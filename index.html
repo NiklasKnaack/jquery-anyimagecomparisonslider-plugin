@@ -61,6 +61,10 @@
 
 
 
+
+
+
+
         body {
             background-color: #f7f7e9;
         }
@@ -176,10 +180,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="./js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script src='./js/jquery.anyimagecomparisonslider.js'></script>
 
     <script>
+
+        hljs.initHighlightingOnLoad();
+
+        //---
 
         $( document ).ready( function() {
 
@@ -195,6 +202,7 @@
                 onPointerDown: 'false',
                 cursor: 'ew-resize',
                 dividingLine: 'solid 1px rgba(255, 255, 255, .5)',
+                followEasingFactor: 0,
                 autoAnimation: true,
                 autoAnimationSpeed: 8,
                 autoAnimationPause: 1,
@@ -315,6 +323,7 @@
                             <div class="ui">
                                 <a class="button-rgt" alt="full size image of 2020" target="_blank">2020</a>
                                 <a class="button-lft" alt="full size image of 2019" target="_blank">2019</a>
+                                <!-- <img class="dragger" src="./img/dragger-h.png" alt="dragger" width="84" height="48">  -->
                             </div>
                         </div>
                     </div>

@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.83';
+    var AICS_VERSION = '0.9.85';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -375,11 +375,14 @@ THE SOFTWARE.
         var ui = element.getElementsByClassName( 'ui' )[ 0 ];
         var buttonLft = null;
         var buttonRgt = null;
+        var dragger = null;
 
         if ( typeof ui !== 'undefined' ) {
 
             buttonLft = ui.getElementsByClassName( 'button-lft' )[ 0 ] || ui.getElementsByClassName( 'button-top' )[ 0 ];
             buttonRgt = ui.getElementsByClassName( 'button-rgt' )[ 0 ] || ui.getElementsByClassName( 'button-btm' )[ 0 ];
+
+            dragger = ui.getElementsByClassName( 'dragger' )[ 0 ];
 
         }
 
@@ -855,6 +858,18 @@ THE SOFTWARE.
 
                 }
 
+                //---
+
+                if ( typeof dragger !== 'undefined' ) {
+
+                    dragger.style.position = 'absolute';
+
+                } else {
+
+                    dragger = null;
+
+                }
+
             }
 
             //---
@@ -1119,6 +1134,13 @@ THE SOFTWARE.
 
                 imageLft.style.width = sliderPosition.x + 'px';
 
+                if ( dragger !== null ) {
+
+                    dragger.style.left = ( sliderPosition.x - dragger.offsetWidth / 2 ) + 'px';
+
+                }
+                
+
             } else if ( settings.orientation === orientation.VERTICAL ) {
 
                 if ( sliderPosition.y > element.offsetHeight ) {
@@ -1132,6 +1154,12 @@ THE SOFTWARE.
                 }
 
                 imageLft.style.height = sliderPosition.y + 'px';
+
+                if ( dragger !== null ) {
+
+                    dragger.style.top = ( sliderPosition.y - dragger.offsetHeight / 2 ) + 'px';
+
+                }
 
             }
 
@@ -1169,10 +1197,24 @@ THE SOFTWARE.
                 imageLft.style.width = pointerPosition.x + 'px';
                 imageLft.style.height = imagesHeight;
 
+                if ( dragger !== null ) {
+
+                    dragger.style.top = ( element.offsetHeight / 2 - dragger.offsetHeight / 2 ) + 'px';
+                    dragger.style.left = ( pointerPosition.x - dragger.offsetWidth / 2 ) + 'px';
+
+                }
+
             } else if ( settings.orientation === orientation.VERTICAL ) {
 
                 imageLft.style.width = imagesWidth;
                 imageLft.style.height = pointerPosition.y + 'px';
+
+                if ( dragger !== null ) {
+
+                    dragger.style.left = ( element.offsetWidth / 2 - dragger.offsetWidth / 2 ) + 'px';
+                    dragger.style.top = ( pointerPosition.y - dragger.offsetHeight / 2 ) + 'px';
+
+                }
 
             }
 
