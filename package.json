@@ -1,7 +1,7 @@
 {
   "name": "jquery-anyimagecomparisonslider-plugin",
   "title": "any Image Comparison Slider",
-  "description": "the any Image Comparison Slider is an extremely versatile yet slim slider for comparing images. You have a lot of options to configure the slider and it works just about everywhere.",
+  "description": "The any Image Comparison Slider is an extremely versatile yet slim slider for comparing images. You have a lot of options to configure the slider and it works just about everywhere.",
   "version": "0.9.83",
   "homepage": "https://niklasknaack.de/",
   "author": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin"
+    "url": "https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin.git"
   },
   "bugs": {
     "url": "https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/issues"
