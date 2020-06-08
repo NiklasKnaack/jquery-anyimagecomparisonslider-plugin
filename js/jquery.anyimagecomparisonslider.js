@@ -44,6 +44,7 @@ THE SOFTWARE.
             settings.cursor = 'ew-resize';
             settings.dividingLine = 'solid 1px rgba(255, 255, 255, .5)';
             settings.followEasingFactor = 0;
+            settings.interactive = true;
             settings.autoAnimation = true,
             settings.autoAnimationSpeed = 8;
             settings.autoAnimationPause = 1;
@@ -99,6 +100,10 @@ THE SOFTWARE.
             } else if ( dataAttributes[ i ].nodeName === 'data-follow-easing-factor' ) {
 
                 settings.followEasingFactor = parseFloat( dataAttributes[ i ].nodeValue );
+
+            } else if ( dataAttributes[ i ].nodeName === 'data-interactive' ) {
+
+                settings.interactive = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
 
             } else if ( dataAttributes[ i ].nodeName === 'data-auto-animation' ) {
 
@@ -256,6 +261,12 @@ THE SOFTWARE.
         if ( settings.followEasingFactor < 0 || settings.followEasingFactor > 100 ) {
 
             throw Error( '\n' + 'followEasingFactor must be between 0 and 100' );
+
+        }
+
+        if ( typeof settings.interactive !== 'boolean' ) {
+
+            throw Error( '\n' + 'interactive must be type of boolean' );
 
         }
 
@@ -718,21 +729,25 @@ THE SOFTWARE.
 
             };
 
-            if ( window.PointerEvent ) {
+            if ( settings.interactive ) {
 
-                images[ eventListener ]( eventType ? 'onpointermove' : 'pointermove', imageMove );
-                images[ eventListener ]( eventType ? 'onpointerenter' : 'pointerenter', imageOver );
-                images[ eventListener ]( eventType ? 'onpointerleave' : 'pointerleave', imageOut );
-                images[ eventListener ]( eventType ? 'onpointerdown' : 'pointerdown', imageDown );
-                images[ eventListener ]( eventType ? 'onpointerup' : 'pointerup', imageUp );
+                if ( window.PointerEvent ) {
 
-            } else {
-
-                images[ eventListener ]( eventType ? 'onmousemove' : 'mousemove', imageMove );
-                images[ eventListener ]( eventType ? 'onmouseover' : 'mouseover', imageOver );
-                images[ eventListener ]( eventType ? 'onmouseout' : 'mouseout', imageOut );
-                images[ eventListener ]( eventType ? 'onmousedown' : 'mousedown', imageDown );
-                images[ eventListener ]( eventType ? 'onmouseup' : 'mouseup', imageUp );
+                    images[ eventListener ]( eventType ? 'onpointermove' : 'pointermove', imageMove );
+                    images[ eventListener ]( eventType ? 'onpointerenter' : 'pointerenter', imageOver );
+                    images[ eventListener ]( eventType ? 'onpointerleave' : 'pointerleave', imageOut );
+                    images[ eventListener ]( eventType ? 'onpointerdown' : 'pointerdown', imageDown );
+                    images[ eventListener ]( eventType ? 'onpointerup' : 'pointerup', imageUp );
+    
+                } else {
+    
+                    images[ eventListener ]( eventType ? 'onmousemove' : 'mousemove', imageMove );
+                    images[ eventListener ]( eventType ? 'onmouseover' : 'mouseover', imageOver );
+                    images[ eventListener ]( eventType ? 'onmouseout' : 'mouseout', imageOut );
+                    images[ eventListener ]( eventType ? 'onmousedown' : 'mousedown', imageDown );
+                    images[ eventListener ]( eventType ? 'onmouseup' : 'mouseup', imageUp );
+    
+                }
 
             }
 
@@ -743,7 +758,7 @@ THE SOFTWARE.
             imageLft.style.backgroundRepeat = 'no-repeat';
             imageLft.style.backgroundSize = 'cover';
             imageLft.style.position = 'absolute';
-            imageLft.style.cursor = settings.cursor;
+            imageLft.style.cursor = settings.interactive === true ? settings.cursor : 'default';
             imageLft.style.touchAction = 'none';
 
             if ( settings.orientation === orientation.HORIZONTAL ) {
@@ -760,7 +775,7 @@ THE SOFTWARE.
             imageRgt.style.backgroundRepeat = 'no-repeat';
             imageRgt.style.backgroundSize = 'cover';
             imageRgt.style.position = 'absolute';
-            imageRgt.style.cursor = settings.cursor;
+            imageRgt.style.cursor = settings.interactive === true ? settings.cursor : 'default';
             imageRgt.style.touchAction = 'none';
 
             //---
