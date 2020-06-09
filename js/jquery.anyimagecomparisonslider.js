@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.85';
+    var AICS_VERSION = '0.9.86';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -1201,8 +1201,12 @@ THE SOFTWARE.
 
             element.style.height = imagesHeight;
 
-            ui.style.width = imagesWidth;
-            ui.style.height = imagesHeight;
+            if ( typeof ui !== 'undefined' ) {
+
+                ui.style.width = imagesWidth;
+                ui.style.height = imagesHeight;
+
+            }
 
             images.style.width = imagesWidth;
             images.style.height = imagesHeight;

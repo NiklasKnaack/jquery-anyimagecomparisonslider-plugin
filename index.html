@@ -10,107 +10,60 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swa"> 
     <link rel="stylesheet" href="./css/solarized-light.css">
     <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-
-        .jumbotron {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-            margin-bottom: 0;
-            background-color: #fff;
-        }
-        @media (min-width: 768px) {
-            .jumbotron {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-            }
-        }
-        
-        .jumbotron p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .jumbotron h1 {
-            font-weight: 300;
-        }
-        
-        .jumbotron .container {
-            max-width: 40rem;
-        }
-        
-
-
-
-
-
-        footer {
-            background-color: rgb(34, 26, 5);
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        
-        footer p {
-            margin-bottom: .25rem;
-        }
-
-        footer .sub-headline-text {
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            padding: 0 50px;
-            color: #f7f7e9;
-        }
-
-        footer ul {
-            margin-top: 10px;
-            padding: 0 50px;
-        }
-
-        footer ul li {
-            padding: 0 50px;
-        }
-
-        footer ul li a, footer ul li a:visited, footer ul li a:active {
-            -webkit-transition: color 0.25s;
-            transition: color 0.25s;
-            text-decoration: none;
-            color: #f7f7e9;
-        }
-
-        footer ul li a:hover {
-            text-decoration: none;
-            color: #ffd300;
-        }
-
-
-
-
-
-
 
         body {
             background-color: #f7f7e9;
         }
 
+
+
+
+        .back-to-top a {
+            border-radius: 5px 5px 0 0 !important;
+            background-color: #fff;
+            padding-left: 15px;
+            padding-right: 15px;
+            line-height: 1.75rem;
+        }
+
+        .back-to-top a .sign {
+            font-size: 1.75rem;
+        }
+
+        .back-to-top a, .back-to-top a:visited, .back-to-top a:active {
+            -webkit-transition: color 0.25s;
+            transition: color 0.25s;
+            text-decoration: none;
+            color: #6c757d;
+        }
+
+        .back-to-top a:hover {
+            text-decoration: none;
+            color: #000000;
+        }
+
+
+
+
+
         #navbarHeader .container {
             background-color: #fff;
         }
 
-        #navbarHeader h4 {
+        #navbarHeader .sub-headline-text {
+            letter-spacing: -1px;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.25rem;
+            padding: 0 50px;
+            color: rgb(34, 26, 5);
+        }
+
+        #navbarHeader p {
+            padding: 25px 50px;
+        }
+
+        #navbarHeader ul {
+            padding: 25px 50px;
         }
 
         .navbar {
@@ -148,16 +101,79 @@
             color: black;
         }
 
-
-
-        .block {
-            
+        @media (max-width: 768px) {
+            .navbar-brand .headline-text {
+                padding-left: 25px;
+                padding-right: 25px;
+                font-size: 1.5rem;
+            }
         }
+
+        @media (max-width: 576px) {
+            .navbar-brand .headline-text {
+                padding-left: 25px;
+                padding-right: 25px;
+                font-size: 2rem;
+            }
+        }
+
+
+
+
+        .jumbotron {
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+            margin-bottom: 0;
+            background-color: #fff;
+        }
+        
+        .jumbotron p:last-child {
+            margin-bottom: 0;
+        }
+
+        .jumbotron .container {
+            max-width: 40rem;
+        }
+
+        .jumbotron .sub-headline-text {
+            letter-spacing: -1px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            padding: 0 50px;
+            color: #000;
+            line-height: 6rem;
+        }
+
+        .jumbotron p {
+            font-size: 1rem;
+        }
+
+        .jumbotron .btn-secondary {
+            border-radius: 5px 5px 0 0 !important;
+            border-color: #ffd300;
+            background-color: #ffd300;
+            color: black;
+        }
+
+
+
+
 
         .block .container {
             background-color: #fff;
         }
 
+        .block a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .block .copyright {
+            padding-left: 5px;
+            font-size: 0.65rem;
+            text-decoration: none;
+            color: #aaaaaa;
+        }
 
         .block .container .headline {
             background-color: rgb(34, 26, 5);
@@ -172,6 +188,13 @@
             color: black;
         }
 
+        @media (max-width: 768px) {
+            .block .container .headline-number {
+                font-size: 6rem;
+                padding: 0 25px;
+            }
+        }
+
         .block .container .headline-text {
             font-size: 2rem;
             padding-left: 25px;
@@ -179,7 +202,12 @@
             color: #f7f7e9;
         }
 
-
+        @media (max-width: 768px) {
+            .block .container .headline-text {
+                font-size: 1.5rem;
+                padding-left: 15px;
+            }
+        }
 
         .block .container .sub-headline {
             letter-spacing: -1px;
@@ -189,10 +217,8 @@
             color: rgb(34, 26, 5);
         }
 
-
-
         .block .container .content {
-            padding: 25px 50px;
+            padding: 0px 50px;
         }
 
         .block .container .code-block {
@@ -202,6 +228,7 @@
         .block .container .code-block pre {
             font-size: 0.75rem;
             width: 100%;
+            margin-bottom: 0px;
         }
 
         .block .container .code-block pre .hljs {
@@ -209,9 +236,57 @@
             padding-left: 25px;
         }
 
+
+
+
+        footer {
+            background-color: rgb(34, 26, 5);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: .25rem;
+        }
+
+        footer .sub-headline-text {
+            letter-spacing: -1px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            padding: 0 50px;
+            color: #f7f7e9;
+        }
+
+        footer ul {
+            margin-top: 10px;
+            /* padding: 0 50px; */
+        }
+
+        footer ul li {
+            padding: 0 50px;
+        }
+
+        @media (max-width: 768px) {
+            footer ul li {
+                padding-right: 0px;
+            }
+        }
+
+        footer ul li a, footer ul li a:visited, footer ul li a:active {
+            -webkit-transition: color 0.25s;
+            transition: color 0.25s;
+            text-decoration: none;
+            color: #f7f7e9;
+        }
+
+        footer ul li a:hover {
+            text-decoration: none;
+            color: #ffd300;
+        }
+
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="./js/highlight.pack.js"></script>
@@ -224,6 +299,46 @@
         //---
 
         $( document ).ready( function() {
+
+            //------------------------------------------------------------------------
+
+            $( '.back-to-top-btn' ).click( function() {
+
+                $( 'html, body' ).animate( { scrollTop: 0 }, 1000 );
+
+                return false;
+
+            } );
+
+            function scrollToElement( element ) {
+
+                $( 'html, body' ).animate( { scrollTop: element.offset().top }, 1000 );
+
+            }
+
+            $( '.goto-quickstart' ).click( function() {
+
+                scrollToElement( $( '#quickstart .headline' ) );
+
+                return false;
+
+            } );
+
+            $( '.goto-introduction' ).click( function() {
+
+                scrollToElement( $( '#introduction .headline' ) );
+
+                return false;
+
+            } );
+
+            $( '.goto-examples' ).click( function() {
+
+                scrollToElement( $( '#examples .headline' ) );
+
+                return false;
+
+            } );
 
             //------------------------------------------------------------------------
 
@@ -288,17 +403,25 @@
         <header>
             <div class="collapse" id="navbarHeader">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-md-7 py-4">
-                            <h4 class="">About</h4>
-                            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                    <div class="row pt-4">
+                        <div class="col-sm-12 col-md-6">
+                            <strong class="sub-headline-text">About</strong> 
+                            <p class="text-muted">Hi. Just for a second. I am Niklas. I am the developer behind this little plugin. With this page I want to help you how to use the plugin and show you with the help of some examples how you can get the maximum out of it.</p>
                         </div>
-                        <div class="col-sm-4 offset-md-1 py-4">
-                            <h4 class="">Contact</h4>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <strong class="sub-headline-text">Navigation</strong> 
                             <ul class="list-unstyled">
-                                <li><a href="#" class="text-muted">Follow on Twitter</a></li>
-                                <li><a href="#" class="text-muted">Like on Facebook</a></li>
-                                <li><a href="#" class="text-muted">Email me</a></li>
+                                <li></li><a href="#" class="text-muted goto-quickstart">Quickstart</a></li>
+                                <li></li><a href="#" class="text-muted goto-introduction">Introdution</a></li>
+                                <li></li><a href="#" class="text-muted goto-examples">Examples</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <strong class="sub-headline-text">Contact</strong> 
+                            <ul class="list-unstyled">
+                                <li><a href="https://twitter.com/niklaswebdev" class="text-muted">Twitter</a></li>
+                                <li><a href="mailto:info@niklasknaack.de" class="text-muted">Email</a></li>
+                                <li><a href="https://github.com/NiklasKnaack/" class="text-muted">GitHub</a></li>
                             </ul>
                         </div>
                     </div>
@@ -308,7 +431,8 @@
                 <div class="container d-flex justify-content-between">
                     <span class="navbar-brand d-flex align-items-center">
                         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> -->
-                        <strong class="headline-text">any Image Comparison Slider</strong>
+                        <strong class="headline-text d-none d-sm-block">any Image Comparison Slider</strong>
+                        <strong class="headline-text d-sm-none">aICS</strong>
                     </span>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -321,11 +445,18 @@
         
             <section class="jumbotron text-center">
                 <div class="container">
-                    <h1>Album example</h1>
-                    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+                    <strong class="sub-headline-text">Welcome</strong>
+                    <p class="text-muted">
+                        Hi, and welcome. I'm glad you're here.<br/>
+                        You're probably here because you're looking for a slider to compare images. Very good. Because you've come to the right place. 
+                        If you do not want to read this welcome text bla bla, you can jump directly to the Quickstart or to the examples.<br/>
+                        The any Image Comparison Slider (I know, it's a bulky name) is on the one hand super slim and does not need any additional libraries. On the other hand it is super flexible, versatile and highly customizable. With just a few simple steps, the Slider is ready to use very quickly and runs on almost any device.<br/>
+                        In short, it is the last slider you will ever need.
+                        And now have fun.</p>
                     <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    <a href="#" class="btn goto-quickstart btn-secondary my-2">Quickstart</a>
+                    <a href="#" class="btn goto-introduction btn-secondary my-2">Introdution</a>
+                    <a href="#" class="btn goto-examples btn-secondary my-2">Examples</a>
                     </p>
                 </div>
             </section>
@@ -335,34 +466,65 @@
 
 
             
-            <div class="block py-5">
+            <div id="quickstart" class="block py-5">
                 <div class="container">
                     <div class="headline row d-flex align-items-end">
                         <strong class="headline-number">1.</strong>
-                        <p class="headline-text">Introduction</p>
+                        <p class="headline-text">Quickstart</p>
                     </div>
                     <div class="sub-headline row pt-5">
-                        <strong class="sub-headline-text">Default</strong> 
+                        <strong class="sub-headline-text">Let's go</strong> 
                     </div>
                     <div class="content row d-flex align-items-end">
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et facilisis ex, et convallis ex. Cras vel est ac nulla aliquet aliquet eu nec nunc. Suspendisse dapibus pretium dolor non tincidunt. Mauris suscipit leo volutpat lorem iaculis feugiat quis at lacus. Fusce dui odio, facilisis cursus dapibus sit amet, pretium vel eros. Donec laoreet enim ornare pretium malesuada. Maecenas maximus, lacus et mattis auctor, ligula tellus sollicitudin lectus, eu commodo lacus eros vitae est. Praesent rutrum vel neque ac vulputate. Pellentesque et nisi et neque lacinia feugiat. Nam nec elit blandit, dapibus massa id, pretium lorem.</p>
+                        <p class="text-muted">
+                            If you are in a hurry, this is the perfect place to start. Below you will find an example of the default slider and everything you need to get this thing running.
+                            <br/>
+                            But if you want to customize your slider and learn more about the possibilities and areas of application, please have a look at the detailed introduction and the examples.
+                        </p>
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div id="any-image-comparison-slider-1" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g1">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                 <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
                             </div>
+                            <!--
                             <div class="ui">
                                 <a class="button-rgt" alt="full size image of 2020" target="_blank">2020</a>
                                 <a class="button-lft" alt="full size image of 2019" target="_blank">2019</a>
-                                <!-- <img class="dragger" src="./img/dragger-h.png" alt="dragger" width="84" height="48">  -->
+                                <img class="dragger" src="./img/dragger-h.png" alt="dragger" width="84" height="48">
                             </div>
+                        -->
                         </div>
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
                     <div class="content row d-flex align-items-end">
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et facilisis ex, et convallis ex. Cras vel est ac nulla aliquet aliquet eu nec nunc. Suspendisse dapibus pretium dolor non tincidunt. Mauris suscipit leo volutpat lorem iaculis feugiat quis at lacus. Fusce dui odio, facilisis cursus dapibus sit amet, pretium vel eros. Donec laoreet enim ornare pretium malesuada. Maecenas maximus, lacus et mattis auctor, ligula tellus sollicitudin lectus, eu commodo lacus eros vitae est. Praesent rutrum vel neque ac vulputate. Pellentesque et nisi et neque lacinia feugiat. Nam nec elit blandit, dapibus massa id, pretium lorem.</p>
+                        <p class="text-muted">
+                            This is the default slider. If you want to use it directly as shown, just follow the steps below and you will be done in no time.
+                            <br/><br/>
+                            First, get the <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/blob/master/js/jquery.anyimagecomparisonslider.min.js" target="_blank">jquery.anyimagecomparisonslider.min.js</a> file you need directly from this <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin" target="_blank">GitHub Repo</a> page and implement it into the page like your other scripts.
+                            <br/><br/>
+                            <i>Please note, if you want to use the plugin together with jQuery, then implement the slider script behind jQuery.</i>
+                        </p>
                     </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;script src='./path/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Then insert the following code at the position of your page where you want to have the slider. Of course you have to adjust the image paths accordingly. This is done with the data-src attribute.
+                        </p>
+                    </div>
+                    
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
@@ -370,10 +532,10 @@
                         <pre>
                             <code class="language-html">
 &lt;div class=&quot;row&quot;&gt;
-    &lt;div id=&quot;any-image-comparison-slider&quot;&gt;
+    &lt;div id=&quot;aics&quot;&gt;
         &lt;div class=&quot;images&quot;&gt;
-            &lt;div class=&quot;image-rgt&quot; data-src=&quot;./img/glacier-debris-20161008-full.jpg&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;image-lft&quot; data-src=&quot;./img/glacier-debris-20161008-compare-full.jpg&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
@@ -381,7 +543,7 @@
                         </pre>
                     </div>
 
-                    <div class="sub-headline row">
+                    <!-- <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
@@ -396,6 +558,12 @@
 }
                             </code>
                         </pre>
+                    </div> -->
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Almost there. Now all you have to do is initialize the slider. Depending on whether you want to work with jQuery or pure JavaScript, you have the following options.
+                        </p>
                     </div>
 
                     <div class="sub-headline row">
@@ -404,7 +572,7 @@
                     <div class="code-block row">
                         <pre>
                             <code class="language-javascript">
-new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
                             </code>
                         </pre>
                     </div>
@@ -415,165 +583,20 @@ new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-sli
                     <div class="code-block row">
                         <pre>
                             <code class="language-javascript">
-$( '#any-image-comparison-slider' ).anyImageComparisonSlider();
+$( '#aics' ).anyImageComparisonSlider();
                             </code>
                         </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Congrats, you have successfully added your first any Image Comparison slider to your site.
+                        </p>
                     </div>
                 </div> 
             </div> 
 
 
-
-
-
-
-
-            
-        
-            <div class="album py-5">
-                <div class="container">
-            
-                    <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-            
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-            
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
         
         </main>
         
@@ -587,49 +610,47 @@ $( '#any-image-comparison-slider' ).anyImageComparisonSlider();
             </div>
         </footer> -->
 
+        <div class="container back-to-top">
+            <div class="row d-flex justify-content-end align-items-center">
+                <a class="back-to-top-btn" href="#"><span class="sign">&#8593;</span><span class="text"> Back to top</span></a>
+            </div>
+        </div>
+            
+
 
         <footer class="container py-5">
+            <!-- <p class="float-right">
+                <a href="#">Back to top</a>
+            </p> -->
             <div class="row">
-              <div class="col-6 col-md">
-                <strong class="sub-headline-text">Features</strong> 
-                <ul class="list-unstyled text-small">
-                  <li><a href="#">Cool stuff</a></li>
-                  <li><a href="#">Random feature</a></li>
-                  <li><a href="#">Team feature</a></li>
-                  <li><a href="#">Stuff for developers</a></li>
-                  <li><a href="#">Another one</a></li>
-                  <li><a href="#">Last time</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-md">
-                <strong class="sub-headline-text">Resources</strong> 
-                <ul class="list-unstyled text-small">
-                  <li><a href="#">Resource</a></li>
-                  <li><a href="#">Resource name</a></li>
-                  <li><a href="#">Another resource</a></li>
-                  <li><a href="#">Final resource</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-md">
-                <strong class="sub-headline-text">Resources</strong> 
-                <ul class="list-unstyled text-small">
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Education</a></li>
-                  <li><a href="#">Government</a></li>
-                  <li><a href="#">Gaming</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-md">
-                <strong class="sub-headline-text">About</strong> 
-                <ul class="list-unstyled text-small">
-                  <li><a href="#">Team</a></li>
-                  <li><a href="#">Locations</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Terms</a></li>
-                </ul>
-              </div>
+                <div class="col-md-4 col-sm-12">
+                    <strong class="sub-headline-text">About</strong> 
+                    <ul class="list-unstyled text-small">
+                        <li><a href="https://www.niklasknaack.de/">Niklas Knaack</a></li>
+                        <li><a href="https://www.anymotion.de/">anyMOTION </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <strong class="sub-headline-text">Resources</strong> 
+                    <ul class="list-unstyled text-small">
+                        <li><a href="https://jquery.com/">jQuery</a></li>
+                        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+                        <li><a href="https://www.npmjs.com/">npm</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <strong class="sub-headline-text">Links</strong> 
+                    <ul class="list-unstyled text-small">
+                        <li><a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin">GitHub</a></li>
+                        <li><a href="https://twitter.com/niklaswebdev">Twitter</a></li>
+                        <li><a href="http://codepen.io/NiklasKnaack/#">CodePen</a></li>
+                        <li><a href="https://jsfiddle.net/user/NiklasKnaack/fiddles/">JSFiddle</a></li>
+                        <li><a href="https://www.dwitter.net/u/Niklas/top">Dwitter</a></li>
+                    </ul>
+                </div>
+                
             </div>
-          </footer>
+        </footer>
         
     </body>
 
