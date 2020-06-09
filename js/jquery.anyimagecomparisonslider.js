@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.9';
+    var AICS_VERSION = '0.9.91';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -759,7 +759,7 @@ THE SOFTWARE.
             imageLft.style.backgroundSize = 'cover';
             imageLft.style.position = 'absolute';
             imageLft.style.cursor = settings.interactive === true ? settings.cursor : 'default';
-            imageLft.style.touchAction = 'none';
+            imageLft.style.touchAction = settings.interactive === true ? 'none' : 'auto';
 
             if ( settings.orientation === orientation.HORIZONTAL ) {
 
@@ -776,7 +776,7 @@ THE SOFTWARE.
             imageRgt.style.backgroundSize = 'cover';
             imageRgt.style.position = 'absolute';
             imageRgt.style.cursor = settings.interactive === true ? settings.cursor : 'default';
-            imageRgt.style.touchAction = 'none';
+            imageRgt.style.touchAction = settings.interactive === true ? 'none' : 'auto';
 
             //---
 

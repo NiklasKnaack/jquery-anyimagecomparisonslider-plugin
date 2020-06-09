@@ -535,12 +535,10 @@
                     <div class="code-block row">
                         <pre>
                             <code class="language-html">
-&lt;div class=&quot;row&quot;&gt;
-    &lt;div id=&quot;aics&quot;&gt;
-        &lt;div class=&quot;images&quot;&gt;
-            &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
+&lt;div id=&quot;aics&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
                             </code>
@@ -643,9 +641,9 @@ $( '#aics' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            We see here the same slider as in the Quickstart. However, it is configured in such a way that the behavior has changed almost completely.
+                            This is the same slider as in the Quickstart. However, it is configured in such a way that the behavior has changed almost completely.
                             <br/><br/>
-                            To understand how this works with the parameters, let's first look at how to configure this slider. 
+                            To understand how to configure the slider with attributes or parameters, let's first look at the complete HTML code.
                             <br/>
                             Then we will look at all possible parameters in detail. 
                         </p>
@@ -663,12 +661,14 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="code-block row">
                         <pre>
                             <code class="language-html">
-&lt;div class=&quot;row&quot;&gt;
-    &lt;div id=&quot;aics&quot;&gt;
-        &lt;div class=&quot;images&quot;&gt;
-            &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
+&lt;div id=&quot;aics-2&quot; data-orientation=&quot;vertical&quot; data-background-color=&quot;#ffffff&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;10&quot; data-group=&quot;g2&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+        &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
                             </code>
@@ -694,8 +694,23 @@ $( '#aics' ).anyImageComparisonSlider();
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Almost there. Now all you have to do is initialize the slider. Depending on whether you want to work with jQuery or pure JavaScript, you have the following options.
+                            At first glance, the HTML code looks almost the same as in the default example. But if we take a closer look we can see two differences. First, we pass various data attributes with parameters for the slider. And second we added another div to set the buttons in the slider.
                         </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+data-orientation="vertical" 
+data-background-color="#ffffff" 
+data-cursor="ns-resize" 
+data-follow-easing-factor="10" 
+data-group="g2"
+                            </code>
+                        </pre>
                     </div>
 
                     <div class="sub-headline row">
@@ -704,7 +719,7 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="code-block row">
                         <pre>
                             <code class="language-javascript">
-new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-2' ) );
                             </code>
                         </pre>
                     </div>
@@ -715,7 +730,7 @@ new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
                     <div class="code-block row">
                         <pre>
                             <code class="language-javascript">
-$( '#aics' ).anyImageComparisonSlider();
+$( '#aics-2' ).anyImageComparisonSlider();
                             </code>
                         </pre>
                     </div>
