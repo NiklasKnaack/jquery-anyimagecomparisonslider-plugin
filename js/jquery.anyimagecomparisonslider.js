@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.86';
+    var AICS_VERSION = '0.9.9';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -782,7 +782,7 @@ THE SOFTWARE.
 
             if ( typeof ui !== 'undefined' ) {
 
-                var btSet = function( element, alignment ) {
+                var btSet = function( element, image, alignment ) {
 
                     element.style.pointerEvents = 'auto';
                     element.style.position = 'absolute';
@@ -796,7 +796,7 @@ THE SOFTWARE.
                     element.style.lineHeight = '26px';
                     element.style.textDecoration = 'none';
                     element.style.transition = 'all ease-in-out .3s';
-                    element.setAttribute( 'href', imageLft.getAttribute( 'data-src' ) );
+                    element.setAttribute( 'href', image.getAttribute( 'data-src' ) );
 
                     if ( alignment === 'tl' ) {
 
@@ -855,7 +855,7 @@ THE SOFTWARE.
 
                 if ( typeof buttonLft !== 'undefined' ) {
 
-                    btSet( buttonLft, 'tl' );
+                    btSet( buttonLft, imageLft, 'tl' );
 
                 }
 
@@ -863,11 +863,11 @@ THE SOFTWARE.
 
                    if ( settings.orientation === orientation.HORIZONTAL ) {
 
-                        btSet( buttonRgt, 'tr' );
+                        btSet( buttonRgt, imageRgt, 'tr' );
 
                     } else if ( settings.orientation === orientation.VERTICAL ) {
 
-                        btSet( buttonRgt, 'bl' );
+                        btSet( buttonRgt, imageRgt, 'bl' );
 
                     }
 
