@@ -76,6 +76,11 @@
             border-radius: 0px;
             border: 2px solid;
             padding: 0 0;
+            user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
         }
 
         .navbar .container {
@@ -159,6 +164,19 @@
             color: black;
         }
 
+        .jumbotron .btn-secondary:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .jumbotron .btn-secondary:active {
+            outline: none !important;
+            box-shadow: none !important;
+            border-color: #ffd300!important;
+            background-color: #ffd300 !important;
+            color: black !important;
+        }
+
         
 
 
@@ -239,6 +257,37 @@
             background-color: #f7f7e9;
             padding-left: 25px;
         }
+
+        .block .table td {
+            color: #6c757d;
+            min-width: 250px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .block .table td strong {
+            color: #000000;
+            padding-right: 15px;
+        }
+
+        @media (max-width: 992px) {
+            .block .table td {
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .block .table td {
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .block .table td {
+                min-width: 100px;
+            }
+        }
+
 
 
 
@@ -336,6 +385,14 @@
 
             } );
 
+            $( '.goto-configuration' ).click( function() {
+
+                scrollToElement( $( '#configuration .headline' ) );
+
+                return false;
+
+            } );
+
             $( '.goto-examples' ).click( function() {
 
                 scrollToElement( $( '#examples .headline' ) );
@@ -417,6 +474,7 @@
                             <ul class="list-unstyled">
                                 <li></li><a href="#" class="text-muted goto-quickstart">Quickstart</a></li>
                                 <li></li><a href="#" class="text-muted goto-introduction">Introdution</a></li>
+                                <li></li><a href="#" class="text-muted goto-configuration">Configuration</a></li>
                                 <li></li><a href="#" class="text-muted goto-examples">Examples</a></li>
                             </ul>
                         </div>
@@ -460,6 +518,7 @@
                     <p>
                     <a href="#" class="btn goto-quickstart btn-secondary my-2">Quickstart</a>
                     <a href="#" class="btn goto-introduction btn-secondary my-2">Introdution</a>
+                    <a href="#" class="btn goto-configuration btn-secondary my-2">Configuration</a>
                     <a href="#" class="btn goto-examples btn-secondary my-2">Examples</a>
                     </p>
                 </div>
@@ -483,7 +542,7 @@
                         <p class="text-muted">
                             If you are in a hurry, this is the perfect place to start. Below you will find an example of the default slider and everything you need to get this thing running.
                             <br/>
-                            But if you want to customize your slider and learn more about the possibilities and areas of application, please have a look at the detailed introduction and the examples.
+                            But if you want to customize your slider and learn more about the possibilities and areas of application, please have a look at the <a href="#" class="goto-introduction">Introduction</a>, the <a href="#" class="goto-configuration">Configuration</a> and the <a href="#" class="goto-examples">Examples</a>.
                         </p>
                     </div>
                     <div class="row mb-3">
@@ -695,6 +754,8 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             At first glance, the HTML code looks almost the same as in the default example. But if we take a closer look we can see two differences. First, we pass various data attributes with parameters for the slider. And second we added another div to set the buttons in the slider.
+                            <br/><br/>
+                            Here you can see the data attributes used for this slider in detail.
                         </p>
                     </div>
 
@@ -704,13 +765,61 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="code-block row">
                         <pre>
                             <code class="language-html">
-data-orientation="vertical" 
-data-background-color="#ffffff" 
-data-cursor="ns-resize" 
-data-follow-easing-factor="10" 
-data-group="g2"
+data-orientation="vertical" //default value: "horizontal"
+data-background-color="#ffffff" //default value: "#000000"
+data-cursor="ns-resize" //default value: "ew-resize"
+data-follow-easing-factor="10" //default value: "0"
+data-group="g2" //default value: ""
                             </code>
                         </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            The exact configuration of the slider with attributes and parameters is described in the chapter <a href="#" class="goto-configuration">Configuration</a>.
+                            <br/><br/>
+                            The following code creates the two buttons in the slider. With these buttons the user can easily download the images used in the slider.
+                        </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div class=&quot;ui&quot;&gt;
+    &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+    &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            The used buttons must be in a div with the class ui. In addition, the buttons themselves should always use one of the following classes so that they are correctly recognized by JavaScript.
+                        </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">CSS</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+button-rgt
+button-lft
+button-top
+button-btm
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            And here it is again about the initialization. As already learned there are two possibilities depending on whether you want to work with jQuery or pure JavaScript.
+                        </p>
                     </div>
 
                     <div class="sub-headline row">
@@ -737,25 +846,203 @@ $( '#aics-2' ).anyImageComparisonSlider();
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Congrats, you have successfully added your first any Image Comparison slider to your site.
+                            Congrats, you have successfully added your first self configured any Image Comparison slider to your site. 
                         </p>
                     </div>
                 </div> 
-            </div> 
+            </div>
+
+
+
+
+            <div class="container back-to-top">
+                <div class="row d-flex justify-content-end align-items-center">
+                    <a class="back-to-top-btn" href="#"><span class="sign">&#8593;</span><span class="text"> Back to top</span></a>
+                </div>
+            </div>
+
+            <div id="configuration" class="block pb-5">
+                <div class="container">
+                    <div class="headline row d-flex align-items-end">
+                        <strong class="headline-number">3.</strong>
+                        <p class="headline-text">Configuration</p>
+                    </div>
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">Let's go into detail</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Let's first look at how you can configure the slider using data attributes. In the chapter Introduction we could already get to know some attributes. But now it is time to get to know them all.
+                        </p>
+                    </div>
+
+                    
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+data-orientation="horizontal"
+data-width="100%"
+data-background-color="#000000"
+data-on-pointer-down="false"
+data-cursor="ew-resize"
+data-dividing-line="solid 1px rgba(255, 255, 255, .5)"
+data-follow-easing-factor="0"
+data-interactive="true"
+data-auto-animation="true"
+data-auto-animation-speed="8"
+data-auto-animation-pause="1"
+data-auto-animation-easing="inOutCubic"
+data-control-others="false"
+data-controlled-by-others="false"
+data-group=""
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            These are all available data attributes with their default values.
+                            <br/>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>data-orientation</strong></td>
+                                        <td>Specify either horizontal or vertical. With this you can control whether your slider slides horizontally or vertically.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-width</strong></td>
+                                        <td>Enter either a percentage value such as 100% or 75%, or a fixed pixel value such as 500px or 728px. It depends on whether your slider should behave responsively.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-background-color</strong></td>
+                                        <td>Here you set the background color of the slider. You can see this color until the images are loaded. You can enter none (if you don't want a background), or hex (#ffffff), rgb (rgb(255, 255, 255)) or rgba (rgba(255, 255, 255, 1.0)) values.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-on-pointer-down</strong></td>
+                                        <td>Specify true or false here. If you select true here, your slider will only be active when you hold down the mouse button.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-cursor</strong></td>
+                                        <td>Here you define which mouse cursor should be displayed when you move the mouse over the slider. You have the following options: ew-resize, ns-resize, grab, w-resize, s-resize, e-resize, n-resize, row-resize, col-resize, all-scroll, move, crosshair, pointer, default, auto, inherit, initial and unset.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-dividing-line</strong></td>
+                                        <td>Here you specify how the dividing line of the slider should look. If you do not want a dividing line, then none will be specified. Otherwise you can use the default value: solid 1px rgba(255, 255, 255, .5)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-follow-easing-factor</strong></td>
+                                        <td>If you want the slider to follow you without easing, then enter the value 0 here. Otherwise you can enter values from 0 to 100 to control the easing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-interactive</strong></td>
+                                        <td>If you want your slider to be non-interactive then enter false here. So the slider can not be controlled and runs only automatically.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-auto-animation</strong></td>
+                                        <td>With true or false you can determine whether your slider should automatically play an animation in case there is no user interaction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-auto-animation-speed</strong></td>
+                                        <td>Here you define the speed of the automatic animation in seconds.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-auto-animation-pause</strong></td>
+                                        <td>Here you define the time in seconds for the pause between the animations and the time that should pass after a user interaction until the automatic animation starts again.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-auto-animation-easing</strong></td>
+                                        <td>Here you determine which easing function should be used for the automatic animation. The following functions are available: linear, inQuad, outQuad, inOutQuad, inCubic, outCubic, inOutCubic, inQuart, outQuart, inOutQuart, inQuint, outQuint, inOutQuint, inSine, outSine, inOutSine</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-control-others</strong></td>
+                                        <td>If you want this slider to control other sliders on the page, then enter true at this point. Otherwise take the default value false.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-controlled-by-others</strong></td>
+                                        <td>If you want this slider to be controlled by other sliders on the page, then enter true here. Otherwise take the default value false.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-group</strong></td>
+                                        <td>You can group your sliders. If you use more than one slider on your site, you can group them by entering a group name. This is especially important if you only want to control certain other sliders on your site with your active slider.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </p>
+                    </div>
+                    
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-2' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Congrats, you have successfully added your first self configured any Image Comparison slider to your site. 
+                        </p>
+                    </div>
+                </div> 
+            </div>
+
+
+
+            <div class="container back-to-top">
+                <div class="row d-flex justify-content-end align-items-center">
+                    <a class="back-to-top-btn" href="#"><span class="sign">&#8593;</span><span class="text"> Back to top</span></a>
+                </div>
+            </div>
+
+            <div id="examples" class="block pb-5">
+                <div class="container">
+                    <div class="headline row d-flex align-items-end">
+                        <strong class="headline-number">4.</strong>
+                        <p class="headline-text">Examples</p>
+                    </div>
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">And on we go</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            After we learned in the Quickstart how to integrate the default slider into your site as fast as possible, we now go a bit deeper into detail and learn what the plugin offers for configuration possibilities.
+                        </p>
+                    </div>
+                    
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-2' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Congrats, you have successfully added your first self configured any Image Comparison slider to your site. 
+                        </p>
+                    </div>
+                </div> 
+            </div>
 
 
         
         </main>
-        
-        <!-- <footer class="text-muted">
-            <div class="container">
-            <p class="float-right">
-                <a href="#">Back to top</a>
-            </p>
-            <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-            <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
-            </div>
-        </footer> -->
+
+
+
 
         <div class="container back-to-top">
             <div class="row d-flex justify-content-end align-items-center">
