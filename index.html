@@ -349,6 +349,15 @@
             color: #ffd300;
         }
 
+        footer .license {
+            padding-left: 50px;
+            -webkit-transition: color 0.25s;
+            transition: color 0.25s;
+            text-decoration: none;
+            color: #f7f7e9;
+            font-size: 0.75rem;
+        }
+
 
 
 
@@ -486,6 +495,7 @@
             var anyImageComparisonSlider17 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-17' ) );
             var anyImageComparisonSlider18 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-18' ) );
             var anyImageComparisonSlider19 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-19' ) );
+            var anyImageComparisonSlider20 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-20' ) );
 
             //------------------------------------------------------------------------
 
@@ -1737,6 +1747,98 @@ $( '#aics-19' ).anyImageComparisonSlider();
                     </div>
 
 
+
+
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">Example 6</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                        </p>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div id="any-image-comparison-slider-20" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="url('./img/dragger-h.cur') 22 12, auto" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g6">
+                            <div class="images">
+                                <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics-19&quot; data-cursor=&quot;url('./path/dragger-h.cur') 22 12, auto&quot; data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">CSS</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-css">
+#aics-19 {
+    overflow: visible !important;
+}
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Or alternatively applied globally to all slider elements
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-css">
+div[data-slider-type|=any-image-comparison-slider] {
+    overflow: visible !important;
+}
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-19' ) );
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-19' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+
                     
                 </div> 
             </div>
@@ -1787,6 +1889,11 @@ $( '#aics-19' ).anyImageComparisonSlider();
                     </ul>
                 </div>
                 
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a class="license" href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/blob/master/LICENSE" target="_blank">Copyright (c) 2020 Niklas Knaack</a>
+                </div>
             </div>
         </footer>
         
