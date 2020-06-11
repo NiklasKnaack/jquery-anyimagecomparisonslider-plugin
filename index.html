@@ -288,6 +288,18 @@
             }
         }
 
+        .block .multible > div {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        @media (max-width: 576px) {
+            .block .multible > div {
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+                padding-top: .50rem;
+            }
+        }
 
 
 
@@ -336,6 +348,19 @@
             text-decoration: none;
             color: #ffd300;
         }
+
+
+
+
+        #any-image-comparison-slider-19 {
+            overflow: visible !important;
+        }
+
+        /*
+        div[data-slider-type|=any-image-comparison-slider] {
+            overflow: visible !important;
+        }
+        */
 
     </style>
 
@@ -442,12 +467,25 @@
 
             //js
             //var anyImageComparisonSlider = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider' ), settings );
-            var anyImageComparisonSlider1 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-1' ) );
-            var anyImageComparisonSlider2 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-2' ) );
-            // var anyImageComparisonSlider3 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-3' ) );
-            // var anyImageComparisonSlider4 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-4' ) );
-            // var anyImageComparisonSlider5 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-5' ) );
-            // var anyImageComparisonSlider6 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-6' ) );
+            var anyImageComparisonSlider1  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-1' ) );
+            var anyImageComparisonSlider2  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-2' ) );
+            var anyImageComparisonSlider3  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-3' ) );
+            var anyImageComparisonSlider4  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-4' ) );
+            var anyImageComparisonSlider5  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-5' ) );
+            var anyImageComparisonSlider6  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-6' ) );
+            var anyImageComparisonSlider7  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-7' ) );
+            var anyImageComparisonSlider8  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-8' ) );
+            var anyImageComparisonSlider9  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-9' ) );
+            var anyImageComparisonSlider10 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-10' ) );
+            var anyImageComparisonSlider11 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-11' ) );
+            var anyImageComparisonSlider12 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-12' ) );
+            var anyImageComparisonSlider13 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-13' ) );
+            var anyImageComparisonSlider14 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-14' ) );
+            var anyImageComparisonSlider15 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-15' ) );
+            var anyImageComparisonSlider16 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-16' ) );
+            var anyImageComparisonSlider17 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-17' ) );
+            var anyImageComparisonSlider18 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-18' ) );
+            var anyImageComparisonSlider19 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-19' ) );
 
             //------------------------------------------------------------------------
 
@@ -686,13 +724,13 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="row mb-3">
                         <div id="any-image-comparison-slider-2" data-orientation="vertical" data-width="100%" data-background-color="#ffffff" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g2">
                             <div class="images">
-                                <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
-                                <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                <div class="image-btm" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                <div class="image-top" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
                             </div>
                             
                             <div class="ui">
-                                <a class="button-rgt" alt="full size image of 2020" target="_blank">2020</a>
-                                <a class="button-lft" alt="full size image of 2019" target="_blank">2019</a>
+                                <a class="button-btm" alt="full size image of 2020" target="_blank">2020</a>
+                                <a class="button-top" alt="full size image of 2019" target="_blank">2019</a>
                                 <!-- <img class="dragger" src="./img/dragger-h.png" alt="dragger" width="84" height="48"> -->
                             </div>
                         </div>
@@ -722,12 +760,12 @@ $( '#aics' ).anyImageComparisonSlider();
                             <code class="language-html">
 &lt;div id=&quot;aics-2&quot; data-orientation=&quot;vertical&quot; data-background-color=&quot;#ffffff&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;10&quot; data-group=&quot;g2&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
-        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-btm&quot; data-src=&quot;./path/image-btm.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-top&quot; data-src=&quot;./path/image-top.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;ui&quot;&gt;
-        &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
-        &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+        &lt;a class=&quot;button-btm&quot; alt=&quot;full image btm&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+        &lt;a class=&quot;button-top&quot; alt=&quot;full image top&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
                             </code>
@@ -872,7 +910,7 @@ $( '#aics-2' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Let's first look at how you can configure the slider using data attributes. In the chapter Introduction we could already get to know some attributes. But now it is time to get to know them all.
+                            Let's first look at how you can configure the slider using data attributes. In the <a href="#" class="goto-introduction">Introduction</a> chapter we could already get to know some attributes. But now it is time to get to know them all.
                         </p>
                     </div>
 
@@ -926,7 +964,7 @@ data-group=""
                                     </tr>
                                     <tr>
                                         <td><strong>data-cursor</strong></td>
-                                        <td>Here you define which mouse cursor should be displayed when you move the mouse over the slider. You have the following options: ew-resize, ns-resize, grab, w-resize, s-resize, e-resize, n-resize, row-resize, col-resize, all-scroll, move, crosshair, pointer, default, auto, inherit, initial and unset.</td>
+                                        <td>Here you define which mouse cursor should be displayed when you move the mouse over the slider. You have the following options: ew-resize, ns-resize, grab, w-resize, s-resize, e-resize, n-resize, row-resize, col-resize, all-scroll, move, crosshair, pointer, default, auto, inherit, initial and unset. But wait, there is more. Mit der folgenden Anweisung kannst du jeden beliebigen Cursor laden: url("http://yourcursor.cur") 0 0, auto</td>
                                     </tr>
                                     <tr>
                                         <td><strong>data-dividing-line</strong></td>
@@ -973,6 +1011,86 @@ data-group=""
                             
                         </p>
                     </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Just as an example. A slider with all possible data attributes.
+                        </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics&quot; data-orientation=&quot;horizontal&quot; data-width=&quot;100%&quot; data-background-color=&quot;#000000&quot; data-on-pointer-down=&quot;false&quot; data-cursor=&quot;ew-resize&quot; data-dividing-line=&quot;solid 1px rgba(255, 255, 255, .5)&quot; data-follow-easing-factor=&quot;0&quot; data-auto-animation=&quot;true&quot; data-auto-animation-speed=&quot;8&quot; data-auto-animation-pause=&quot;1&quot; data-auto-animation-easing=&quot;inOutCubic&quot; data-control-others=&quot;false&quot; data-controlled-by-others=&quot;false&quot; data-group=&quot;&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            But there is another way to configure your slider. This is done with a settings object that you pass during initialization in JavaScript or jQuery.
+                        </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript/jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+var settings = {
+
+    orientation: 'horizontal',
+    width: '100%',
+    backgroundColor: '#000000',
+    onPointerDown: 'false',
+    cursor: 'ew-resize',
+    dividingLine: 'solid 1px rgba(255, 255, 255, .5)',
+    followEasingFactor: 0,
+    interactive: true,
+    autoAnimation: true,
+    autoAnimationSpeed: 8,
+    autoAnimationPause: 1,
+    autoAnimationEasing: 'inOutCubic',
+    controlOthers: false,
+    controlledByOthers: false,
+    group: ''
+
+};
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            These are all available object properties with their default values.
+                            <br/>
+                            As you have seen, the object properties correspond exactly to the data attributes.
+                            <br/>
+                            Therefore I do not have to list all functions again. Just have a look at the data attribute table above.
+                            <br/><br/>
+                            Now you only have to pass the object you just created during initialization.
+                        </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics' ), settings );
+                            </code>
+                        </pre>
+                    </div>
                     
 
                     <div class="sub-headline row">
@@ -981,16 +1099,124 @@ data-group=""
                     <div class="code-block row">
                         <pre>
                             <code class="language-javascript">
-$( '#aics-2' ).anyImageComparisonSlider();
+$( '#aics' ).anyImageComparisonSlider( settings );
                             </code>
                         </pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Congrats, you have successfully added your first self configured any Image Comparison slider to your site. 
+                            Since in this example we configure everything via settings object, we do not need any data attributes.
                         </p>
                     </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Just a hint. The data attributes take precedence over the settings object properties. That means, if you want to use both attributes and object properties (which makes no sense in my opinion), the properties will be overwritten by the attributes with the same name.
+                            <br/><br/>
+                            Let us now continue with the methods.
+                        </p>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            The slider brings some methods that you can use in your JavaScript/jQuery.
+                            <br/>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>pause()</strong></td>
+                                        <td>Pauses the slider.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>unpause()</strong></td>
+                                        <td>Cancels the pause.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>getAllOthers()</strong></td>
+                                        <td>Returns an array with all other sliders on the page except the one the method was called from.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>getOrientation()</strong></td>
+                                        <td>Returns a string that indicates whether the slider is horizontal or vertical.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>getId()</strong></td>
+                                        <td>Returns a string with the id of the slider</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </p>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            And here are the examples how you can call the methods in JavaScript and jQuery.
+                        </p>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+var aics = new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
+    aics.pause();
+    aics.unpause();
+
+console.log( aics.getAllOthers() );
+console.log( aics.getOrientation() );
+console.log( aics.getId() );
+                            </code>
+                        </pre>
+                    </div>
+                    
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics' ).anyImageComparisonSlider();
+$( '#aics' ).pause();
+$( '#aics' ).unpause();
+
+console.log( $( '#aics' ).getAllOthers() );
+console.log( $( '#aics' ).getOrientation() );
+console.log( $( '#aics' ).getId() );
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            There is so much more to discover. But we have the most important points now. Everything else in the <a href="#" class="goto-examples">Examples</a> chapter.
+                        </p>
+                    </div>
+
+
+
+
+
                 </div> 
             </div>
 
@@ -1008,15 +1234,75 @@ $( '#aics-2' ).anyImageComparisonSlider();
                         <strong class="headline-number">4.</strong>
                         <p class="headline-text">Examples</p>
                     </div>
+
+
+
                     <div class="sub-headline row pt-5">
-                        <strong class="sub-headline-text pb-3">And on we go</strong> 
+                        <strong class="sub-headline-text pb-3">Example 1</strong> 
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            After we learned in the Quickstart how to integrate the default slider into your site as fast as possible, we now go a bit deeper into detail and learn what the plugin offers for configuration possibilities.
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                         </p>
                     </div>
-                    
+
+                    <div class="multible row">
+                        <div class="col-sm-6 col-xs-3 pr-1">
+                            <div id="any-image-comparison-slider-3" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g3">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-6 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-4" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g3">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mb-3">
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics-3&quot; data-follow-easing-factor=&quot;10&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g3&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-4&quot; data-follow-easing-factor=&quot;10&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g3&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-3' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-4' ) );
+                            </code>
+                        </pre>
+                    </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
@@ -1024,16 +1310,434 @@ $( '#aics-2' ).anyImageComparisonSlider();
                     <div class="code-block row">
                         <pre>
                             <code class="language-javascript">
-$( '#aics-2' ).anyImageComparisonSlider();
+$( '#aics-3' ).anyImageComparisonSlider();
+$( '#aics-4' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">Example 2</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+
+                    <div class="multible row">
+                        <div class="col-sm-6 col-xs-3 pr-1">
+                            <div id="any-image-comparison-slider-5" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g4">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-6 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-6" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g4">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multible row pt-2">
+                        <div class="col-sm-6 col-xs-3 pr-1">
+                            <div id="any-image-comparison-slider-7" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g4">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-6 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-8" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g4">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics-5&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g4&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-6&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g4&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-7&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g4&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-8&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g4&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-5' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-6' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-7' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-8' ) );
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-5' ).anyImageComparisonSlider();
+$( '#aics-6' ).anyImageComparisonSlider();
+$( '#aics-7' ).anyImageComparisonSlider();
+$( '#aics-8' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">Example 3</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+
+                    <div class="multible row">
+                        <div class="col-sm-4 col-xs-3 pr-1">
+                            <div id="any-image-comparison-slider-9" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-4 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-10" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-11" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multible row pt-2">
+                        <div class="col-sm-4 col-xs-3 pr-1">
+                            <div id="any-image-comparison-slider-12" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-4 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-13" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="false" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-14" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multible row pt-2">
+                        <div class="col-sm-4 col-xs-3 pr-1">
+                            <div id="any-image-comparison-slider-15" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-4 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-16" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-3 pl-1">
+                            <div id="any-image-comparison-slider-17" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                                <div class="images">
+                                    <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                    <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-5' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-6' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-7' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-8' ) );
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-5' ).anyImageComparisonSlider();
+$( '#aics-6' ).anyImageComparisonSlider();
+$( '#aics-7' ).anyImageComparisonSlider();
+$( '#aics-8' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+
+
+
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">Example 4</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <div id="any-image-comparison-slider-18" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="none" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g6">
+                            <div class="images">
+                                <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                            </div>
+                            <div class="ui">
+                                <img class="dragger" src="./img/dragger-h.png" alt="dragger" width="84" height="48">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics-18&quot; data-cursor=&quot;none&quot; data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-h.png&quot; alt=&quot;dragger&quot; width=&quot;84&quot; height=&quot;48&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-18' ) );
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-18' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+
+
+
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="sub-headline-text pb-3">Example 5</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                        </p>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div id="any-image-comparison-slider-19" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="row-resize" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g6">
+                            <div class="images">
+                                <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
+                                <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
+                            </div>
+                            <div class="ui">
+                                <img class="dragger" src="./img/dragger-v.png" alt="dragger" width="48" height="84">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">HTML</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-html">
+&lt;div id=&quot;aics-18&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;none&quot; data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-v.png&quot; alt=&quot;dragger&quot; width=&quot;48&quot; height=&quot;84&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">CSS</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-css">
+#any-image-comparison-slider-19 {
+    overflow: visible !important;
+}
                             </code>
                         </pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Congrats, you have successfully added your first self configured any Image Comparison slider to your site. 
+                            Or alternatively applied globally to all slider elements
                         </p>
                     </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-css">
+div[data-slider-type|=any-image-comparison-slider] {
+    overflow: visible !important;
+}
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">JavaScript</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-18' ) );
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">jQuery</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre>
+                            <code class="language-javascript">
+$( '#aics-18' ).anyImageComparisonSlider();
+                            </code>
+                        </pre>
+                    </div>
+
+
+                    
                 </div> 
             </div>
 

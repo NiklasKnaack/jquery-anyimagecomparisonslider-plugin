@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.91';
+    var AICS_VERSION = '0.9.93';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -213,7 +213,7 @@ THE SOFTWARE.
 
         if ( typeof settings.cursor === 'string' && settings.cursor.length > 0 && settings.cursor !== '' && settings.cursor !== ' ' ) {
 
-            var cursorTypes = [ 'ew-resize', 'ns-resize', 'grab', 'grabbing', 'w-resize', 's-resize', 'e-resize', 'n-resize', 'row-resize', 'col-resize', 'all-scroll', 'move', 'crosshair', 'pointer', 'default', 'auto', 'inherit', 'initial', 'unset' ];
+            var cursorTypes = [ 'ew-resize', 'ns-resize', 'grab', 'grabbing', 'w-resize', 's-resize', 'e-resize', 'n-resize', 'row-resize', 'col-resize', 'all-scroll', 'move', 'crosshair', 'pointer', 'default', 'auto', 'inherit', 'initial', 'unset', 'none' ];
             var cursorTypeError = true;
 
             for ( var cursorType in cursorTypes ) {
@@ -634,6 +634,7 @@ THE SOFTWARE.
 
             //---
 
+            element.style.overflow = 'hidden';
             element.style.position = 'relative';
             element.style.backgroundColor = settings.backgroundColor;
 
