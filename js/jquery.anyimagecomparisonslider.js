@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.93';
+    var AICS_VERSION = '0.9.94';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -226,25 +226,15 @@ THE SOFTWARE.
 
             }
 
-            console.log( cursorTypeError );
-            console.log( settings.cursor.indexOf( 'url' ) );
-            console.log( settings.cursor.indexOf( '.cur' ) );
-
             if ( cursorTypeError === true && settings.cursor.indexOf( 'url' ) > -1 && settings.cursor.indexOf( '.cur' ) > -1 ) {
 
                 cursorTypeError = false;
 
-                console.log('>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<');
-
             }
 
-            
-
             if ( cursorTypeError === true ) {
-
-
-
-                //throw Error( '\n' + 'cursor must contain one of the following values: ' + cursorTypes.join( ', ' ) + ', url("http://yourcursor.cur") 0 0, auto' );
+                
+                throw Error( '\n' + 'cursor must contain one of the following values: ' + cursorTypes.join( ', ' ) + ', url("http://yourcursor.cur") 0 0, auto' );
 
             }
 
@@ -992,7 +982,7 @@ THE SOFTWARE.
 
             }
 
-            if ( pointerActive === true && settings.autoAnimation === true ) {
+            if ( pointerActive === true ) {
 
                 if ( settings.followEasingFactor === 0 ) {
 
