@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -416,6 +416,27 @@
 
             //------------------------------------------------------------------------
 
+            function getLicenseYear( element ) {
+
+                var input = element.text();
+                var year = new Date().getFullYear().toString();
+
+                if ( input === year ) {
+
+                    return input;
+
+                } else {
+
+                    return input + ' - ' + year;
+
+                }
+
+            }
+
+            $( '.license-year' ).text( getLicenseYear( $( '.license-year' ) ) );
+
+            //------------------------------------------------------------------------
+
             $( '.back-to-top-btn' ).click( function() {
 
                 $( 'html, body' ).animate( { scrollTop: 0 }, 1000 );
@@ -536,7 +557,7 @@
 
     <title>any Image Comparison Slider - jQuery/JS Plugin</title>
 
-  </head>
+</head>
 
     <body>
 
@@ -2205,7 +2226,7 @@ $( '#aics-24' ).anyImageComparisonSlider();
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="license" href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/blob/master/LICENSE" target="_blank">Copyright (c) 2020 Niklas Knaack</a>
+                    <a class="license" href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/blob/master/LICENSE" target="_blank">Copyright (c) <span class="license-year">2020</span> Niklas Knaack</a>
                 </div>
             </div>
         </footer>
