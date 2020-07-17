@@ -258,10 +258,12 @@
             font-size: 0.75rem;
             width: 100%;
             margin-bottom: 0px;
+            margin-top: 5px;
         }
 
         .block .container .code-block pre .hljs {
             background-color: #f7f7e9;
+            padding: 0;
             padding-left: 25px;
         }
 
@@ -675,16 +677,14 @@
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;script src='./path/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Then insert the following code at the position of your page where you want to have the slider. Of course you have to adjust the image paths accordingly. This is done with the data-src attribute.
+                            <br/>Then insert the following code at the position of your page where you want to have the slider. Of course you have to adjust the image paths accordingly. This is done with the data-src attribute.
                         </p>
                     </div>
                     
@@ -692,24 +692,21 @@
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <!-- <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 .block .container .sub-headline {
     letter-spacing: -1px;
     font-family: 'Playfair Display', serif;
@@ -717,13 +714,12 @@
     padding: 0 50px;
     color: rgb(34, 26, 5);
 }
-                            </code>
-                        </pre>
+</code></pre>
                     </div> -->
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Almost there. Now all you have to do is initialize the slider. Depending on whether you want to work with jQuery or pure JavaScript, you have the following options.
+                            <br/>Almost there. Now all you have to do is initialize the slider. Depending on whether you want to work with jQuery or pure JavaScript, you have the following options.
                         </p>
                     </div>
 
@@ -731,27 +727,23 @@
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Congrats, you have successfully added your first any Image Comparison slider to your site.
+                            <br/>Congrats, you have successfully added your first any Image Comparison slider to your site.
                         </p>
                     </div>
                 </div> 
@@ -818,8 +810,7 @@ $( '#aics' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics-2&quot; data-orientation=&quot;vertical&quot; data-background-color=&quot;#ffffff&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;10&quot; data-group=&quot;g2&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-btm&quot; data-src=&quot;./path/image-btm.jpg&quot;&gt;&lt;/div&gt;
@@ -830,16 +821,14 @@ $( '#aics' ).anyImageComparisonSlider();
         &lt;a class=&quot;button-top&quot; alt=&quot;full image top&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <!-- <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 .block .container .sub-headline {
     letter-spacing: -1px;
     font-family: 'Playfair Display', serif;
@@ -847,13 +836,12 @@ $( '#aics' ).anyImageComparisonSlider();
     padding: 0 50px;
     color: rgb(34, 26, 5);
 }
-                            </code>
-                        </pre>
+</code></pre>
                     </div> -->
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            At first glance, the HTML code looks almost the same as in the default example. But if we take a closer look we can see two differences. First, we pass various data attributes with parameters for the slider. And second we added another div to set the buttons in the slider.
+                            <br/>At first glance, the HTML code looks almost the same as in the default example. But if we take a closer look we can see two differences. First, we pass various data attributes with parameters for the slider. And second we added another div to set the buttons in the slider.
                             <br/><br/>
                             Here you can see the data attributes used for this slider in detail.
                         </p>
@@ -863,20 +851,18 @@ $( '#aics' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 data-orientation="vertical" //default value: "horizontal"
 data-background-color="#ffffff" //default value: "#000000"
 data-cursor="ns-resize" //default value: "ew-resize"
 data-follow-easing-factor="10" //default value: "0"
 data-group="g2" //default value: ""
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            The exact configuration of the slider with attributes and parameters is described in the chapter <a href="#" class="goto-configuration">Configuration</a>.
+                            <br/>The exact configuration of the slider with attributes and parameters is described in the chapter <a href="#" class="goto-configuration">Configuration</a>.
                             <br/><br/>
                             The following code creates the two buttons in the slider. With these buttons the user can easily download the images used in the slider.
                         </p>
@@ -886,19 +872,17 @@ data-group="g2" //default value: ""
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div class=&quot;ui&quot;&gt;
     &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
     &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            The used buttons must be in a div with the class ui. In addition, the buttons themselves should always use one of the following classes so that they are correctly recognized by JavaScript.
+                            <br/>The used buttons must be in a div with the class ui. In addition, the buttons themselves should always use one of the following classes so that they are correctly recognized by JavaScript.
                         </p>
                     </div>
 
@@ -906,19 +890,17 @@ data-group="g2" //default value: ""
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 button-rgt
 button-lft
 button-top
 button-btm
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            And here it is again about the initialization. As already learned there are two possibilities depending on whether you want to work with jQuery or pure JavaScript.
+                            <br/>And here it is again about the initialization. As already learned there are two possibilities depending on whether you want to work with jQuery or pure JavaScript.
                         </p>
                     </div>
 
@@ -926,27 +908,23 @@ button-btm
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-2' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-2' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Congrats, you have successfully added your first self configured any Image Comparison slider to your site. 
+                            <br/>Yay, you have successfully added your first self configured any Image Comparison slider to your site. 
                         </p>
                     </div>
                 </div> 
@@ -981,8 +959,7 @@ $( '#aics-2' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 data-orientation="horizontal"
 data-width="100%"
 data-background-color="#000000"
@@ -998,13 +975,12 @@ data-auto-animation-easing="inOutCubic"
 data-control-others="false"
 data-controlled-by-others="false"
 data-group=""
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            These are all available data attributes with their default values.
+                            <br/>These are all available data attributes with their default values.
                             <br/>
                             <table class="table">
                                 <tbody>
@@ -1084,21 +1060,19 @@ data-group=""
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics&quot; data-orientation=&quot;horizontal&quot; data-width=&quot;100%&quot; data-background-color=&quot;#000000&quot; data-on-pointer-down=&quot;false&quot; data-cursor=&quot;ew-resize&quot; data-dividing-line=&quot;solid 1px rgba(255, 255, 255, .5)&quot; data-follow-easing-factor=&quot;0&quot; data-auto-animation=&quot;true&quot; data-auto-animation-speed=&quot;8&quot; data-auto-animation-pause=&quot;1&quot; data-auto-animation-easing=&quot;inOutCubic&quot; data-control-others=&quot;false&quot; data-controlled-by-others=&quot;false&quot; data-group=&quot;&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            But there is another way to configure your slider. This is done with a settings object that you pass during initialization in JavaScript or jQuery.
+                            <br/>But there is another way to configure your slider. This is done with a settings object that you pass during initialization in JavaScript or jQuery.
                         </p>
                     </div>
 
@@ -1106,8 +1080,7 @@ data-group=""
                         <strong class="sub-headline-text">JavaScript/jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 var settings = {
 
     orientation: 'horizontal',
@@ -1127,13 +1100,12 @@ var settings = {
     group: ''
 
 };
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            These are all available object properties with their default values.
+                            <br/>These are all available object properties with their default values.
                             <br/>
                             As you have seen, the object properties correspond exactly to the data attributes.
                             <br/>
@@ -1147,11 +1119,9 @@ var settings = {
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics' ), settings );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
                     
 
@@ -1159,16 +1129,14 @@ new AnyImageComparisonSlider( document.getElementById( 'aics' ), settings );
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics' ).anyImageComparisonSlider( settings );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Since in this example we configure everything via settings object, we do not need any data attributes.
+                            <br/>Since in this example we configure everything via settings object, we do not need any data attributes.
                         </p>
                     </div>
 
@@ -1176,21 +1144,19 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Just a hint. The data attributes take precedence over the settings object properties. That means, if you want to use both attributes and object properties (which makes no sense in my opinion), the properties will be overwritten by the attributes with the same name.
+                            <br/><i>Just a hint. The data attributes take precedence over the settings object properties. That means, if you want to use both attributes and object properties (which makes no sense in my opinion), the properties will be overwritten by the attributes with the same name.</i>
                             <br/><br/>
                             Let us now continue with the methods.
                         </p>
@@ -1238,8 +1204,7 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 var aics = new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
     aics.pause();
     aics.unpause();
@@ -1247,8 +1212,7 @@ var aics = new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
 console.log( aics.getAllOthers() );
 console.log( aics.getOrientation() );
 console.log( aics.getId() );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
                     
 
@@ -1256,8 +1220,7 @@ console.log( aics.getId() );
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics' ).anyImageComparisonSlider();
 $( '#aics' ).pause();
 $( '#aics' ).unpause();
@@ -1265,13 +1228,12 @@ $( '#aics' ).unpause();
 console.log( $( '#aics' ).getAllOthers() );
 console.log( $( '#aics' ).getOrientation() );
 console.log( $( '#aics' ).getId() );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            There is so much more to discover. But we have the most important points now. Everything else in the <a href="#" class="goto-examples">Examples</a> chapter.
+                            <br/>There is so much more to discover. But we have the most important points now. Everything else in the <a href="#" class="goto-examples">Examples</a> chapter.
                         </p>
                     </div>
 
@@ -1304,7 +1266,7 @@ console.log( $( '#aics' ).getId() );
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            In this example we go a step further and create 2 sliders that control each other.
                         </p>
                     </div>
 
@@ -1332,12 +1294,66 @@ console.log( $( '#aics' ).getId() );
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+
+
+
+
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Here we will focus our attention especially on 3 setting options. 
+                            <br/>
+                            The first thing we have to do is make sure that the two sliders are in one group (As a practical example we choose the value g3 as group name).
+                            <br/>
+                            We do this either by data attribute:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-group=&quot;g3&quot;&gt;
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the property group:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+group: 'g3'
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Next we need to make sure that the sliders are allowed to control other sliders in their group and let other sliders in their group control them. As always there are 2 possibilities for this what I do not have to mention from now on any more.
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-control-others=&quot;true&quot; 
+data-controlled-by-others=&quot;true&quot;
+                        </code></pre>
+                        <pre><code class="language-javascript">
+controlOthers: true
+controlledByOthers: true
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>And here is the complete code for this example.
+                        </p>
+                    </div>
+
+
+
+
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics-3&quot; data-follow-easing-factor=&quot;10&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g3&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
@@ -1350,32 +1366,27 @@ console.log( $( '#aics' ).getId() );
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-3' ) );
 new AnyImageComparisonSlider( document.getElementById( 'aics-4' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-3' ).anyImageComparisonSlider();
 $( '#aics-4' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -1386,7 +1397,7 @@ $( '#aics-4' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            Let's go ahead and increase the number of controlling sliders to four. Another new feature is that two of the sliders are now vertically aligned and receive a special mouse cursor.
                         </p>
                     </div>
 
@@ -1432,12 +1443,72 @@ $( '#aics-4' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            As in the previous example we have to make sure that the sliders are in the same group and can control each other:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-group=&quot;g4&quot;&gt;
+                        </code></pre>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+group: 'g4'
+                        </code></pre>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-control-others=&quot;true&quot; 
+data-controlled-by-others=&quot;true&quot;
+                        </code></pre>
+                        <pre><code class="language-javascript">
+controlOthers: true
+controlledByOthers: true
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>In addition to this, we now make sure that two of the sliders are vertically aligned:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-orientation=&quot;vertical&quot;
+                        </code></pre>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+orientation: 'vertical'
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Now we define a different mouse cursor for the vertical sliders:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-cursor=&quot;ns-resize&quot;
+                        </code></pre>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+cursor: 'ns-resize'
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>So much for the special features. Here's the complete code:
+                        </p>
+                    </div>
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics-5&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g4&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
@@ -1462,36 +1533,31 @@ $( '#aics-4' ).anyImageComparisonSlider();
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-5' ) );
 new AnyImageComparisonSlider( document.getElementById( 'aics-6' ) );
 new AnyImageComparisonSlider( document.getElementById( 'aics-7' ) );
 new AnyImageComparisonSlider( document.getElementById( 'aics-8' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-5' ).anyImageComparisonSlider();
 $( '#aics-6' ).anyImageComparisonSlider();
 $( '#aics-7' ).anyImageComparisonSlider();
 $( '#aics-8' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -1502,7 +1568,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            Now things are getting a little crazy. We take it to the extreme and combine nine sliders into one group. Some of the sliders are aligned horizontally, others vertically. The slider in the middle, i.e. slider number 5, may control all other sliders, but cannot be controlled by other sliders. All other sliders are synchronized.
                         </p>
                     </div>
 
@@ -1517,7 +1583,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-10" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                            <div id="any-image-comparison-slider-10" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
@@ -1525,7 +1591,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             </div>
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-11" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                            <div id="any-image-comparison-slider-11" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
@@ -1535,7 +1601,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                     </div>
                     <div class="multible row pt-2">
                         <div class="col-sm-4 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-12" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                            <div id="any-image-comparison-slider-12" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
@@ -1544,7 +1610,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-13" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="false" data-group="g5">
+                            <div id="any-image-comparison-slider-13" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="false" data-group="g5">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
@@ -1562,7 +1628,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                     </div>
                     <div class="multible row pt-2">
                         <div class="col-sm-4 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-15" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                            <div id="any-image-comparison-slider-15" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
@@ -1571,7 +1637,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-16" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
+                            <div id="any-image-comparison-slider-16" data-orientation="vertical" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-group="g5">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>
@@ -1591,43 +1657,163 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Everything we need for this example we already know from the previous two examples.
+                            <br/>
+                            Also here we have to make sure that the sliders are all in one group:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-group=&quot;g5&quot;&gt;
+                        </code></pre>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+group: 'g5'
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>We make sure as usual that the sliders are allowed to control other sliders and let the other sliders of the group control them:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-control-others=&quot;true&quot; 
+data-controlled-by-others=&quot;true&quot;
+                        </code></pre>
+                        <pre><code class="language-javascript">
+controlOthers: true
+controlledByOthers: true
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Only for the middle slider, slider number 5, we change the settings a little bit:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-control-others=&quot;true&quot; 
+data-controlled-by-others=&quot;false&quot;
+                        </code></pre>
+                        <pre><code class="language-javascript">
+controlOthers: true
+controlledByOthers: false
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>How you can align the sliders horizontally or vertically, you can read in the previous examples.
+                            <br/><br/>
+                            Here is the complete code for this example:
+                        </p>
+                    </div>
+
+
+
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics-9&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-10&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-11&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 
-                            </code>
-                        </pre>
+&lt;div id=&quot;aics-12&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-13&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;false&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-14&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;aics-15&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-16&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;ns-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;aics-17&quot; data-orientation=&quot;horizontal&quot; data-cursor=&quot;ew-resize&quot; data-follow-easing-factor=&quot;5&quot; data-control-others=&quot;true&quot; data-controlled-by-others=&quot;true&quot; data-group=&quot;g5&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
-new AnyImageComparisonSlider( document.getElementById( 'aics-5' ) );
-new AnyImageComparisonSlider( document.getElementById( 'aics-6' ) );
-new AnyImageComparisonSlider( document.getElementById( 'aics-7' ) );
-new AnyImageComparisonSlider( document.getElementById( 'aics-8' ) );
-                            </code>
-                        </pre>
+                        <pre><code class="language-javascript">
+new AnyImageComparisonSlider( document.getElementById( 'aics-9' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-10' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-11' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-12' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-13' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-14' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-15' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-16' ) );
+new AnyImageComparisonSlider( document.getElementById( 'aics-17' ) );
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
-$( '#aics-5' ).anyImageComparisonSlider();
-$( '#aics-6' ).anyImageComparisonSlider();
-$( '#aics-7' ).anyImageComparisonSlider();
-$( '#aics-8' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        <pre><code class="language-javascript">
+$( '#aics-9' ).anyImageComparisonSlider();
+$( '#aics-10' ).anyImageComparisonSlider();
+$( '#aics-11' ).anyImageComparisonSlider();
+$( '#aics-12' ).anyImageComparisonSlider();
+$( '#aics-13' ).anyImageComparisonSlider();
+$( '#aics-14' ).anyImageComparisonSlider();
+$( '#aics-15' ).anyImageComparisonSlider();
+$( '#aics-16' ).anyImageComparisonSlider();
+$( '#aics-17' ).anyImageComparisonSlider();
+                        </code></pre>
                     </div>
 
 
@@ -1663,8 +1849,7 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics-18&quot; data-cursor=&quot;none&quot; data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
@@ -1674,30 +1859,25 @@ $( '#aics-8' ).anyImageComparisonSlider();
         &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-h.png&quot; alt=&quot;dragger&quot; width=&quot;84&quot; height=&quot;48&quot;&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-18' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-18' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -1733,8 +1913,7 @@ $( '#aics-18' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 &lt;div id=&quot;aics-19&quot; data-orientation=&quot;vertical&quot; data-cursor=&quot;row-resize&quot; data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-btm&quot; data-src=&quot;./path/image-btm.jpg&quot;&gt;&lt;/div&gt;
@@ -1744,21 +1923,18 @@ $( '#aics-18' ).anyImageComparisonSlider();
         &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-v.png&quot; alt=&quot;dragger&quot; width=&quot;48&quot; height=&quot;84&quot;&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 #aics-19 {
     overflow: visible !important;
 }
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
@@ -1767,35 +1943,29 @@ $( '#aics-18' ).anyImageComparisonSlider();
                         </p>
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 div[data-slider-type|=any-image-comparison-slider] {
     overflow: visible !important;
 }
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-19' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-19' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -1828,44 +1998,36 @@ $( '#aics-19' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-20' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-20' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -1900,44 +2062,36 @@ $( '#aics-20' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-21' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-21' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -1972,44 +2126,36 @@ $( '#aics-21' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-22' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-22' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -2044,44 +2190,36 @@ $( '#aics-22' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-23' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-23' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
@@ -2120,19 +2258,16 @@ $( '#aics-23' ).anyImageComparisonSlider();
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-html">
+                        <pre><code class="language-html">
 
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">CSS</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-css">
+                        <pre><code class="language-css">
 #aics-24 .ui .button-rgt {
     bottom: 0px !important;
     border-radius: 4px 0 0 0 !important;
@@ -2141,30 +2276,25 @@ $( '#aics-23' ).anyImageComparisonSlider();
     bottom: 0px !important;
     border-radius: 0 4px 0 0 !important;
 }
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 new AnyImageComparisonSlider( document.getElementById( 'aics-24' ) );
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">jQuery</strong> 
                     </div>
                     <div class="code-block row">
-                        <pre>
-                            <code class="language-javascript">
+                        <pre><code class="language-javascript">
 $( '#aics-24' ).anyImageComparisonSlider();
-                            </code>
-                        </pre>
+                        </code></pre>
                     </div>
 
 
