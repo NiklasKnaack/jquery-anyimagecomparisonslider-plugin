@@ -1311,7 +1311,7 @@ console.log( $( '#aics' ).getId() );
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-data-group=&quot;g3&quot;&gt;
+data-group=&quot;g3&quot;
                         </code></pre>
                     </div>
                     <div class="content row d-flex align-items-end">
@@ -1826,7 +1826,9 @@ $( '#aics-17' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            For this example, we introduce the ui element in the slider markup, which allows us to add custom controls to the slider.
+                            <br/>
+                            And furthermore, we give the slider a different style and hide the mouse cursor.
                         </p>
                     </div>
 
@@ -1844,6 +1846,55 @@ $( '#aics-17' ).anyImageComparisonSlider();
                     <div class="row mb-3">
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Let us first take a closer look at the ui element in the slider markup.
+                            <br/>
+                            In the div with the class ui we can add an img element with the class dragger. If this element is present, the slider automatically places it in the middle of the separator. At this point you can use any image you like. Don't forget to specify the width and height of your image:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div class=&quot;ui&quot;&gt;
+    &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-h.png&quot; alt=&quot;dragger&quot; width=&quot;84&quot; height=&quot;48&quot;&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>For styling the dividing line and hiding the mouse cursor you have two options. 
+                            <br/>
+                            We do this either by the data attributes data-cursor and data-dividing-line: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-cursor=&quot;none&quot; 
+data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the properties cursor and dividingLine: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+cursor: 'none'
+dividingLine: 'solid 3px rgba(0, 0, 0, 1.0)'
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>And here is the complete code for this example:
+                        </p>
+                    </div>
+                    
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
@@ -1890,7 +1941,9 @@ $( '#aics-18' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                            This example is based on the previous example and is intended to show further possibilities for customizing the slider.
+                            <br/>
+                            To do so, we change the orientation of the slider from horizontal to vertical, insert a different mouse cursor and use CSS to make our dragger element visible outside the slider.
                         </p>
                     </div>
 
@@ -1908,6 +1961,76 @@ $( '#aics-18' ).anyImageComparisonSlider();
                     <div class="row mb-5">
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Because this slider has a vertical orientation we need a different image for our dragger element at this point:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div class=&quot;ui&quot;&gt;
+    &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-v.png&quot; alt=&quot;dragger&quot; width=&quot;48&quot; height=&quot;84&quot;&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>We change the orientation and the mouse cursor of the slider as follows.
+                            <br/>
+                            We do this either by the data attributes data-orientation and data-cursor: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-orientation=&quot;vertical&quot;
+data-cursor=&quot;row-resize&quot; 
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the properties orientation and cursor: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+orientation: 'vertical'
+cursor: 'row-resize'
+                        </code></pre>
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>To make our dragger element visible outside of our slider we have to add a small CSS. 
+                            <br/>
+                            We can either apply our style globally to all sliders on the page, or, as in this case, apply the style only to the corresponding slider: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-css">
+div[data-slider-type|=any-image-comparison-slider] {
+    overflow: visible !important;
+}
+                        </code></pre>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-css">
+#aics-19 {
+    overflow: visible !important;
+}
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>And here is the complete code for this example:
+                        </p>
+                    </div>
+                    
+
+
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
@@ -1932,19 +2055,6 @@ $( '#aics-18' ).anyImageComparisonSlider();
                     <div class="code-block row">
                         <pre><code class="language-css">
 #aics-19 {
-    overflow: visible !important;
-}
-                        </code></pre>
-                    </div>
-
-                    <div class="content row d-flex align-items-end">
-                        <p class="text-muted">
-                            Or alternatively applied globally to all slider elements
-                        </p>
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-css">
-div[data-slider-type|=any-image-comparison-slider] {
     overflow: visible !important;
 }
                         </code></pre>
@@ -1978,7 +2088,7 @@ $( '#aics-19' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                            In this example we have our standard slider with a slightly different dividing line and a custom cursor for the mouse.
                         </p>
                     </div>
 
@@ -1994,21 +2104,51 @@ $( '#aics-19' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            We change the orientation and the mouse cursor of the slider as follows.
+                            <br/>
+                            We do this either by the data attributes data-cursor and data-dividing-line: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-cursor=&quot;url('./path/dragger-h.cur') 22 12, auto&quot;
+data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the properties cursor and dividingLine: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+cursor: 'url('./path/dragger-h.cur') 22 12, auto'
+dividingLine: 'solid 3px rgba(0, 0, 0, 1.0)'
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Please note that only files of type CUR may be used. For converting your graphic from e.g. PNG to CUR there are many small tools available on the web for free.
+                            <br/><br/>
+                            And here is the complete code for this example:
+                        </p>
+                    </div>
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-
-                        </code></pre>
-                    </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">CSS</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-css">
-
+&lt;div id=&quot;aics-20&quot; data-cursor=&quot;url('./path/dragger-h.cur') 22 12, auto&quot; data-dividing-line=&quot;solid 3px rgba(0, 0, 0, 1.0)&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
                         </code></pre>
                     </div>
 
@@ -2042,7 +2182,7 @@ $( '#aics-20' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                            In this example we see a slider that only reacts when the mouse button is held down. In addition, we have a differently styled dividing line and a mouse cursor suitable for this purpose.
                         </p>
                     </div>
 
@@ -2058,23 +2198,62 @@ $( '#aics-20' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Let's have a look at how we make the slider only react to the mouse movement if the mouse button is pressed down. 
+                            <br/>
+                            And of course we look at the dividing line and the mouse cursor again.
+                            <br/>
+                            We do this either by the data attributes data-on-pointer-down, data-cursor and data-dividing-line: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-on-pointer-down=&quot;true&quot; 
+data-cursor=&quot;grab&quot;
+data-dividing-line=&quot;solid 1px rgba(255, 255, 255, 0.5)&quot;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the properties onPointerDown, cursor and dividingLine: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+onPointerDown: true
+cursor: 'grab'
+dividingLine: 'solid 1px rgba(255, 255, 255, 0.5)'
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>The onPointerDown property is set to false by default. If we set it to true we make sure that the slider can only react to the mouse movement when the mouse button is pressed.
+                            <br/><br/>
+                            And here is the complete code for this example:
+                        </p>
+                    </div>
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-
+&lt;div id=&quot;aics-21&quot; data-on-pointer-down=&quot;true&quot; data-cursor=&quot;grab&quot; data-dividing-line=&quot;solid 1px rgba(255, 255, 255, 0.5)&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
                         </code></pre>
                     </div>
 
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">CSS</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-css">
-
-                        </code></pre>
-                    </div>
+        
 
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">JavaScript</strong> 
@@ -2106,7 +2285,7 @@ $( '#aics-21' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                            In this example we see a slider without automatic animation of the dividing line. The slider only reacts when the user interacts with it. In addition, we have again a differently styled dividing line and a suitable mouse cursor.
                         </p>
                     </div>
 
@@ -2122,21 +2301,55 @@ $( '#aics-21' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Let's look at how to disable the automatic animation of the dividing line. 
+                            <br/>
+                            And of course, let's have a look at the divider and the mouse cursor again.
+                            <br/>
+                            We do this either by the data attributes data-cursor, data-dividing-line and data-auto-animation: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-cursor=&quot;ew-resize&quot;
+data-dividing-line=&quot;solid 3px rgba(255, 255, 255, 0.5)&quot;
+data-auto-animation=&quot;false&quot;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the properties cursor, dividingLine and autoAnimation: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+cursor: 'ew-resize'
+dividingLine: 'solid 3px rgba(255, 255, 255, 0.5)'
+autoAnimation: false
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>The autoAnimation property is activated by default. If we deactivate the property with false, as in this example, we forbid the slider to animate the dividing line automatically by itself.
+                            <br/><br/>
+                            And here is the complete code for this example:
+                        </p>
+                    </div>
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-
-                        </code></pre>
-                    </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">CSS</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-css">
-
+&lt;div id=&quot;aics-22&quot; data-cursor=&quot;grab&quot; data-dividing-line=&quot;solid 3px rgba(255, 255, 255, 0.5)&quot; data-auto-animation=&quot;false&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
                         </code></pre>
                     </div>
 
@@ -2170,7 +2383,7 @@ $( '#aics-22' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                            In this example we get to see a slider with which no interaction is possible. This slider runs only automatically and cannot be operated. In addition to this change, this slider has a different speed than the standard slider, does not pause between direction changes and applies a different easing to the animation.
                         </p>
                     </div>
 
@@ -2186,21 +2399,56 @@ $( '#aics-22' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+                    
+                    
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Let's look at how we can deactivate the interaction with the slider and how we can adjust speed, pause time and easing.
+                            <br/>
+                            We do this either by the data attributes data-cursor, data-dividing-line and data-auto-animation: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-auto-animation=&quot;false&quot;
+
+
+
+data-auto-animation-speed="6" data-auto-animation-pause="0" data-auto-animation-easing="inOutSine"
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>Or we can do it using the settings object and the properties cursor, dividingLine and autoAnimation: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-javascript">
+autoAnimation: false
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>The autoAnimation property is activated by default. If we deactivate the property with false, as in this example, we forbid the slider to animate the dividing line automatically by itself.
+                            <br/><br/>
+                            And here is the complete code for this example:
+                        </p>
+                    </div>
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-
-                        </code></pre>
-                    </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">CSS</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-css">
-
+&lt;div id=&quot;aics-23&quot; data-cursor=&quot;grab&quot; data-dividing-line=&quot;solid 3px rgba(255, 255, 255, 0.5)&quot; data-auto-animation=&quot;false&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
                         </code></pre>
                     </div>
 
