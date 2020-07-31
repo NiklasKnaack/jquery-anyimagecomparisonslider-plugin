@@ -410,7 +410,11 @@
 
     <script>
 
-        hljs.initHighlightingOnLoad();
+        if ( typeof hljs !== 'undefined' ) {
+
+            hljs.initHighlightingOnLoad();
+
+        }
 
         //---
 
