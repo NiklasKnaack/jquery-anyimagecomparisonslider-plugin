@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.94';
+    var AICS_VERSION = '0.9.95';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -51,6 +51,7 @@ THE SOFTWARE.
             settings.autoAnimationEasing = 'inOutCubic';
             settings.controlOthers = false;
             settings.controlledByOthers = false;
+            settings.controlledByOthersReverse = false;
             settings.group = '';
 
         //get settings from params
@@ -128,6 +129,10 @@ THE SOFTWARE.
             } else if ( dataAttributes[ i ].nodeName === 'data-controlled-by-others' ) {
 
                 settings.controlledByOthers = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
+
+            } else if ( dataAttributes[ i ].nodeName === 'data-controlled-by-others-reverse' ) {
+
+                settings.controlledByOthersReverse = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
 
             } else if ( dataAttributes[ i ].nodeName === 'data-group' ) {
 
@@ -332,6 +337,12 @@ THE SOFTWARE.
         if ( typeof settings.controlledByOthers !== 'boolean' ) {
 
             throw Error( '\n' + 'controlledByOthers must be type of boolean' );
+
+        }
+
+        if ( typeof settings.controlledByOthersReverse !== 'boolean' ) {
+
+            throw Error( '\n' + 'controlledByOthersReverse must be type of boolean' );
 
         }
 
@@ -936,6 +947,12 @@ THE SOFTWARE.
         }
 
         function getPositionFromPercentageValue( position, size ) {
+
+            if ( settings.controlledByOthersReverse === true ) {
+
+                position = 1 - position;
+
+            }
 
             var p = {};
                 p.v = position * size;
