@@ -1830,7 +1830,7 @@ $( '#aics-17' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            For this example, we introduce the ui element in the slider markup, which allows us to add custom controls to the slider.
+                            In this example we again add the ui element in the slider markup which allows us to add custom controls to the slider.
                             <br/>
                             And furthermore, we give the slider a different style and hide the mouse cursor.
                         </p>
@@ -2416,10 +2416,6 @@ $( '#aics-22' ).anyImageComparisonSlider();
                     <div class="code-block row">
                         <pre><code class="language-html">
 data-auto-animation=&quot;false&quot;
-
-
-
-data-auto-animation-speed="6" data-auto-animation-pause="0" data-auto-animation-easing="inOutSine"
                         </code></pre>
                     </div>
 
@@ -2486,7 +2482,7 @@ $( '#aics-23' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.
+                            In this example we take a closer look at the two buttons in the slider with which the user can easily download the images used in the slider. With a few lines of CSS code we can reposition the buttons and style them differently. 
                         </p>
                     </div>
 
@@ -2506,12 +2502,62 @@ $( '#aics-23' ).anyImageComparisonSlider();
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
 
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            As already known from one of the previous examples we set the two buttons within the ui element: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div class=&quot;ui&quot;&gt;
+    &lt;a class=&quot;button-rgt&quot; alt=&quot;full size image of 2020&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+    &lt;a class=&quot;button-lft&quot; alt=&quot;full size image of 2019&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>To reposition and style the buttons we just added we need a few extra lines of CSS. To get the button elements we need the id of the slider element, the class name of the ui element and the two class names of the buttons. With this data we can then style the elements as usual. Please note that as in this example it might be necessary to apply the important rule to the styles: 
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-css">
+#aics-24 .ui .button-rgt {
+    bottom: 0px !important;
+    border-radius: 4px 0 0 0 !important;
+}
+#aics-24 .ui .button-lft {
+    bottom: 0px !important;
+    border-radius: 0 4px 0 0 !important;
+}
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>There is nothing more to consider in this example.
+                            <br/><br/>
+                            And here the complete code for the sake of completeness:
+                        </p>
+                    </div>
+
                     <div class="sub-headline row">
                         <strong class="sub-headline-text">HTML</strong> 
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-
+&lt;div id=&quot;aics-24&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;a class=&quot;button-rgt&quot; alt=&quot;full size image of 2020&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+        &lt;a class=&quot;button-lft&quot; alt=&quot;full size image of 2019&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
                         </code></pre>
                     </div>
 
