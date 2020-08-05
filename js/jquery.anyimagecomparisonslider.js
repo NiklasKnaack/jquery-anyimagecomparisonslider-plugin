@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.95';
+    var AICS_VERSION = '0.9.97';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -38,6 +38,7 @@ THE SOFTWARE.
         //set default settings
         var settings = {};
             settings.orientation = 'horizontal';
+            settings.initialPosition = 0.00;
             settings.width = '100%';
             settings.backgroundColor = 'none';
             settings.onPointerDown = false;
@@ -77,6 +78,10 @@ THE SOFTWARE.
             if ( dataAttributes[ i ].nodeName === 'data-orientation' ) {
 
                 settings.orientation = dataAttributes[ i ].nodeValue;
+
+            } else if ( dataAttributes[ i ].nodeName === 'data-initial-position' ) {
+
+                settings.initialPosition = parseFloat( dataAttributes[ i ].nodeValue );
 
             } else if ( dataAttributes[ i ].nodeName === 'data-width' ) {
 
@@ -169,6 +174,12 @@ THE SOFTWARE.
                 settings.orientation = 'vertical';
 
             }
+
+        }
+
+        if ( typeof settings.initialPosition !== 'number' || settings.initialPosition < 0 || settings.initialPosition > 1 ) {
+
+            throw Error( '\n' + 'initialPosition must be of type number and the value must be between 0 to 1' );
 
         }
 
@@ -873,7 +884,7 @@ THE SOFTWARE.
 
                 if ( typeof buttonRgt !== 'undefined' ) {
 
-                   if ( settings.orientation === orientation.HORIZONTAL ) {
+                    if ( settings.orientation === orientation.HORIZONTAL ) {
 
                         btSet( buttonRgt, imageRgt, 'tr' );
 
@@ -911,6 +922,27 @@ THE SOFTWARE.
 
                 allOtherElements = getAllOthers();
 
+            }
+
+            //---
+
+            if ( settings.initialPosition > 0 ) {
+
+                if ( settings.orientation === orientation.HORIZONTAL ) {
+
+                    pointerPosition.x = getPositionFromPercentageValue( settings.initialPosition, element.offsetWidth );
+
+                } else if ( settings.orientation === orientation.VERTICAL ) {
+
+                    pointerPosition.y = getPositionFromPercentageValue( settings.initialPosition, element.offsetHeight );
+
+                }
+
+                sliderPosition.x = pointerPosition.x;
+                sliderPosition.y = pointerPosition.y;
+
+                tweenToggle = null;
+                
             }
 
             //---
@@ -1029,6 +1061,7 @@ THE SOFTWARE.
                         if ( tweenToggle === null ) {
 
                             from = sliderPosition.x;
+                            console.log("FROM: ", from);
 
                             if ( sliderPosition.x >= element.offsetWidth / 2 ) {
 
@@ -1347,6 +1380,8 @@ THE SOFTWARE.
 
             }
 
+            console.log( control, position, settings.controlledByOthers );
+
             if ( settings.controlledByOthers === true ) {
 
                 if ( control === true ) {
@@ -1373,6 +1408,8 @@ THE SOFTWARE.
                 }
 
             }
+
+            console.log(pointerPosition, element.offsetWidth);
 
         }
 
@@ -1402,6 +1439,14 @@ THE SOFTWARE.
 
         this.controlThisSlider = controlThisSlider;
         this.controlOtherSliders = controlOtherSliders;
+
+        //---
+
+        this.controlByExternalSource = function( control, position, max ) {
+
+            controlThisSlider( control, { v: position / max } );
+
+        }
 
         //---
 
