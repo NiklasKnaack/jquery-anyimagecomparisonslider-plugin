@@ -1,0 +1,13 @@
+# Blacklist files/folders in same directory as the .gitignore file
+/*
+
+# Whitelist some files
+!README.md
+
+# Ignore all files named .DS_Store or ending with .log
+**/.DS_Store
+**.log
+
+# Whitelist the js files
+!js/jquery.anyimagecomparisonslider.js
+!js/jquery.anyimagecomparisonslider.min.js
