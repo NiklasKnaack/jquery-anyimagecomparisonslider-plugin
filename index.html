@@ -16,8 +16,6 @@
         }
 
 
-
-
         .back-to-top a {
             border-radius: 5px 5px 0 0 !important;
             background-color: #fff;
@@ -41,8 +39,6 @@
             text-decoration: none;
             color: #000000;
         }
-
-
 
 
 
@@ -121,7 +117,6 @@
                 font-size: 2rem;
             }
         }
-
 
 
 
@@ -500,6 +495,14 @@
 
             } );
 
+            $( '.goto-download' ).click( function() {
+
+                scrollToElement( $( '#download .headline' ) );
+
+                return false;
+
+            } );
+
             $( '.goto-introduction' ).click( function() {
 
                 scrollToElement( $( '#introduction .headline' ) );
@@ -611,13 +614,26 @@
 
             } );
             */
+            var loadingDone27 = function() {
 
-            $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider();
-            //$( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'controlByExternalSource', true, $( '#range-slider' ).attr( 'value' ), $( '#range-slider' ).attr( 'max' ) );
-            //$( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'controlByExternalSource', false );
+                console.log( 'LOADING DONE' );
 
-            //console.log( $( '#range-slider' ).attr('value'), $( '#range-slider' ).attr('max') );
+            }
 
+            var settings27 = {
+
+                initialPosition: 0.5,
+                interactive: false,
+                autoAnimation: false,
+                controlledByOthers: true,
+                group: 'g13',
+                onReady: loadingDone27
+
+            };
+            
+            $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( settings27 );
+
+            $( '#range-slider' ).val( '500' );
             $( '#range-slider' ).on( 'input', function( e ) {
 
                 $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'controlByExternalSource', true, e.target.value, e.target.max );
@@ -629,7 +645,17 @@
                 $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'controlByExternalSource', false );
 
             } );
-            
+
+            //setInterval(function(){ $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getId' ); }, 100);
+            //setInterval(function(){ console.log("HALLO") }, 50);
+
+            // $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( v ) } );
+            // $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getOrientation', function( v ) { console.log( v ) } );
+            // $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getId', function( v ) { console.log( v ) } );
+            // $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v ) } );
+
+            // setInterval(function(){ $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v ) } ); }, 100);
+
             //------------------------------------------------------------------------
 
         } );
@@ -654,6 +680,7 @@
                             <strong class="sub-headline-text">Navigation</strong> 
                             <ul class="list-unstyled">
                                 <li></li><a href="#" class="text-muted goto-quickstart">Quickstart</a></li>
+                                <li></li><a href="#" class="text-muted goto-download">Download</a></li>
                                 <li></li><a href="#" class="text-muted goto-introduction">Introdution</a></li>
                                 <li></li><a href="#" class="text-muted goto-configuration">Configuration</a></li>
                                 <li></li><a href="#" class="text-muted goto-examples">Examples</a></li>
@@ -698,9 +725,11 @@
                         And now have fun.</p>
                     <p>
                     <a href="#" class="btn goto-quickstart btn-secondary my-2">Quickstart</a>
+                    <a href="#" class="btn goto-download btn-secondary my-2">Download</a>
                     <a href="#" class="btn goto-introduction btn-secondary my-2">Introdution</a>
                     <a href="#" class="btn goto-configuration btn-secondary my-2">Configuration</a>
                     <a href="#" class="btn goto-examples btn-secondary my-2">Examples</a>
+                    <!-- <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/raw/master/js/jquery.anyimagecomparisonslider.min.js" class="btn btn-secondary my-2">Download</a> -->
                     </p>
                 </div>
             </section>
@@ -746,7 +775,7 @@
                         <p class="text-muted">
                             This is the default slider. If you want to use it directly as shown, just follow the steps below and you will be done in no time.
                             <br/><br/>
-                            First, get the <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/blob/master/js/jquery.anyimagecomparisonslider.min.js" target="_blank">jquery.anyimagecomparisonslider.min.js</a> file you need directly from this <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin" target="_blank">GitHub Repo</a> page and implement it into the page like your other scripts.
+                            First, get the <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/raw/master/js/jquery.anyimagecomparisonslider.min.js" target="_blank">jquery.anyimagecomparisonslider.min.js</a> file you need directly from this <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin" target="_blank">GitHub Repo</a> page and implement it into the page like your other scripts.
                             <br/><br/>
                             <i>Please note, if you want to use the plugin together with jQuery, then implement the slider script behind jQuery.</i>
                         </p>
@@ -838,20 +867,78 @@ $( '#aics' ).anyImageComparisonSlider();
 
 
 
+            <div id="download" class="block pb-5">
+                <div class="container">
+                    <div class="headline row d-flex align-items-end">
+                        <strong class="headline-number">2.</strong>
+                        <p class="headline-text">Download & Installation</p>
+                    </div>
+                    <div class="sub-headline row pt-5">
+                        <strong class="block-headline pb-3">Download</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            As we learned in the Quickstart, you can simply download the file directly from the GitHub repository page.
+                            <br/><br/>
+                            First, there is the minified file:
+                            <br/>
+                            <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/raw/master/js/jquery.anyimagecomparisonslider.min.js" target="_blank">jquery.anyimagecomparisonslider.min.js</a>
+                            <br/><br/>
+                            And for those who are interested in the non-minified version:
+                            <br/>
+                            <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/raw/master/js/jquery.anyimagecomparisonslider.js" target="_blank">jquery.anyimagecomparisonslider.js</a>
+                            <br/><br/>
+                            Just click on the links. You will be directed to the corresponding file. Now click on file in your browser menu and then click on "save as..." or on "save page as..." and save the file in your project folder. 
+                            Or simply use the key combination CTRL + S to save the file.
+                            <br/>
+                        </p>
+                    </div>
+                    <div class="sub-headline row pt-5">
+                        <strong class="block-headline pb-3">Installation</strong> 
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Install it via Package Managers:
+                        </p>
+                    </div>
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">NPM</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+npm i jquery-anyimagecomparisonslider-plugin
+                        </code></pre>
+                    </div>
+                </div> 
+            </div>
+
+
+
+            <div class="container back-to-top">
+                <div class="row d-flex justify-content-end align-items-center">
+                    <a class="back-to-top-btn" href="#"><span class="sign">&#8593;</span><span class="text"> Back to top</span></a>
+                </div>
+            </div>
+
+
+
+
+
 
 
             <div id="introduction" class="block pb-5">
                 <div class="container">
                     <div class="headline row d-flex align-items-end">
-                        <strong class="headline-number">2.</strong>
+                        <strong class="headline-number">3.</strong>
                         <p class="headline-text">Introduction</p>
                     </div>
                     <div class="sub-headline row pt-5">
-                        <strong class="block-headline pb-3">And on we go</strong> 
+                        <strong class="block-headline pb-3">Let's continue</strong> 
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            After we learned in the Quickstart how to integrate the default slider into your site as fast as possible, we now go a bit deeper into detail and learn what the plugin offers for configuration possibilities.
+                            After we learned in the Quickstart how to integrate the default slider into your site as fast as possible and we now also know how to download and install the files, we now go a little bit deeper into detail and deviate from the standard configuration before we look at all configuration options in detail.
                         </p>
                     </div>
                     <div class="row mb-3">
@@ -1021,7 +1108,7 @@ $( '#aics-2' ).anyImageComparisonSlider();
             <div id="configuration" class="block pb-5">
                 <div class="container">
                     <div class="headline row d-flex align-items-end">
-                        <strong class="headline-number">3.</strong>
+                        <strong class="headline-number">4.</strong>
                         <p class="headline-text">Configuration</p>
                     </div>
                     <div class="sub-headline row pt-5">
@@ -1188,7 +1275,8 @@ var settings = {
     controlOthers: false,
     controlledByOthers: false,
     controlledByOthersReverse: false,
-    group: ''
+    group: '',
+    onReady: function(){}
 
 };
                         </code></pre>
@@ -1198,10 +1286,97 @@ var settings = {
                         <p class="text-muted">
                             <br/>These are all available object properties with their default values.
                             <br/>
-                            As you have seen, the object properties correspond exactly to the data attributes.
+                            As you have seen, the object properties correspond exactly to the data attributes. With one exception (onReady).
                             <br/>
-                            Therefore I do not have to list all functions again. Just have a look at the data attribute table above.
-                            <br/><br/>
+                            But let's take a closer look at the object properties as well:
+                        </p>
+                    </div>
+
+                    <div class="content row d-flex align-items-end pt-3">
+                        <p class="text-muted">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>orientation</strong></td>
+                                        <td>Specify either horizontal or vertical. With this you can control whether your slider slides horizontally or vertically.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>initialPosition</strong></td>
+                                        <td>At this point you define the starting position of the slider's dividing line. The value must be a percentage and must be between 0 and 1.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>width</strong></td>
+                                        <td>Enter either a percentage value such as 100% or 75%, or a fixed pixel value such as 500px or 728px. It depends on whether your slider should behave responsively.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>backgroundColor</strong></td>
+                                        <td>Here you set the background color of the slider. You can see this color until the images are loaded. You can enter none (if you don't want a background), or hex (#ffffff), rgb (rgb(255, 255, 255)) or rgba (rgba(255, 255, 255, 1.0)) values.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>onPointerDown</strong></td>
+                                        <td>Specify true or false here. If you select true here, your slider will only be active when you hold down the mouse button.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>cursor</strong></td>
+                                        <td>Here you define which mouse cursor should be displayed when you move the mouse over the slider. You have the following options: ew-resize, ns-resize, grab, w-resize, s-resize, e-resize, n-resize, row-resize, col-resize, all-scroll, move, crosshair, pointer, default, auto, inherit, initial and unset. But wait, there is more. Mit der folgenden Anweisung kannst du jeden beliebigen Cursor laden: url("http://yourcursor.cur") 0 0, auto</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>dividingLine</strong></td>
+                                        <td>Here you specify how the dividing line of the slider should look. If you do not want a dividing line, then none will be specified. Otherwise you can use the default value: solid 1px rgba(255, 255, 255, .5)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>followEasingFactor</strong></td>
+                                        <td>If you want the slider to follow you without easing, then enter the value 0 here. Otherwise you can enter values from 0 to 100 to control the easing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>interactive</strong></td>
+                                        <td>If you want your slider to be non-interactive then enter false here. So the slider can not be controlled and runs only automatically.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>autoAnimation</strong></td>
+                                        <td>With true or false you can determine whether your slider should automatically play an animation in case there is no user interaction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>autoAnimationSpeed</strong></td>
+                                        <td>Here you define the speed of the automatic animation in seconds.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>autoAnimationPause</strong></td>
+                                        <td>Here you define the time in seconds for the pause between the animations and the time that should pass after a user interaction until the automatic animation starts again.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>autoAnimationEasing</strong></td>
+                                        <td>Here you determine which easing function should be used for the automatic animation. The following functions are available: linear, inQuad, outQuad, inOutQuad, inCubic, outCubic, inOutCubic, inQuart, outQuart, inOutQuart, inQuint, outQuint, inOutQuint, inSine, outSine, inOutSine</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>controlOthers</strong></td>
+                                        <td>If you want this slider to control other sliders on the page, then enter true at this point. Otherwise take the default value false.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>controlledByOthers</strong></td>
+                                        <td>If you want this slider to be controlled by other sliders on the page, then enter true here. Otherwise take the default value false.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>controlledByOthersReverse</strong></td>
+                                        <td>If you want this slider to be controlled in reverse by other sliders on this page, then enter true here. Otherwise take the default value false. Please note that this property only works in conjunction with data-controlled-by-others.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>group</strong></td>
+                                        <td>You can group your sliders. If you use more than one slider on your site, you can group them by entering a group name. This is especially important if you only want to control certain other sliders on your site with your active slider.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>onReady</strong></td>
+                                        <td>Here you can pass a callback function which will be called when the slider is fully loaded and initialized.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
                             Now you only have to pass the object you just created during initialization.
                         </p>
                     </div>
@@ -1280,6 +1455,10 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                                         <td>Returns a string with the id of the slider.</td>
                                     </tr>
                                     <tr>
+                                        <td><strong>getPos()</strong></td>
+                                        <td>Returns a number that represents the percentage position of the slider's separator line.</td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>controlByExternalSource()</strong></td>
                                         <td>
                                             If you want to control the slider with another element like an input slider, then this method is exactly what you are looking for.
@@ -1301,6 +1480,8 @@ $( '#aics' ).anyImageComparisonSlider( settings );
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
+                            <i>Please note that the methods do not work correctly until the slider is fully loaded and initialized.</i>
+                            <br/><br/>
                             And here are the examples how you can call the methods in JavaScript and jQuery.
                         </p>
                     </div>
@@ -1317,6 +1498,7 @@ var aics = new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
 console.log( aics.getAllOthers() );
 console.log( aics.getOrientation() );
 console.log( aics.getId() );
+console.log( aics.getPos() );
 
 //start/in progress (50 = 50% of 100 = 100%):
 aics.controlByExternalSource( true, 50, 100 );
@@ -1336,9 +1518,10 @@ $( '#aics' ).anyImageComparisonSlider();
 $( '#aics' ).anyImageComparisonSlider( 'pause' );
 $( '#aics' ).anyImageComparisonSlider( 'unpause' );
 
-console.log( $( '#aics' ).anyImageComparisonSlider( 'getAllOthers') );
-console.log( $( '#aics' ).anyImageComparisonSlider( 'getOrientation') );
-console.log( $( '#aics' ).anyImageComparisonSlider( 'getId') );
+$( '#aics' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( v ) } );
+$( '#aics' ).anyImageComparisonSlider( 'getOrientation', function( v ) { console.log( v ) } );
+$( '#aics' ).anyImageComparisonSlider( 'getId', function( v ) { console.log( v ) } );
+$( '#aics' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v ) } );
 
 //start/in progress (50 = 50% of 100 = 100%):
 $( '#aics' ).anyImageComparisonSlider( 'controlByExternalSource', true, 50, 100 );
@@ -1372,7 +1555,7 @@ $( '#aics' ).anyImageComparisonSlider( 'controlByExternalSource', false );
             <div id="examples" class="block pb-5">
                 <div class="container">
                     <div class="headline row d-flex align-items-end">
-                        <strong class="headline-number">4.</strong>
+                        <strong class="headline-number">5.</strong>
                         <p class="headline-text">Examples</p>
                     </div>
 
@@ -2835,7 +3018,8 @@ $( '#aics-26' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-27" data-orientation="horizontal" data-initial-position="0.5" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="false" data-auto-animation="false" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g13">
+                        <!-- <div id="any-image-comparison-slider-27" data-orientation="horizontal" data-initial-position="0.5" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="false" data-auto-animation="false" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g13"> -->
+                        <div id="any-image-comparison-slider-27">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                 <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>

@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.97';
+    var AICS_VERSION = '0.9.99';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -54,6 +54,7 @@ THE SOFTWARE.
             settings.controlledByOthers = false;
             settings.controlledByOthersReverse = false;
             settings.group = '';
+            settings.onReady = function(){};
 
         //get settings from params
         if ( params !== undefined ) {
@@ -955,6 +956,10 @@ THE SOFTWARE.
 
             animationFrame = requestAnimFrame( render );
 
+            //---
+
+            settings.onReady();
+
         }
 
         //---
@@ -1061,7 +1066,6 @@ THE SOFTWARE.
                         if ( tweenToggle === null ) {
 
                             from = sliderPosition.x;
-                            console.log("FROM: ", from);
 
                             if ( sliderPosition.x >= element.offsetWidth / 2 ) {
 
@@ -1380,8 +1384,6 @@ THE SOFTWARE.
 
             }
 
-            console.log( control, position, settings.controlledByOthers );
-
             if ( settings.controlledByOthers === true ) {
 
                 if ( control === true ) {
@@ -1408,8 +1410,6 @@ THE SOFTWARE.
                 }
 
             }
-
-            console.log(pointerPosition, element.offsetWidth);
 
         }
 
@@ -1472,6 +1472,33 @@ THE SOFTWARE.
 
         }
 
+        //---
+
+        this.getPos = function() {
+
+            if ( settings.orientation === orientation.HORIZONTAL ) {
+
+                return getPercentagePosition( pointerPosition.x, element.offsetWidth ).v;
+
+            } else if ( settings.orientation === orientation.VERTICAL ) {
+
+                return getPercentagePosition( pointerPosition.y, element.offsetHeight ).v;
+
+            }
+
+        }
+
+        //---
+        
+        if ( typeof jQuery !== 'undefined' ) {
+
+            jQuery.data( element, 'getAllOthers', this.getAllOthers );
+            jQuery.data( element, 'getOrientation', this.getOrientation );
+            jQuery.data( element, 'getId', this.getId );
+            jQuery.data( element, 'getPos', this.getPos );
+
+        }
+        
     };
 
     AnyImageComparisonSlider.VERSION = AICS_VERSION;
@@ -1500,8 +1527,18 @@ if ( typeof jQuery !== 'undefined' ) {
 
                     if ( plugin[ params ] ) {
 
-                        plugin[ params ].apply( this, Array.prototype.slice.call( args, 1 ) );
+                        var methodArgs = Array.prototype.slice.call( args, 1 );
 
+                        if ( typeof methodArgs[ methodArgs.length - 1 ] === 'function' ) {
+
+                            methodArgs[ methodArgs.length - 1 ]( plugin[ params ].apply( this, Array.prototype.slice.call( methodArgs, 0, methodArgs.length - 1 ) ) );
+
+                        } else {
+
+                            plugin[ params ].apply( this, methodArgs );
+
+                        }
+                        
                     } else {
 
                         $.error( 'Method ' +  params + ' does not exist on jQuery.anyImageComparisonSlider' );
