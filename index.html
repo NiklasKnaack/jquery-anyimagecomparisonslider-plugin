@@ -614,9 +614,17 @@
 
             } );
             */
+
+
+
+
+
+            
             var loadingDone27 = function() {
 
                 console.log( 'LOADING DONE' );
+                //console.log( $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getAllOthers' ) );
+                //console.log( $( '#any-image-comparison-slider-28' ).anyImageComparisonSlider( 'getAllOthers' ) );
 
             }
 
@@ -645,6 +653,18 @@
                 $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'controlByExternalSource', false );
 
             } );
+            
+            
+
+            // console.log('---------');
+            // $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( '27: ', v ) } );
+            // console.log('---------');
+            // $( '#any-image-comparison-slider-28' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( '28: ', v ) } );
+            // console.log('---------');
+            // $( '#any-image-comparison-slider-29' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( '29: ', v ) } );
+            // console.log('--------- --------- ---------');
+
+
 
             //setInterval(function(){ $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getId' ); }, 100);
             //setInterval(function(){ console.log("HALLO") }, 50);
@@ -717,12 +737,20 @@
                 <div class="container">
                     <strong class="sub-headline-text">Welcome</strong>
                     <p class="text-muted">
-                        Hi, and welcome. I'm glad you're here.<br/>
+                        Hi, and welcome. I'm glad you're here.
+                        <br/>
                         You're probably here because you're looking for a slider to compare images. Very good. Because you've come to the right place. 
-                        If you do not want to read this welcome text bla bla, you can jump directly to the <a href="#" class="text-muted goto-quickstart">Quickstart</a> or to the <a href="#" class="text-muted goto-examples">Examples</a>.<br/>
-                        The any Image Comparison Slider (I know, it's a bulky name) is on the one hand super slim (only 17 KB) and does not need any additional libraries. On the other hand it is super flexible, versatile and highly customizable. With just a few simple steps, the Slider is ready to use very quickly and runs on almost any device.<br/>
-                        In short, it is the last slider you will ever need.
-                        And now have fun.</p>
+                        <br/>
+                        If you do not want to read this welcome text bla bla, you can jump directly to the <a href="#" class="text-muted goto-quickstart">Quickstart</a> or to the <a href="#" class="text-muted goto-examples">Examples</a>.
+                        <br/><br/>
+                        The any Image Comparison Slider (I know, it's a bulky name) is on the one hand super slim (only 19 KB) and does not need any additional libraries (even without jQuery). 
+                        <br/>
+                        On the other hand it is super flexible, versatile and highly customizable. With just a few simple steps, the Slider is ready to use very quickly and runs on almost any device and any oldschool browser (this includes ie8 and other friends).
+                        <br/><br/>
+                        In short, it is the last slider you’ll ever need. Trust me! ;)
+                        <br/>
+                        Now have fun.
+                    </p>
                     <p>
                     <a href="#" class="btn goto-quickstart btn-secondary my-2">Quickstart</a>
                     <a href="#" class="btn goto-download btn-secondary my-2">Download</a>
@@ -1443,22 +1471,6 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                                         <td>Cancels the pause.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>getAllOthers()</strong></td>
-                                        <td>Returns an array with all other sliders on the page except the one the method was called from.</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>getOrientation()</strong></td>
-                                        <td>Returns a string that indicates whether the slider is horizontal or vertical.</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>getId()</strong></td>
-                                        <td>Returns a string with the id of the slider.</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>getPos()</strong></td>
-                                        <td>Returns a number that represents the percentage position of the slider's separator line.</td>
-                                    </tr>
-                                    <tr>
                                         <td><strong>controlByExternalSource()</strong></td>
                                         <td>
                                             If you want to control the slider with another element like an input slider, then this method is exactly what you are looking for.
@@ -1472,6 +1484,22 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                                             </ul>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td><strong>getAllOthers()</strong></td>
+                                        <td>Returns an array of all sliders on the page that are in the same group except the one from which the method was called.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>getOrientation()</strong></td>
+                                        <td>Returns a string that indicates whether the slider is horizontal or vertical.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>getId()</strong></td>
+                                        <td>Returns a string with the id of the slider.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>getPos()</strong></td>
+                                        <td>Returns a number that represents the percentage position of the slider's separator line.</td>
+                                    </tr>
                                 </tbody>
                             </table>
                             
@@ -1480,7 +1508,11 @@ $( '#aics' ).anyImageComparisonSlider( settings );
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <i>Please note that the methods do not work correctly until the slider is fully loaded and initialized.</i>
+                            <i>
+                                Note: Please note that the methods do not work correctly until the slider is fully loaded and initialized.
+                                <br/>
+                                In case you want to use certain methods it is recommended to use the onReady callback function to wait until the slider is fully loaded and initialized. 
+                            </i>
                             <br/><br/>
                             And here are the examples how you can call the methods in JavaScript and jQuery.
                         </p>
@@ -1495,16 +1527,16 @@ var aics = new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
     aics.pause();
     aics.unpause();
 
-console.log( aics.getAllOthers() );
-console.log( aics.getOrientation() );
-console.log( aics.getId() );
-console.log( aics.getPos() );
-
 //start/in progress (50 = 50% of 100 = 100%):
 aics.controlByExternalSource( true, 50, 100 );
 
 //stop/end:
 aics.controlByExternalSource( false );
+
+console.log( aics.getAllOthers() );
+console.log( aics.getOrientation() );
+console.log( aics.getId() );
+console.log( aics.getPos() );
                         </code></pre>
                     </div>
                     
@@ -1518,16 +1550,16 @@ $( '#aics' ).anyImageComparisonSlider();
 $( '#aics' ).anyImageComparisonSlider( 'pause' );
 $( '#aics' ).anyImageComparisonSlider( 'unpause' );
 
-$( '#aics' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( v ) } );
-$( '#aics' ).anyImageComparisonSlider( 'getOrientation', function( v ) { console.log( v ) } );
-$( '#aics' ).anyImageComparisonSlider( 'getId', function( v ) { console.log( v ) } );
-$( '#aics' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v ) } );
-
 //start/in progress (50 = 50% of 100 = 100%):
 $( '#aics' ).anyImageComparisonSlider( 'controlByExternalSource', true, 50, 100 );
 
 //stop/end:
 $( '#aics' ).anyImageComparisonSlider( 'controlByExternalSource', false );
+
+$( '#aics' ).anyImageComparisonSlider( 'getAllOthers', function( v ) { console.log( v ) } );
+$( '#aics' ).anyImageComparisonSlider( 'getOrientation', function( v ) { console.log( v ) } );
+$( '#aics' ).anyImageComparisonSlider( 'getId', function( v ) { console.log( v ) } );
+$( '#aics' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v ) } );
                         </code></pre>
                     </div>
 
@@ -2142,7 +2174,7 @@ $( '#aics-17' ).anyImageComparisonSlider();
                             
                         </div>
                         <div class="col-sm-6 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-19" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="true" data-group="g6">
+                            <div id="any-image-comparison-slider-19" data-orientation="horizontal" data-initial-position="1" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="true" data-group="g6">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/glacier-debris-20161008-full.jpg"></div>
                                     <div class="image-lft" data-src="./img/glacier-debris-20161008-compare-full.jpg"></div>

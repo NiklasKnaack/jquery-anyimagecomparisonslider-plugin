@@ -182,6 +182,20 @@ THE SOFTWARE.
 
             throw Error( '\n' + 'initialPosition must be of type number and the value must be between 0 to 1' );
 
+        } else {
+
+            settings.initialPosition = 1 - settings.initialPosition;
+
+            if ( settings.initialPosition < 0.01 ) {
+
+                settings.initialPosition = 0.01;
+
+            } else if ( settings.initialPosition > 0.99 ) {
+
+                settings.initialPosition = 0.99;
+
+            }
+
         }
 
         if ( typeof settings.width !== 'string' ) {
@@ -476,6 +490,12 @@ THE SOFTWARE.
         }
 
         var tweenToggle = false;
+
+        if ( settings.initialPosition > 0.5 ) {
+
+            tweenToggle = true;
+
+        }
 
         var tweenStartPosX = 0;
         var tweenEndPosX = 0;
@@ -998,6 +1018,15 @@ THE SOFTWARE.
 
         }
 
+        function getDistance( x1, x2, y1, y2 ) {
+
+            var a = x1 - x2;
+            var b = y1 - y2;
+
+            return Math.sqrt( a * a + b * b );
+
+        }
+
         //---
 
         window.requestAnimFrame = ( function() {
@@ -1073,17 +1102,18 @@ THE SOFTWARE.
 
                                 tweenToggle = true;
 
-                                animationTimeMaxCalc = ( animationTimeMax * ( ( element.offsetWidth / sliderPosition.x ) - 1 ) / 2 );
-
                             } else {
 
                                 to = tweenStartPosX;
 
                                 tweenToggle = false;
 
-                                animationTimeMaxCalc = ( animationTimeMax * ( ( sliderPosition.x / element.offsetWidth ) * 2 ) / 2 );
-
                             }
+
+                            var dist = Math.abs( getDistance( sliderPosition.x, element.offsetWidth / 2, 0, 0 ) );
+                            var distPercent = 1 - dist / ( element.offsetWidth / 2 );
+
+                            animationTimeMaxCalc = animationTimeMax * distPercent;
 
                         } else {
 
@@ -1119,17 +1149,18 @@ THE SOFTWARE.
 
                                 tweenToggle = true;
 
-                                animationTimeMaxCalc = ( animationTimeMax * ( ( element.offsetHeight / sliderPosition.y ) - 1 ) / 2 );
-
                             } else {
 
                                 to = tweenStartPosY;
 
                                 tweenToggle = false;
 
-                                animationTimeMaxCalc = ( animationTimeMax * ( ( sliderPosition.y / element.offsetHeight ) * 2 ) / 2 );
-
                             }
+
+                            var dist = Math.abs( getDistance( 0, 0, sliderPosition.y, element.offsetHeight / 2 ) );
+                            var distPercent = 1 - dist / ( element.offsetHeight / 2 );
+
+                            animationTimeMaxCalc = animationTimeMax * distPercent;
 
                         } else {
 
@@ -1305,77 +1336,6 @@ THE SOFTWARE.
 
         //---
 
-        this.pause = function() {
-
-            paused = true;
-
-        };
-
-        this.unpause = function() {
-
-            paused = false;
-
-        };
-
-        //---
-
-        function getAllOthers() {
-
-            var aicsName = AICS_NAME + '-' + settings.group;
-            var allElements = null;
-            var sliderElements = [];
-
-            if ( document.querySelectorAll ) {
-
-                if ( Array.from ) {
-
-                    sliderElements = Array.from( document.body.querySelectorAll( '*[' + AICS_TYPE + '="' + aicsName + '"]:not([id="' + AICS_ID + '"])' ) );
-
-                } else {
-
-                    allElements = document.body.querySelectorAll( '*[' + AICS_TYPE + '="' + aicsName + '"]:not([id="' + AICS_ID + '"])' );
-
-                    for ( var i = 0, l = allElements.length; i < l; i++ ) {
-
-                        sliderElements.push( allElements[ i ] );
-
-                    }
-
-                }
-
-            } else {
-
-                allElements = document.body.getElementsByTagName( '*' );
-
-                for ( var i = 0, l = allElements.length; i < l; i++ ) {
-
-                    var el = allElements[ i ];
-
-                    var st = el.getAttribute( AICS_TYPE );
-                    var si = el.getAttribute( 'id' );
-
-                    if ( st !== null && si !== null ) {
-
-                        if ( st === aicsName && si !== AICS_ID ) {
-
-                            sliderElements.push( el );
-
-                        }
-
-                    }
-
-                }
-
-            }
-
-            return sliderElements;
-
-        }
-
-        this.getAllOthers = getAllOthers;
-
-        //---
-
         function controlThisSlider( control, position ) {
 
             if ( paused === true ) {
@@ -1442,11 +1402,80 @@ THE SOFTWARE.
 
         //---
 
+        this.pause = function() {
+
+            paused = true;
+
+        };
+
+        this.unpause = function() {
+
+            paused = false;
+
+        };
+
         this.controlByExternalSource = function( control, position, max ) {
 
             controlThisSlider( control, { v: position / max } );
 
+        };
+
+        //---
+
+        function getAllOthers() {
+
+            var aicsName = AICS_NAME + '-' + settings.group;
+            var allElements = null;
+            var sliderElements = [];
+
+            if ( document.querySelectorAll ) {
+
+                if ( Array.from ) {
+
+                    sliderElements = Array.from( document.body.querySelectorAll( '*[' + AICS_TYPE + '="' + aicsName + '"]:not([id="' + AICS_ID + '"])' ) );
+
+                } else {
+
+                    allElements = document.body.querySelectorAll( '*[' + AICS_TYPE + '="' + aicsName + '"]:not([id="' + AICS_ID + '"])' );
+
+                    for ( var i = 0, l = allElements.length; i < l; i++ ) {
+
+                        sliderElements.push( allElements[ i ] );
+
+                    }
+
+                }
+
+            } else {
+
+                allElements = document.body.getElementsByTagName( '*' );
+
+                for ( var i = 0, l = allElements.length; i < l; i++ ) {
+
+                    var el = allElements[ i ];
+
+                    var st = el.getAttribute( AICS_TYPE );
+                    var si = el.getAttribute( 'id' );
+
+                    if ( st !== null && si !== null ) {
+
+                        if ( st === aicsName && si !== AICS_ID ) {
+
+                            sliderElements.push( el );
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            return sliderElements;
+
         }
+
+        this.getAllOthers = getAllOthers;
 
         //---
 
@@ -1462,17 +1491,13 @@ THE SOFTWARE.
 
             }
 
-        }
-
-        //---
+        };
 
         this.getId = function() {
 
             return AICS_ID;
 
-        }
-
-        //---
+        };
 
         this.getPos = function() {
 
@@ -1486,7 +1511,7 @@ THE SOFTWARE.
 
             }
 
-        }
+        };
 
         //---
         
