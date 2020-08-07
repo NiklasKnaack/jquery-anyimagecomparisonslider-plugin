@@ -54,6 +54,7 @@ THE SOFTWARE.
             settings.controlledByOthers = false;
             settings.controlledByOthersReverse = false;
             settings.group = '';
+            settings.groupSync = false;
             settings.onReady = function(){};
 
         //get settings from params
@@ -144,6 +145,10 @@ THE SOFTWARE.
 
                 settings.group = dataAttributes[ i ].nodeValue;
 
+            } else if ( dataAttributes[ i ].nodeName === 'data-group-sync' ) {
+
+                settings.groupSync = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
+
             }
 
         }
@@ -183,8 +188,6 @@ THE SOFTWARE.
             throw Error( '\n' + 'initialPosition must be of type number and the value must be between 0 to 1' );
 
         } else {
-
-            settings.initialPosition = 1 - settings.initialPosition;
 
             if ( settings.initialPosition < 0.01 ) {
 
@@ -378,6 +381,12 @@ THE SOFTWARE.
 
         }
 
+        if ( typeof settings.groupSync !== 'boolean' ) {
+
+            throw Error( '\n' + 'groupSync must be type of boolean' );
+
+        }
+
         if ( !element ) {
 
             throw Error( '\n' + 'No slider div element found' );
@@ -387,14 +396,17 @@ THE SOFTWARE.
         //---
 
         var aicsName = settings.group.length > 0 ? AICS_NAME + '-' + settings.group : AICS_NAME;
+        var aics = this;
 
         element.setAttribute( AICS_TYPE, aicsName );
 
-        if ( settings.controlOthers === true ) {
+        if ( settings.controlOthers === true || settings.groupSync === true ) {
 
-            element.aics = this;
+            element.aics = aics;
 
         }
+
+        aics.initialized = false;
 
         //---
 
@@ -442,7 +454,7 @@ THE SOFTWARE.
 
         var imageOnLoad = function( e ) {
 
-            init();
+            load();
 
         };
 
@@ -660,17 +672,61 @@ THE SOFTWARE.
 
         //---
 
-        function init() {
+        function load() {
 
             imagesLoaded++;
 
-            if ( imagesLoaded < imagesToLoad ) {
+            if ( imagesLoaded === imagesToLoad ) {
 
-                return;
+                aics.initialized = true;
+
+                sync();
 
             }
 
-            //---
+        }
+
+        function sync() {
+
+            if ( settings.groupSync === true ) {
+
+                allOtherElements = getAllOthers();
+
+                var interval = setInterval( function() { 
+
+                    var confirmationCounter = 0;
+
+                    for ( var i = 0, l = allOtherElements.length; i < l; i++ ) {
+
+                        var otherElement = allOtherElements[ i ];
+
+                        if ( otherElement.aics && otherElement.aics.initialized === true ) {
+
+                            confirmationCounter++;
+        
+                        }
+        
+                    }
+
+                    if ( confirmationCounter === allOtherElements.length ) {
+
+                        clearInterval( interval );
+
+                        init();
+
+                    }
+                
+                }, 10 );
+
+            } else {
+
+                init();
+
+            }
+
+        }
+
+        function init() {
 
             var eventType = !!document.attachEvent;
             var eventListener = eventType ? "attachEvent" : "addEventListener";
@@ -941,7 +997,11 @@ THE SOFTWARE.
 
             if ( settings.controlOthers === true ) {
 
-                allOtherElements = getAllOthers();
+                if ( allOtherElements === null ) {
+
+                    allOtherElements = getAllOthers();
+
+                }
 
             }
 
@@ -1397,24 +1457,24 @@ THE SOFTWARE.
 
         }
 
-        this.controlThisSlider = controlThisSlider;
-        this.controlOtherSliders = controlOtherSliders;
+        aics.controlThisSlider = controlThisSlider;
+        aics.controlOtherSliders = controlOtherSliders;
 
         //---
 
-        this.pause = function() {
+        aics.pause = function() {
 
             paused = true;
 
         };
 
-        this.unpause = function() {
+        aics.unpause = function() {
 
             paused = false;
 
         };
 
-        this.controlByExternalSource = function( control, position, max ) {
+        aics.controlByExternalSource = function( control, position, max ) {
 
             controlThisSlider( control, { v: position / max } );
 
@@ -1475,11 +1535,11 @@ THE SOFTWARE.
 
         }
 
-        this.getAllOthers = getAllOthers;
+        aics.getAllOthers = getAllOthers;
 
         //---
 
-        this.getOrientation = function() {
+        aics.getOrientation = function() {
 
             if ( settings.orientation === orientation.HORIZONTAL ) {
 
@@ -1493,13 +1553,13 @@ THE SOFTWARE.
 
         };
 
-        this.getId = function() {
+        aics.getId = function() {
 
             return AICS_ID;
 
         };
 
-        this.getPos = function() {
+        aics.getPos = function() {
 
             if ( settings.orientation === orientation.HORIZONTAL ) {
 
@@ -1517,10 +1577,10 @@ THE SOFTWARE.
         
         if ( typeof jQuery !== 'undefined' ) {
 
-            jQuery.data( element, 'getAllOthers', this.getAllOthers );
-            jQuery.data( element, 'getOrientation', this.getOrientation );
-            jQuery.data( element, 'getId', this.getId );
-            jQuery.data( element, 'getPos', this.getPos );
+            jQuery.data( element, 'getAllOthers', aics.getAllOthers );
+            jQuery.data( element, 'getOrientation', aics.getOrientation );
+            jQuery.data( element, 'getId', aics.getId );
+            jQuery.data( element, 'getPos', aics.getPos );
 
         }
         
