@@ -1573,17 +1573,6 @@ THE SOFTWARE.
 
         };
 
-        //---
-        
-        if ( typeof jQuery !== 'undefined' ) {
-
-            jQuery.data( element, 'getAllOthers', aics.getAllOthers );
-            jQuery.data( element, 'getOrientation', aics.getOrientation );
-            jQuery.data( element, 'getId', aics.getId );
-            jQuery.data( element, 'getPos', aics.getPos );
-
-        }
-        
     };
 
     AnyImageComparisonSlider.VERSION = AICS_VERSION;
