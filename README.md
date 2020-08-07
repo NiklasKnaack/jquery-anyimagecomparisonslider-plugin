@@ -7,7 +7,7 @@ The any Image Comparison Slider is an extremely versatile yet slim slider for co
 
 ## Documentation & Examples
 
-The complete documentation and all examples can be found here: https://niklasknaack.de/aics/
+The complete documentation and all ready to use examples can be found here: https://niklasknaack.de/aics/
 
 ## License
 
