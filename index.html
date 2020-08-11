@@ -1461,6 +1461,8 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                         <p class="text-muted">
                             <br/><i>Just a hint. The data attributes take precedence over the settings object properties. That means, if you want to use both attributes and object properties (which makes no sense in my opinion), the properties will be overwritten by the attributes with the same name.</i>
                             <br/><br/>
+                            No matter if you use the data attributes or the settings object properties. Thanks to an extensive error handling the any Image Comparison slider helps you in case you have passed a parameter incorrectly. If the slider does not work as desired, it is worth checking the browser console to see if there is an error message that can help you to analyze the error.
+                            <br/><br/>
                             Let us now continue with the methods.
                         </p>
                     </div>
@@ -1518,7 +1520,7 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <i>
-                                Note: Please note that the methods do not work correctly until the slider is fully loaded and initialized.
+                                Note: Please note that some of the methods will not work correctly until the slider is fully loaded and initialized.
                                 <br/>
                                 In case you want to use certain methods it is recommended to use the onReady callback function to wait until the slider is fully loaded and initialized. 
                             </i>
