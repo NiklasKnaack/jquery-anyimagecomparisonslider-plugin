@@ -527,6 +527,18 @@
 
             } );
 
+            $( '.goto-top-open-navi' ).click( function() {
+
+                $( 'html, body' ).animate( { scrollTop: 0 }, 1000 );
+
+                $( '#navbarHeader' ).addClass( 'show' );
+
+                return false;
+
+            } );
+
+
+
             //------------------------------------------------------------------------
 
             //Settings - params for any Image Comparison Slider
@@ -3345,7 +3357,7 @@ $( '#range-slider' ).on( 'change', function( e ) {
                         <br/><br/>
                         Please tell your friends and colleagues about the any Image Comparison Slider and recommend it to others.
                         <br/><br/>
-                        If you have any questions or suggestions, found a bug, or just want to share how you implemented the slider on your site, feel free to contact me.
+                        If you have any questions or suggestions, found a bug, or just want to share how you implemented the slider on your site, feel free to <a class="goto-top-open-navi text-muted" href="#">contact</a> me.
                         <br/><br/>
                         So long, cheers.
                     </p>
@@ -3382,8 +3394,9 @@ $( '#range-slider' ).on( 'change', function( e ) {
                     <strong class="sub-headline-text">Resources</strong> 
                     <ul class="list-unstyled text-small">
                         <li><a href="https://jquery.com/">jQuery</a></li>
-                        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
                         <li><a href="https://www.npmjs.com/">npm</a></li>
+                        <li><a href="https://yarnpkg.com/">Yarn</a></li>
+                        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -3393,7 +3406,7 @@ $( '#range-slider' ).on( 'change', function( e ) {
                         <li><a href="https://twitter.com/niklaswebdev">Twitter</a></li>
                         <li><a href="http://codepen.io/NiklasKnaack/#">CodePen</a></li>
                         <li><a href="https://jsfiddle.net/user/NiklasKnaack/fiddles/">JSFiddle</a></li>
-                        <li><a href="https://www.dwitter.net/u/Niklas/top">Dwitter</a></li>
+                        <!-- <li><a href="https://www.dwitter.net/u/Niklas/top">Dwitter</a></li> -->
                     </ul>
                 </div>
                 
