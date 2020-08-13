@@ -9,367 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swa"> 
     <link rel="stylesheet" href="./css/solarized-light.css">
+    <link rel="stylesheet" href="./css/index.css">
     <style>
-
-        body {
-            background-color: #f7f7e9;
-        }
-
-
-        .back-to-top a {
-            border-radius: 5px 5px 0 0 !important;
-            background-color: #fff;
-            padding-left: 15px;
-            padding-right: 15px;
-            line-height: 1.75rem;
-        }
-
-        .back-to-top a .sign {
-            font-size: 1.75rem;
-        }
-
-        .back-to-top a, .back-to-top a:visited, .back-to-top a:active {
-            -webkit-transition: color 0.25s;
-            transition: color 0.25s;
-            text-decoration: none;
-            color: #6c757d;
-        }
-
-        .back-to-top a:hover {
-            text-decoration: none;
-            color: #000000;
-        }
-
-
-
-        #navbarHeader .container {
-            background-color: #fff;
-        }
-
-        #navbarHeader .sub-headline-text {
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            padding: 0 50px;
-            color: rgb(34, 26, 5);
-        }
-
-        #navbarHeader p {
-            padding: 25px 50px;
-        }
-
-        #navbarHeader ul {
-            padding: 25px 50px;
-        }
-
-        .navbar {
-            padding: 0 0 0 0;
-        }
-
-        .navbar .navbar-toggler {
-            margin-right: 20px;
-            border-color: rgba(255, 255, 255, 0.5);
-            border-radius: 0px;
-            border: 2px solid;
-            padding: 0 0;
-            user-select: none;
-            -moz-user-select: none;
-            -khtml-user-select: none;
-            -webkit-user-select: none;
-            -o-user-select: none;
-        }
-
-        .navbar .container {
-            background-color: rgb(34, 26, 5);
-            padding: 0 0 0 0;
-            
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            padding: 0 0 0 0;
-        }
-
-        .navbar-brand .headline-text {
-            letter-spacing: -1px;
-            font-size: 2rem;
-            /* padding: 20px; */
-            padding-left: 55px;
-            padding-right: 55px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background-color: #ffd300;
-            color: black;
-        }
-
-        @media (max-width: 768px) {
-            .navbar-brand .headline-text {
-                padding-left: 25px;
-                padding-right: 25px;
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .navbar-brand .headline-text {
-                padding-left: 25px;
-                padding-right: 25px;
-                font-size: 2rem;
-            }
-        }
-
-
-
-        .jumbotron {
-            padding-top: 2rem;
-            padding-bottom: 3rem;
-            margin-bottom: 0;
-            background-color: #fff;
-        }
-
-        .jumbotron a:not(.btn) {
-            text-decoration: underline;
-        }
-        
-        .jumbotron p:last-child {
-            margin-bottom: 0;
-        }
-
-        .jumbotron .container {
-            max-width: 40rem;
-        }
-
-        .jumbotron .sub-headline-text {
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            padding: 0 50px;
-            color: #000;
-            line-height: 6rem;
-        }
-
-        .jumbotron p {
-            font-size: 1rem;
-        }
-
-        .jumbotron .btn-secondary {
-            border-radius: 5px 5px 0 0 !important;
-            border-color: #ffd300;
-            background-color: #ffd300;
-            color: black;
-        }
-
-        .jumbotron .btn-secondary:focus {
-            outline: none;
-            box-shadow: none;
-        }
-
-        .jumbotron .btn-secondary:active {
-            outline: none !important;
-            box-shadow: none !important;
-            border-color: #ffd300!important;
-            background-color: #ffd300 !important;
-            color: black !important;
-        }
-
-        
-
-
-        .block .container {
-            background-color: #fff;
-            padding-bottom: 25px;
-        }
-
-        .block a {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        .block .copyright {
-            padding-left: 5px;
-            font-size: 0.65rem;
-            text-decoration: none;
-            color: #aaaaaa;
-        }
-
-        .block .container .headline {
-            background-color: rgb(34, 26, 5);
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .block .container .headline-number {
-            font-size: 8rem;
-            padding: 0 50px;
-            background-color: #ffd300;
-            color: black;
-        }
-
-        @media (max-width: 768px) {
-            .block .container .headline-number {
-                font-size: 6rem;
-                padding: 0 25px;
-            }
-        }
-
-        .block .container .headline-text {
-            font-size: 2rem;
-            padding-left: 25px;
-            padding-bottom: 17px;
-            color: #f7f7e9;
-        }
-
-        @media (max-width: 768px) {
-            .block .container .headline-text {
-                font-size: 1.5rem;
-                padding-left: 15px;
-            }
-        }
-
-        .block .container .sub-headline {
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            padding: 0 50px;
-            color: rgb(34, 26, 5);
-        }
-
-        .block .container .block-headline {
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: rgb(34, 26, 5);
-        }
-
-        .block .container .content {
-            padding: 0px 50px;
-        }
-
-        .block .container .code-block {
-            padding: 0px 50px;
-        }
-
-        .block .container .code-block pre {
-            font-size: 0.75rem;
-            width: 100%;
-            margin-bottom: 0px;
-            margin-top: 5px;
-        }
-
-        .block .container .code-block pre .hljs {
-            background-color: #f7f7e9;
-            padding: 0;
-            padding-left: 25px;
-        }
-
-        .block .table td {
-            color: #6c757d;
-            min-width: 250px;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .block .table td strong {
-            color: #000000;
-            padding-right: 15px;
-        }
-
-        @media (max-width: 992px) {
-            .block .table td {
-                min-width: 200px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .block .table td {
-                min-width: 150px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .block .table td {
-                min-width: 100px;
-            }
-        }
-
-        .block .multible > div {
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        @media (max-width: 576px) {
-            .block .multible > div {
-                padding-left: 0px !important;
-                padding-right: 0px !important;
-                padding-top: .50rem;
-            }
-        }
-
-
-
-
-        footer {
-            background-color: rgb(34, 26, 5);
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        
-        footer p {
-            margin-bottom: .25rem;
-        }
-
-        footer .sub-headline-text {
-            letter-spacing: -1px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            padding: 0 50px;
-            color: #f7f7e9;
-        }
-
-        footer ul {
-            margin-top: 10px;
-            /* padding: 0 50px; */
-        }
-
-        footer ul li {
-            padding: 0 50px;
-        }
-
-        @media (max-width: 768px) {
-            footer ul li {
-                padding-right: 0px;
-            }
-        }
-
-        footer ul li a, footer ul li a:visited, footer ul li a:active {
-            -webkit-transition: color 0.25s;
-            transition: color 0.25s;
-            text-decoration: none;
-            color: #f7f7e9;
-        }
-
-        footer ul li a:hover {
-            text-decoration: none;
-            color: #ffd300;
-        }
-
-        footer .license {
-            padding-left: 50px;
-            -webkit-transition: color 0.25s;
-            transition: color 0.25s;
-            text-decoration: none;
-            color: #f7f7e9;
-            font-size: 0.75rem;
-        }
-
-
-
-        .list-styled {
-            padding-left: 15px;
-        }
-
-
-
 
         #any-image-comparison-slider-21 {
             overflow: visible !important;
@@ -1978,8 +1619,8 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <div class="col-sm-4 col-xs-3 pr-1">
                             <div id="any-image-comparison-slider-9" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/milne_ice_shelf_20200731_1049_rgb_6m_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/milne_ice_shelf_20200726_105c_rgb_6m_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/milne_ice_shelf_20200731_1049_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/milne_ice_shelf_20200726_105c_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                             
@@ -1987,16 +1628,16 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <div class="col-sm-4 col-xs-3 pl-1">
                             <div id="any-image-comparison-slider-10" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/dust_south_africa_20200716_1018_rgb_6m_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/dust_south_africa_20200705_0f02_rgb_6m_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/dust_south_africa_20200716_1018_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/dust_south_africa_20200705_0f02_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
                             <div id="any-image-comparison-slider-11" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/flooding_brahmaputra_bangladesh_20200716_103b_rgb_6m_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/flooding_brahmaputra_bangladesh_20200517_2278_rgb_6m_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/flooding_brahmaputra_bangladesh_20200716_103b_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/flooding_brahmaputra_bangladesh_20200517_2278_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
@@ -2005,8 +1646,8 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <div class="col-sm-4 col-xs-3 pr-1">
                             <div id="any-image-comparison-slider-12" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/tyson_foods_pasco_wa_s108_20200430T213525Z_1920_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/tyson_foods_pasco_wa_NAIP_20150625_1920_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/tyson_foods_pasco_wa_s108_20200430T213525Z_1920_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/tyson_foods_pasco_wa_NAIP_20150625_1920_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                             
@@ -2014,16 +1655,16 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <div class="col-sm-4 col-xs-3 pl-1">
                             <div id="any-image-comparison-slider-13" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/SFO_s106_20200330T215157Z_1080_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/SFO_s109_20200209T214620Z_1080_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/SFO_s106_20200330T215157Z_1080_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/SFO_s109_20200209T214620Z_1080_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
                             <div id="any-image-comparison-slider-14" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/riyadh_season_20190825_1057_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/riyadh_season_20191021_105c_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/riyadh_season_20190825_1057_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/riyadh_season_20191021_105c_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
@@ -2032,8 +1673,8 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <div class="col-sm-4 col-xs-3 pr-1">
                             <div id="any-image-comparison-slider-15" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/blue_mountains_fires_20191118_1057_gallery-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/blue_mountains_fires_20191216_1061_gallery-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/blue_mountains_fires_20191118_1057_gallery-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/blue_mountains_fires_20191216_1061_gallery-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                             
@@ -2041,16 +1682,16 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         <div class="col-sm-4 col-xs-3 pl-1">
                             <div id="any-image-comparison-slider-16" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/islam_qala_s106_20200426T092058Z_1920_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/islam_qala_s106_20200221T092924Z_1920_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/islam_qala_s106_20200426T092058Z_1920_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/islam_qala_s106_20200221T092924Z_1920_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 col-xs-3 pl-1">
                             <div id="any-image-comparison-slider-17" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
                                 <div class="images">
-                                    <div class="image-rgt" data-src="./img/port_beirut_lebanon_s3_20200805T083844Z_rgb_3840_16by9_geo-1-web.jpg"></div>
-                                    <div class="image-lft" data-src="./img/port_beirut_lebanon_s112_20200531T081734Z_rgb_3840_16by9_geo-2-web.jpg"></div>
+                                    <div class="image-rgt" data-src="./img/port_beirut_lebanon_s3_20200805T083844Z_rgb_3840_16by9_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                    <div class="image-lft" data-src="./img/port_beirut_lebanon_s112_20200531T081734Z_rgb_3840_16by9_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>

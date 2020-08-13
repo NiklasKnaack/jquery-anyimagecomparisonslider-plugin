@@ -157,7 +157,7 @@ THE SOFTWARE.
 
         if ( typeof settings.orientation !== 'string' ) {
 
-            throw Error( '\n' + 'orientation must be type of string' );
+            throwError( 'orientation must be type of string' );
 
         } else {
 
@@ -167,7 +167,7 @@ THE SOFTWARE.
 
         if ( settings.orientation !== 'horizontal' && settings.orientation !== 'h' && settings.orientation !== 'vertical' && settings.orientation !== 'v' && settings.orientation !== 'default' ) {
 
-            throw Error( '\n' + 'orientation must be horizontal, h, vertical, v or default' );
+            throwError( 'orientation must be horizontal, h, vertical, v or default' );
 
         } else {
 
@@ -185,7 +185,7 @@ THE SOFTWARE.
 
         if ( typeof settings.initialPosition !== 'number' || settings.initialPosition < 0 || settings.initialPosition > 1 ) {
 
-            throw Error( '\n' + 'initialPosition must be of type number and the value must be between 0 to 1' );
+            throwError( 'initialPosition must be of type number and the value must be between 0 to 1' );
 
         } else {
 
@@ -203,7 +203,7 @@ THE SOFTWARE.
 
         if ( typeof settings.width !== 'string' ) {
 
-            throw Error( '\n' + 'width must be type of string' );
+            throwError( 'width must be type of string' );
 
         } else {
 
@@ -213,13 +213,13 @@ THE SOFTWARE.
 
         if ( settings.width.indexOf( 'px' ) < 0 && settings.width.indexOf( '%' ) < 0 ) {
 
-            throw Error( '\n' + 'width must be given in px or %' );
+            throwError( 'width must be given in px or %' );
 
         }
 
         if ( typeof settings.backgroundColor !== 'string' ) {
 
-            throw Error( '\n' + 'backgroundColor must be type of string' );
+            throwError( 'backgroundColor must be type of string' );
 
         } else {
 
@@ -229,19 +229,19 @@ THE SOFTWARE.
 
         if ( settings.backgroundColor.indexOf( 'none' ) < 0 && settings.backgroundColor.indexOf( '#' ) < 0 && settings.backgroundColor.indexOf( 'rgb' ) < 0 ) {
 
-            throw Error( '\n' + 'backgroundColor must be none, hex, rgb or rgba value' );
+            throwError( 'backgroundColor must be none, hex, rgb or rgba value' );
 
         }
 
         if ( typeof settings.onPointerDown !== 'boolean' ) {
 
-            throw Error( '\n' + 'onPointerDown must be type of boolean' );
+            throwError( 'onPointerDown must be type of boolean' );
 
         }
 
         if ( typeof settings.cursor !== 'string' ) {
 
-            throw Error( '\n' + 'cursor must be type of string' );
+            throwError( 'cursor must be type of string' );
 
         }
 
@@ -267,8 +267,8 @@ THE SOFTWARE.
             }
 
             if ( cursorTypeError === true ) {
-                
-                throw Error( '\n' + 'cursor must contain one of the following values: ' + cursorTypes.join( ', ' ) + ', url("http://yourcursor.cur") 0 0, auto' );
+
+                throwError( 'cursor must contain one of the following values: ' + cursorTypes.join( ', ' ) + ', url("http://yourcursor.cur") 0 0, auto' );
 
             }
 
@@ -276,61 +276,61 @@ THE SOFTWARE.
 
         if ( typeof settings.dividingLine !== 'string' ) {
 
-            throw Error( '\n' + 'dividingLine must be type of string' );
+            throwError( 'dividingLine must be type of string' );
 
         }
 
         if ( settings.dividingLine.length < 4 ) {
 
-            throw Error( '\n' + 'dividingLine should look for example as follows: solid 1px rgba(255, 255, 255, .5) or none' );
+            throwError( 'dividingLine should look for example as follows: solid 1px rgba(255, 255, 255, .5) or none' );
 
         }
 
         if ( typeof settings.followEasingFactor !== 'number' ) {
 
-            throw Error( '\n' + 'followEasingFactor must be of type number' );
+            throwError( 'followEasingFactor must be of type number' );
 
         }
 
         if ( settings.followEasingFactor < 0 || settings.followEasingFactor > 100 ) {
 
-            throw Error( '\n' + 'followEasingFactor must be between 0 and 100' );
+            throwError( 'followEasingFactor must be between 0 and 100' );
 
         }
 
         if ( typeof settings.interactive !== 'boolean' ) {
 
-            throw Error( '\n' + 'interactive must be type of boolean' );
+            throwError( 'interactive must be type of boolean' );
 
         }
 
         if ( typeof settings.autoAnimation !== 'boolean' ) {
 
-            throw Error( '\n' + 'autoAnimation must be type of boolean' );
+            throwError( 'autoAnimation must be type of boolean' );
 
         }
 
         if ( typeof settings.autoAnimationSpeed !== 'number' && settings.autoAnimation === true ) {
 
-            throw Error( '\n' + 'autoAnimationSpeed must be of type number' );
+            throwError( 'autoAnimationSpeed must be of type number' );
 
         }
 
         if ( settings.autoAnimationSpeed < 1 && settings.autoAnimation === true ) {
 
-            throw Error( '\n' + 'autoAnimationSpeed must be 1 or higher' );
+            throwError( 'autoAnimationSpeed must be 1 or higher' );
 
         }
 
         if ( typeof settings.autoAnimationPause !== 'number' && settings.autoAnimation === true ) {
 
-            throw Error( '\n' + 'autoAnimationPause must be of type number' );
+            throwError( 'autoAnimationPause must be of type number' );
 
         }
 
         if ( settings.autoAnimationPause < 0 && settings.autoAnimation === true ) {
 
-            throw Error( '\n' + 'autoAnimationPause must be 0 or higher' );
+            throwError( 'autoAnimationPause must be 0 or higher' );
 
         }
 
@@ -351,7 +351,7 @@ THE SOFTWARE.
 
             if ( easingTypeError === true ) {
 
-                throw Error( '\n' + 'autoAnimationEasing must contain one of the following values: ' + easingTypes.join( ', ' ) );
+                throwError( 'autoAnimationEasing must contain one of the following values: ' + easingTypes.join( ', ' ) );
 
             }
 
@@ -359,37 +359,37 @@ THE SOFTWARE.
 
         if ( typeof settings.controlOthers !== 'boolean' ) {
 
-            throw Error( '\n' + 'controlOthers must be type of boolean' );
+            throwError( 'controlOthers must be type of boolean' );
 
         }
 
         if ( typeof settings.controlledByOthers !== 'boolean' ) {
 
-            throw Error( '\n' + 'controlledByOthers must be type of boolean' );
+            throwError( 'controlledByOthers must be type of boolean' );
 
         }
 
         if ( typeof settings.controlledByOthersReverse !== 'boolean' ) {
 
-            throw Error( '\n' + 'controlledByOthersReverse must be type of boolean' );
+            throwError( 'controlledByOthersReverse must be type of boolean' );
 
         }
 
         if ( typeof settings.group !== 'string' ) {
 
-            throw Error( '\n' + 'group must be type of string' );
+            throwError( 'group must be type of string' );
 
         }
 
         if ( typeof settings.groupSync !== 'boolean' ) {
 
-            throw Error( '\n' + 'groupSync must be type of boolean' );
+            throwError( 'groupSync must be type of boolean' );
 
         }
 
         if ( !element ) {
 
-            throw Error( '\n' + 'No slider div element found' );
+            throwError( 'No slider div element found' );
 
         }
 
@@ -406,7 +406,7 @@ THE SOFTWARE.
 
         }
 
-        aics.initialized = false;
+        aics.loaded = false;
 
         //---
 
@@ -460,7 +460,7 @@ THE SOFTWARE.
 
         var imageOnError = function( e ) {
 
-            throw Error( '\n' + 'Image ' + this.src + ' could not be loaded' );
+            throwError( 'Image ' + this.src + ' could not be loaded' );
 
         };
 
@@ -477,29 +477,25 @@ THE SOFTWARE.
         var imagesWidth = null;
         var imagesHeight = null;
 
-        if ( imageScrLft.width !== imageScrRgt.width || imageScrLft.height !== imageScrRgt.height ) {
-
-            throw Error( '\n' + 'Images must have the same dimensions' );
-
-        }
-
         if ( !images ) {
 
-            throw Error( '\n' + 'No images div element found' );
+            throwError( 'No images div element found' );
 
         }
 
         if ( !imageLft ) {
 
-            throw Error( '\n' + 'No imageLft div element found' );
+            throwError( 'No imageLft div element found' );
 
         }
 
         if ( !imageRgt ) {
 
-            throw Error( '\n' + 'No imageRgt div element found' );
+            throwError( 'No imageRgt div element found' );
 
         }
+
+        setup();
 
         var tweenToggle = false;
 
@@ -672,13 +668,49 @@ THE SOFTWARE.
 
         //---
 
+        function setup() {
+
+            element.style.overflow = 'hidden';
+            element.style.position = 'relative';
+            element.style.backgroundColor = settings.backgroundColor;
+            element.style.width = settings.width;
+
+            if ( imageLft.getAttribute( 'data-width' ) !== null && imageLft.getAttribute( 'data-height' ) !== null ) {
+
+                var dw = parseInt( imageLft.getAttribute( 'data-width' ) );
+                var dh = parseInt( imageLft.getAttribute( 'data-height' ) );
+
+                var elementHeight = element.offsetWidth;
+
+                if ( dw > dh ) {
+
+                    elementHeight = element.offsetWidth / ( dw / dh );
+
+                } else if ( dw < dh ) {
+
+                    elementHeight = element.offsetWidth * ( dh / dw );
+
+                } 
+
+                element.style.height = elementHeight.toString() + 'px';
+
+            }
+
+        }
+
         function load() {
 
             imagesLoaded++;
 
             if ( imagesLoaded === imagesToLoad ) {
 
-                aics.initialized = true;
+                if ( imageScrLft.width !== imageScrRgt.width || imageScrLft.height !== imageScrRgt.height ) {
+
+                    throwError( 'Images must have the same dimensions' );
+        
+                }
+
+                aics.loaded = true;
 
                 sync();
 
@@ -700,7 +732,7 @@ THE SOFTWARE.
 
                         var otherElement = allOtherElements[ i ];
 
-                        if ( otherElement.aics && otherElement.aics.initialized === true ) {
+                        if ( otherElement.aics && otherElement.aics.loaded === true ) {
 
                             confirmationCounter++;
         
@@ -730,12 +762,6 @@ THE SOFTWARE.
 
             var eventType = !!document.attachEvent;
             var eventListener = eventType ? "attachEvent" : "addEventListener";
-
-            //---
-
-            element.style.overflow = 'hidden';
-            element.style.position = 'relative';
-            element.style.backgroundColor = settings.backgroundColor;
 
             //---
 
@@ -1394,6 +1420,14 @@ THE SOFTWARE.
 
         }
 
+        //---
+        
+        function throwError( msg ) {
+
+            throw Error( '\n' + 'Slider (id="' + AICS_ID + '") reports following error: ' + msg );
+
+        }
+        
         //---
 
         function controlThisSlider( control, position ) {
