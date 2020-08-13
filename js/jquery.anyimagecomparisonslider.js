@@ -55,6 +55,7 @@ THE SOFTWARE.
             settings.controlledByOthersReverse = false;
             settings.group = '';
             settings.groupSync = false;
+            settings.loading = 'lazy';//eager
             settings.onReady = function(){};
 
         //get settings from params
@@ -417,6 +418,10 @@ THE SOFTWARE.
 
         var paused = false;
 
+        var eventType = !!document.attachEvent;
+        var eventListener = eventType ? "attachEvent" : "addEventListener";
+        var removeListener = eventType ? "detachEvent" : "removeEventListener";
+
         var pointerActive = false;
         var pointerDown = false;
         var pointerPosition = { x: -1, y: -1 };
@@ -464,16 +469,8 @@ THE SOFTWARE.
 
         };
 
-        var imageScrLft = new Image();
-            imageScrLft.onload = imageOnLoad;
-            imageScrLft.onerror = imageOnError;
-            imageScrLft.src = imageLft.getAttribute( 'data-src' );
-
-        var imageScrRgt = new Image();
-            imageScrRgt.onload = imageOnLoad;
-            imageScrRgt.onerror = imageOnError;
-            imageScrRgt.src = imageLft.getAttribute( 'data-src' );
-
+        var imageScrLft = null;
+        var imageScrRgt = null;
         var imagesWidth = null;
         var imagesHeight = null;
 
@@ -494,8 +491,6 @@ THE SOFTWARE.
             throwError( 'No imageRgt div element found' );
 
         }
-
-        setup();
 
         var tweenToggle = false;
 
@@ -666,9 +661,88 @@ THE SOFTWARE.
 
         }
 
+        setup();
+
         //---
 
         function setup() {
+
+            var loadImages = function() {
+
+                imageScrLft = new Image();
+                imageScrLft.onload = imageOnLoad;
+                imageScrLft.onerror = imageOnError;
+                imageScrLft.src = imageLft.getAttribute( 'data-src' );
+    
+                imageScrRgt = new Image();
+                imageScrRgt.onload = imageOnLoad;
+                imageScrRgt.onerror = imageOnError;
+                imageScrRgt.src = imageLft.getAttribute( 'data-src' );
+    
+            }
+
+            if ( settings.loading === 'eager' ) {
+
+                loadImages();
+    
+            } else if ( settings.loading === 'lazy' ) {
+    
+                var isIntersectionObserverAvailable = !!window.IntersectionObserver;
+    
+                if ( isIntersectionObserverAvailable === true ) {
+    
+                    var intersectionHandler = function( elements, observer ) {
+    
+                        var element = elements[ 0 ];
+    
+                        if ( element.isIntersecting === true ) {
+    
+                            intersectionObserver.unobserve( element.target );
+    
+                            loadImages();
+    
+                        }
+                        
+                    };
+    
+                    var intersectionObserver = new IntersectionObserver( intersectionHandler );
+    
+                    intersectionObserver.observe( element );
+    
+                } else {
+    
+                    var intersectionWithViewport = function() {
+    
+                        var rect = element.getBoundingClientRect();
+    
+                        return ( 
+    
+                            ( rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) ) && ( ( rect.top + rect.height ) >= 0 ) && 
+                            ( rect.left <= ( window.innerWidth || document.documentElement.clientWidth ) ) && ( ( rect.left + rect.width ) >= 0 ) 
+    
+                        );
+    
+                    };
+    
+                    var scrollHandler = function( e ) {
+    
+                        if ( intersectionWithViewport() === true ) {
+    
+                            window[ removeListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
+    
+                            loadImages();
+    
+                        }
+                        
+                    };
+    
+                    window[ eventListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
+    
+                    scrollHandler();
+    
+                }
+    
+            }
 
             element.style.overflow = 'hidden';
             element.style.position = 'relative';
@@ -759,11 +833,6 @@ THE SOFTWARE.
         }
 
         function init() {
-
-            var eventType = !!document.attachEvent;
-            var eventListener = eventType ? "attachEvent" : "addEventListener";
-
-            //---
 
             var imageMove = function( e ) {
 
