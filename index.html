@@ -792,6 +792,10 @@ $( '#aics-2' ).anyImageComparisonSlider();
                 </div>
             </div>
 
+
+
+
+
             <div id="configuration" class="block pb-5">
                 <div class="container">
                     <div class="headline row d-flex align-items-end">
@@ -801,16 +805,149 @@ $( '#aics-2' ).anyImageComparisonSlider();
                     <div class="sub-headline row pt-5">
                         <strong class="block-headline pb-3">Let's go into detail</strong> 
                     </div>
+
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Let's first look at how you can configure the slider using data attributes. In the <a href="#" class="goto-introduction">Introduction</a> chapter we could already get to know some attributes. But now it´s time to get to know them all.
+                            In this chapter, let's take a close look at the slider in all its facets, its settings and public methods.
                         </p>
                     </div>
 
-                    
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">HTML</strong> 
+                    <div class="sub-headline row pt-2">
+                        <strong class="block-headline pb-2">HTML:</strong> 
                     </div>
+
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            We already know the basic structure from the Quickstart chapter and the short introduction. But now let's have a closer look at all possible variations.
+                            <br/><br/>
+                            Let's start with the easiest one:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            At this point we create the div element for our slider and set the id (aics) for this element so that we can access it in JavaScript/jQuery to initialize the slider.
+                            <br/>
+                            Furthermore, in our slider div element we create another div element with the class images.
+                            <br/>
+                            And in this images div we create two more divs for the images of the slider:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div class=&quot;images&quot;&gt;
+    &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            Each of the two div elements for the images must have one of the following classes:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+class=&quot;image-rgt&quot;
+class=&quot;image-lft&quot;
+class=&quot;image-top&quot;
+class=&quot;image-btm&quot;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            And with the attribute data-src you define the file path:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-src=&quot;./path/image-lft.jpg&quot;
+                        </code></pre>
+                    </div>
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            We can even optionally add two more attributes to the div elements for the images:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-width=&quot;1200&quot;
+data-height=&quot;900&quot;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            1200 and 900 are of course only example values. At this point you simply pass the values for the original width and height of the images.
+                            <br/>
+                            For example, if your original image is 900 * 600 pixels in size, unlike the images used here, you would pass the following values:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+data-width=&quot;900&quot;
+data-height=&quot;600&quot;
+                        </code></pre>
+                    </div>
+
+
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            A standard slider with these optional attributes would look like this:
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+
+
+
+
+                    <div class="sub-headline row pt-2">
+                        <strong class="block-headline pb-2">Data attributes:</strong> 
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            And now we have a closer look at how you can configure the slider using data attributes. In the <a href="#" class="goto-introduction">Introduction</a> chapter we could already get to know some attributes. But now it´s time to get to know them all.
+                            <br/><br/>
+                            These are all available data attributes with their default values:
+                        </p>
+                    </div>
+
                     <div class="code-block row">
                         <pre><code class="language-html">
 data-orientation="horizontal"
@@ -830,12 +967,14 @@ data-control-others="false"
 data-controlled-by-others="false"
 data-controlled-by-others-reverse="false"
 data-group=""
+data-group-sync="false"
+data-loading="lazy"
+data-loading-offset="100px"
                         </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>These are all available data attributes with their default values.
                             <br/>Let's take a closer look at the data attributes and how they work:
                             <br/>
                             <table class="table">
@@ -912,6 +1051,14 @@ data-group=""
                                         <td><strong>data-group-sync</strong></td>
                                         <td>You can also synchronize your sliders. If you want your slider to start only after the other sliders of its group are loaded and initialized, then enter true here. The default value is false.</td>
                                     </tr>
+                                    <tr>
+                                        <td><strong>data-loading</strong></td>
+                                        <td>Here you can choose either lazy or eager loading. If you take the default value of lazy, the slider will not be loaded until it is visible in the viewport. If you choose eager, the slider will be loaded and initialized immediately.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>data-loading-offset</strong></td>
+                                        <td>If lazy loading has been activated, then you can use this value to determine how much px earlier before entering the viewport the loading should start. The default value is 100px.</td>
+                                    </tr>
                                 </tbody>
                             </table>
                             
@@ -929,7 +1076,7 @@ data-group=""
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-&lt;div id=&quot;aics&quot; data-orientation=&quot;horizontal&quot; data-initial-position=&quot;0&quot; data-width=&quot;100%&quot; data-background-color=&quot;#000000&quot; data-on-pointer-down=&quot;false&quot; data-cursor=&quot;ew-resize&quot; data-dividing-line=&quot;solid 1px rgba(255, 255, 255, .5)&quot; data-follow-easing-factor=&quot;0&quot; data-auto-animation=&quot;true&quot; data-auto-animation-speed=&quot;8&quot; data-auto-animation-pause=&quot;1&quot; data-auto-animation-easing=&quot;inOutCubic&quot; data-control-others=&quot;false&quot; data-controlled-by-others=&quot;false&quot; data-controlled-by-others-reverse=&quot;false&quot; data-group=&quot;&quot; data-group-sync=&quot;false&quot;&gt;
+&lt;div id=&quot;aics&quot; data-orientation=&quot;horizontal&quot; data-initial-position=&quot;0&quot; data-width=&quot;100%&quot; data-background-color=&quot;#000000&quot; data-on-pointer-down=&quot;false&quot; data-cursor=&quot;ew-resize&quot; data-dividing-line=&quot;solid 1px rgba(255, 255, 255, .5)&quot; data-follow-easing-factor=&quot;0&quot; data-auto-animation=&quot;true&quot; data-auto-animation-speed=&quot;8&quot; data-auto-animation-pause=&quot;1&quot; data-auto-animation-easing=&quot;inOutCubic&quot; data-control-others=&quot;false&quot; data-controlled-by-others=&quot;false&quot; data-controlled-by-others-reverse=&quot;false&quot; data-group=&quot;&quot; data-group-sync=&quot;false&quot; data-loading=&quot;lazy&quot; data-loading-offset=&quot;100px&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
@@ -938,15 +1085,18 @@ data-group=""
                         </code></pre>
                     </div>
 
+                    <div class="sub-headline row pt-5">
+                        <strong class="block-headline pb-2">Settings object:</strong> 
+                    </div>
+
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>But there is another way to configure your slider. This is done with a settings object that you pass during initialization in JavaScript or jQuery.
+                            But there is another way to configure your slider. This is done with a settings object that you pass during initialization in JavaScript or jQuery.
+                            <br/><br/>
+                            These are all available object properties with their default values:
                         </p>
                     </div>
 
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">JavaScript/jQuery</strong> 
-                    </div>
                     <div class="code-block row">
                         <pre><code class="language-javascript">
 var settings = {
@@ -969,6 +1119,8 @@ var settings = {
     controlledByOthersReverse: false,
     group: '',
     groupSync: false,
+    loading: 'lazy',
+    loadingOffset: '100px',
     onReady: function(){}
 
 };
@@ -977,9 +1129,10 @@ var settings = {
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>These are all available object properties with their default values.
                             <br/>
-                            As you have seen, the object properties correspond exactly to the data attributes. With one exception (onReady).
+                            As you have seen, the object properties correspond exactly to the data attributes. 
+                            <br/>
+                            With one exception (onReady). onReady can only be used in conjunction with the settings object and its properties.
                             <br/>
                             But let's take a closer look at the object properties as well:
                         </p>
@@ -1062,6 +1215,14 @@ var settings = {
                                         <td>You can also synchronize your sliders. If you want your slider to start only after the other sliders of its group are loaded and initialized, then enter true here. The default value is false.</td>
                                     </tr>
                                     <tr>
+                                        <td><strong>loading</strong></td>
+                                        <td>Here you can choose either lazy or eager loading. If you take the default value of lazy, the slider will not be loaded until it is visible in the viewport. If you choose eager, the slider will be loaded and initialized immediately.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>loadingOffset</strong></td>
+                                        <td>If lazy loading has been activated, then you can use this value to determine how much px earlier before entering the viewport the loading should start. The default value is 100px.</td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>onReady</strong></td>
                                         <td>Here you can pass a callback function which will be called when the slider is fully loaded and initialized.</td>
                                     </tr>
@@ -1074,7 +1235,7 @@ var settings = {
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <br/>
-                            Now you only have to pass the object you just created during initialization.
+                            Now you know all properties of the settings object and can create your own settings object. The next step is to pass the settings object you just created:
                         </p>
                     </div>
 
@@ -1122,14 +1283,16 @@ $( '#aics' ).anyImageComparisonSlider( settings );
                             <br/><i>Just a hint. The data attributes take precedence over the settings object properties. That means, if you want to use both attributes and object properties (which makes no sense in my opinion), the properties will be overwritten by the attributes with the same name.</i>
                             <br/><br/>
                             No matter if you use the data attributes or the settings object properties. Thanks to an extensive error handling the any Image Comparison Slider helps you in case you have passed a parameter incorrectly. If the slider does not work as desired, it is worth checking the browser console to see if there is an error message that can help you to analyze the error.
-                            <br/><br/>
-                            Let us now continue with the methods.
                         </p>
+                    </div>
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="block-headline pb-2">Public methods:</strong> 
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            The slider brings some methods that you can use in your JavaScript/jQuery:
+                            Let us now continue with the slider's public methods and take a closer look:
                             <br/>
                             <table class="table">
                                 <tbody>
@@ -3030,16 +3193,17 @@ $( '#range-slider' ).on( 'change', function( e ) {
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <strong class="sub-headline-text">Resources</strong> 
+                    <strong class="sub-headline-text">Resources for this</strong> 
                     <ul class="list-unstyled text-small">
+                        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+                        <li><a href="https://highlightjs.org/">highlight.js</a></li>
                         <li><a href="https://jquery.com/">jQuery</a></li>
                         <li><a href="https://www.npmjs.com/">npm</a></li>
                         <li><a href="https://yarnpkg.com/">Yarn</a></li>
-                        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <strong class="sub-headline-text">Links</strong> 
+                    <strong class="sub-headline-text">Related links</strong> 
                     <ul class="list-unstyled text-small">
                         <li><a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin">GitHub</a></li>
                         <li><a href="https://twitter.com/niklaswebdev">Twitter</a></li>
