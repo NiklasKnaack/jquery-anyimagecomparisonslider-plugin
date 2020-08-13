@@ -55,7 +55,8 @@ THE SOFTWARE.
             settings.controlledByOthersReverse = false;
             settings.group = '';
             settings.groupSync = false;
-            settings.loading = 'lazy';//eager
+            settings.loading = 'lazy';
+            settings.loadingOffset = '100px';
             settings.onReady = function(){};
 
         //get settings from params
@@ -149,6 +150,14 @@ THE SOFTWARE.
             } else if ( dataAttributes[ i ].nodeName === 'data-group-sync' ) {
 
                 settings.groupSync = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
+
+            } else if ( dataAttributes[ i ].nodeName === 'data-loading' ) {
+
+                settings.loading = dataAttributes[ i ].nodeValue;
+
+            } else if ( dataAttributes[ i ].nodeName === 'data-loading-offset' ) {
+
+                settings.loadingOffset = dataAttributes[ i ].nodeValue;
 
             }
 
@@ -385,6 +394,36 @@ THE SOFTWARE.
         if ( typeof settings.groupSync !== 'boolean' ) {
 
             throwError( 'groupSync must be type of boolean' );
+
+        }
+
+        if ( typeof settings.loading !== 'string' ) {
+
+            throwError( 'loading must be type of string' );
+
+        }
+
+        if ( settings.loading !== 'lazy' && settings.loading !== 'eager' ) {
+
+            throwError( 'loading value must be either lazy or eager' );
+
+        }
+
+        if ( typeof settings.loadingOffset !== 'string' ) {
+
+            throwError( 'loadingOffset must be type of string' );
+
+        }
+
+        if ( settings.loadingOffset.indexOf( 'px' ) === -1 || settings.loadingOffset.slice( settings.loadingOffset.indexOf( 'px' ) ) !== 'px' ) {
+
+            throwError( 'loadingOffset value must be specified in px' );
+
+        }
+
+        if ( typeof settings.onReady !== 'function' ) {
+
+            throwError( 'onReady must be type of function' );
 
         }
 
@@ -661,11 +700,9 @@ THE SOFTWARE.
 
         }
 
-        setup();
-
         //---
 
-        function setup() {
+        function init() {
 
             var loadImages = function() {
 
@@ -698,27 +735,33 @@ THE SOFTWARE.
                         if ( element.isIntersecting === true ) {
     
                             intersectionObserver.unobserve( element.target );
-    
+
                             loadImages();
     
                         }
                         
                     };
     
-                    var intersectionObserver = new IntersectionObserver( intersectionHandler );
+                    var intersectionObserver = new IntersectionObserver( intersectionHandler, { 
+                        
+                        rootMargin: settings.loadingOffset + ' ' + settings.loadingOffset + ' ' + settings.loadingOffset + ' ' + settings.loadingOffset 
+                    
+                    } );
     
                     intersectionObserver.observe( element );
     
                 } else {
-    
+
+                    var loadingOffset = parseInt( settings.loadingOffset.slice( 0, settings.loadingOffset.indexOf( 'px' ) ) );
+
                     var intersectionWithViewport = function() {
     
                         var rect = element.getBoundingClientRect();
-    
+
                         return ( 
     
-                            ( rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) ) && ( ( rect.top + rect.height ) >= 0 ) && 
-                            ( rect.left <= ( window.innerWidth || document.documentElement.clientWidth ) ) && ( ( rect.left + rect.width ) >= 0 ) 
+                            ( rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) + loadingOffset ) && ( ( rect.top + rect.height + loadingOffset ) >= 0 ) && 
+                            ( rect.left <= ( window.innerWidth || document.documentElement.clientWidth ) + loadingOffset ) && ( ( rect.left + rect.width + loadingOffset ) >= 0 ) 
     
                         );
     
@@ -729,7 +772,7 @@ THE SOFTWARE.
                         if ( intersectionWithViewport() === true ) {
     
                             window[ removeListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
-    
+
                             loadImages();
     
                         }
@@ -818,7 +861,7 @@ THE SOFTWARE.
 
                         clearInterval( interval );
 
-                        init();
+                        setup();
 
                     }
                 
@@ -826,13 +869,13 @@ THE SOFTWARE.
 
             } else {
 
-                init();
+                setup();
 
             }
 
         }
 
-        function init() {
+        function setup() {
 
             var imageMove = function( e ) {
 
@@ -1675,6 +1718,10 @@ THE SOFTWARE.
             }
 
         };
+
+        //---
+
+        init();
 
     };
 
