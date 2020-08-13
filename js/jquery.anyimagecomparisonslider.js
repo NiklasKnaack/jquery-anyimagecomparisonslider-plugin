@@ -167,7 +167,7 @@ THE SOFTWARE.
 
         if ( typeof settings.orientation !== 'string' ) {
 
-            throwError( 'orientation must be type of string' );
+            throwError( 'orientation must be of type string' );
 
         } else {
 
@@ -213,7 +213,7 @@ THE SOFTWARE.
 
         if ( typeof settings.width !== 'string' ) {
 
-            throwError( 'width must be type of string' );
+            throwError( 'width must be of type string' );
 
         } else {
 
@@ -229,7 +229,7 @@ THE SOFTWARE.
 
         if ( typeof settings.backgroundColor !== 'string' ) {
 
-            throwError( 'backgroundColor must be type of string' );
+            throwError( 'backgroundColor must be of type string' );
 
         } else {
 
@@ -245,13 +245,13 @@ THE SOFTWARE.
 
         if ( typeof settings.onPointerDown !== 'boolean' ) {
 
-            throwError( 'onPointerDown must be type of boolean' );
+            throwError( 'onPointerDown must be of type boolean' );
 
         }
 
         if ( typeof settings.cursor !== 'string' ) {
 
-            throwError( 'cursor must be type of string' );
+            throwError( 'cursor must be of type string' );
 
         }
 
@@ -286,7 +286,7 @@ THE SOFTWARE.
 
         if ( typeof settings.dividingLine !== 'string' ) {
 
-            throwError( 'dividingLine must be type of string' );
+            throwError( 'dividingLine must be of type string' );
 
         }
 
@@ -310,13 +310,13 @@ THE SOFTWARE.
 
         if ( typeof settings.interactive !== 'boolean' ) {
 
-            throwError( 'interactive must be type of boolean' );
+            throwError( 'interactive must be of type boolean' );
 
         }
 
         if ( typeof settings.autoAnimation !== 'boolean' ) {
 
-            throwError( 'autoAnimation must be type of boolean' );
+            throwError( 'autoAnimation must be of type boolean' );
 
         }
 
@@ -369,61 +369,65 @@ THE SOFTWARE.
 
         if ( typeof settings.controlOthers !== 'boolean' ) {
 
-            throwError( 'controlOthers must be type of boolean' );
+            throwError( 'controlOthers must be of type boolean' );
 
         }
 
         if ( typeof settings.controlledByOthers !== 'boolean' ) {
 
-            throwError( 'controlledByOthers must be type of boolean' );
+            throwError( 'controlledByOthers must be of type boolean' );
 
         }
 
         if ( typeof settings.controlledByOthersReverse !== 'boolean' ) {
 
-            throwError( 'controlledByOthersReverse must be type of boolean' );
+            throwError( 'controlledByOthersReverse must be of type boolean' );
 
         }
 
         if ( typeof settings.group !== 'string' ) {
 
-            throwError( 'group must be type of string' );
+            throwError( 'group must be of type string' );
 
         }
 
         if ( typeof settings.groupSync !== 'boolean' ) {
 
-            throwError( 'groupSync must be type of boolean' );
+            throwError( 'groupSync must be of type boolean' );
 
         }
 
         if ( typeof settings.loading !== 'string' ) {
 
-            throwError( 'loading must be type of string' );
+            throwError( 'loading must be of type string' );
 
         }
 
         if ( settings.loading !== 'lazy' && settings.loading !== 'eager' ) {
 
-            throwError( 'loading value must be either lazy or eager' );
+            throwError( 'loading must be given in either lazy or eager' );
 
         }
 
-        if ( typeof settings.loadingOffset !== 'string' ) {
+        if ( settings.loading === 'lazy' ) {
 
-            throwError( 'loadingOffset must be type of string' );
+            if ( typeof settings.loadingOffset !== 'string'  ) {
 
-        }
-
-        if ( settings.loadingOffset.indexOf( 'px' ) === -1 || settings.loadingOffset.slice( settings.loadingOffset.indexOf( 'px' ) ) !== 'px' ) {
-
-            throwError( 'loadingOffset value must be specified in px' );
+                throwError( 'loadingOffset must be of type string' );
+    
+            }
+    
+            if ( settings.loadingOffset.indexOf( 'px' ) === -1 || settings.loadingOffset.slice( settings.loadingOffset.indexOf( 'px' ) ) !== 'px' ) {
+    
+                throwError( 'loadingOffset must be given in px' );
+    
+            }
 
         }
 
         if ( typeof settings.onReady !== 'function' ) {
 
-            throwError( 'onReady must be type of function' );
+            throwError( 'onReady must be of type function' );
 
         }
 
@@ -823,7 +827,7 @@ THE SOFTWARE.
 
                 if ( imageScrLft.width !== imageScrRgt.width || imageScrLft.height !== imageScrRgt.height ) {
 
-                    throwError( 'Images must have the same dimensions' );
+                    throwError( 'Images must have same dimensions' );
         
                 }
 
