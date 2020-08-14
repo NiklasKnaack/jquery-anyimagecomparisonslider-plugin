@@ -932,9 +932,150 @@ data-height=&quot;600&quot;
                         </code></pre>
                     </div>
 
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            But why should you assign these optional attributes at all?
+                            <br/>
+                            Because this way the slider element can already be displayed in its final size without the slider having been completely loaded or initialized. 
+                            <br/>
+                            This way you avoid unpleasant jumping effects on the page when your sliders have to be loaded first and can only take on their final size afterwards. 
+                            <br/><br/>
+                            As we have already seen in the second example, we can add buttons to the slider to download the images used in the slider:
+                        </p>
+                    </div>
 
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+        &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
 
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            Therefore we need a div with the class ui which we place inside the slider div:
+                        </p>
+                    </div>
 
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div class=&quot;ui&quot;&gt;
+    &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+    &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            In this ui div we now create our buttons. The buttons themselves should always use one of the following classes so that they are correctly recognized by JavaScript:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+button-rgt
+button-lft
+button-top
+button-btm
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            Of course you can also specify the button label, set an alt text and set the target so that a click on the button opens a new browser tab.
+                            <br/><br/>
+                            But we can do even more in the ui div:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div class=&quot;ui&quot;&gt;
+    &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+    &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+    &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-h.png&quot; alt=&quot;dragger&quot; width=&quot;84&quot; height=&quot;48&quot;&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            We can add an img element with the class dragger. If this element is present, the slider automatically places it in the middle of the separator. At this point you can use any image you like. Don't forget to specify the width and height of your image: 
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-h.png&quot; alt=&quot;dragger&quot; width=&quot;84&quot; height=&quot;48&quot;&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            And this is the complete markup for our horizontal slider:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;a class=&quot;button-rgt&quot; alt=&quot;full image rgt&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+        &lt;a class=&quot;button-lft&quot; alt=&quot;full image lft&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+        &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-h.png&quot; alt=&quot;dragger&quot; width=&quot;84&quot; height=&quot;48&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            And here for comparison the markup for a vertical slider:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics&quot; data-orientation=&quot;vertical&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-btm&quot; data-src=&quot;./path/image-btm.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-top&quot; data-src=&quot;./path/image-top.jpg&quot; data-width=&quot;1200&quot; data-height=&quot;900&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui&quot;&gt;
+        &lt;a class=&quot;button-btm&quot; alt=&quot;full image btm&quot; target=&quot;_blank&quot;&gt;2020&lt;/a&gt;
+        &lt;a class=&quot;button-top&quot; alt=&quot;full image top&quot; target=&quot;_blank&quot;&gt;2019&lt;/a&gt;
+        &lt;img class=&quot;dragger&quot; src=&quot;./path/dragger-v.png&quot; alt=&quot;dragger&quot; width=&quot;48&quot; height=&quot;84&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            In the next step we will look at how to configure the slider.
+                        </p>
+                    </div>
 
                     <div class="sub-headline row pt-2">
                         <strong class="block-headline pb-2">Data attributes:</strong> 
