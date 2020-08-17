@@ -56,7 +56,8 @@ THE SOFTWARE.
             settings.group = '';
             settings.groupSync = false;
             settings.loading = 'lazy';
-            settings.loadingOffset = '100px';
+            settings.viewportOffset = '100px';
+            settings.sleepMode = true;
             settings.onReady = function(){};
 
         //get settings from params
@@ -155,9 +156,13 @@ THE SOFTWARE.
 
                 settings.loading = dataAttributes[ i ].nodeValue;
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-loading-offset' ) {
+            } else if ( dataAttributes[ i ].nodeName === 'data-viewport-offset' ) {
 
-                settings.loadingOffset = dataAttributes[ i ].nodeValue;
+                settings.viewportOffset = dataAttributes[ i ].nodeValue;
+
+            } else if ( dataAttributes[ i ].nodeName === 'data-sleep-mode' ) {
+
+                settings.sleepMode = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
 
             }
 
@@ -411,17 +416,23 @@ THE SOFTWARE.
 
         if ( settings.loading === 'lazy' ) {
 
-            if ( typeof settings.loadingOffset !== 'string'  ) {
+            if ( typeof settings.viewportOffset !== 'string'  ) {
 
-                throwError( 'loadingOffset must be of type string' );
+                throwError( 'viewportOffset must be of type string' );
     
             }
     
-            if ( settings.loadingOffset.indexOf( 'px' ) === -1 || settings.loadingOffset.slice( settings.loadingOffset.indexOf( 'px' ) ) !== 'px' ) {
+            if ( settings.viewportOffset.indexOf( 'px' ) === -1 || settings.viewportOffset.slice( settings.viewportOffset.indexOf( 'px' ) ) !== 'px' ) {
     
-                throwError( 'loadingOffset must be given in px' );
+                throwError( 'viewportOffset must be given in px' );
     
             }
+
+        }
+
+        if ( typeof settings.sleepMode !== 'boolean' ) {
+
+            throwError( 'sleepMode must be of type boolean' );
 
         }
 
@@ -460,6 +471,7 @@ THE SOFTWARE.
         }
 
         var paused = false;
+        var viewportIntersection = false;
 
         var eventType = !!document.attachEvent;
         var eventListener = eventType ? "attachEvent" : "addEventListener";
@@ -708,6 +720,18 @@ THE SOFTWARE.
 
         function init() {
 
+            var start = function() {
+
+                if ( settings.sleepMode === true ) {
+
+                    addIntersectionOberserver( false );
+
+                }
+
+                loadImages();
+
+            }
+
             var loadImages = function() {
 
                 imageScrLft = new Image();
@@ -727,67 +751,8 @@ THE SOFTWARE.
                 loadImages();
     
             } else if ( settings.loading === 'lazy' ) {
-    
-                var isIntersectionObserverAvailable = !!window.IntersectionObserver;
-    
-                if ( isIntersectionObserverAvailable === true ) {
-    
-                    var intersectionHandler = function( elements, observer ) {
-    
-                        var element = elements[ 0 ];
-    
-                        if ( element.isIntersecting === true ) {
-    
-                            intersectionObserver.unobserve( element.target );
 
-                            loadImages();
-    
-                        }
-                        
-                    };
-    
-                    var intersectionObserver = new IntersectionObserver( intersectionHandler, { 
-                        
-                        rootMargin: settings.loadingOffset + ' ' + settings.loadingOffset + ' ' + settings.loadingOffset + ' ' + settings.loadingOffset 
-                    
-                    } );
-    
-                    intersectionObserver.observe( element );
-    
-                } else {
-
-                    var loadingOffset = parseInt( settings.loadingOffset.slice( 0, settings.loadingOffset.indexOf( 'px' ) ) );
-
-                    var intersectionWithViewport = function() {
-    
-                        var rect = element.getBoundingClientRect();
-
-                        return ( 
-    
-                            ( rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) + loadingOffset ) && ( ( rect.top + rect.height + loadingOffset ) >= 0 ) && 
-                            ( rect.left <= ( window.innerWidth || document.documentElement.clientWidth ) + loadingOffset ) && ( ( rect.left + rect.width + loadingOffset ) >= 0 ) 
-    
-                        );
-    
-                    };
-    
-                    var scrollHandler = function( e ) {
-    
-                        if ( intersectionWithViewport() === true ) {
-    
-                            window[ removeListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
-
-                            loadImages();
-    
-                        }
-                        
-                    };
-    
-                    window[ eventListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
-    
-                    scrollHandler();
-    
-                }
+                addIntersectionOberserver( true, start );
     
             }
 
@@ -1260,131 +1225,172 @@ THE SOFTWARE.
         //---
 
         function render( timestamp ) {
+
+            var allowRendering = true;
             
             if ( paused === true ) {
 
-                return;
+                allowRendering = false;
 
             }
 
-            if ( pointerActive === true ) {
+            if ( settings.sleepMode === true && viewportIntersection === false ) {
 
-                if ( settings.followEasingFactor === 0 ) {
+                allowRendering = false;
 
-                    sliderPosition.x = pointerPosition.x;
-                    sliderPosition.y = pointerPosition.y;
+            }
 
-                } else {
+            if ( allowRendering === true ) {
 
-                    sliderPosition.x += ( pointerPosition.x - sliderPosition.x ) / settings.followEasingFactor;
-                    sliderPosition.y += ( pointerPosition.y - sliderPosition.y ) / settings.followEasingFactor;
+                if ( pointerActive === true ) {
+
+                    if ( settings.followEasingFactor === 0 ) {
+
+                        sliderPosition.x = pointerPosition.x;
+                        sliderPosition.y = pointerPosition.y;
+
+                    } else {
+
+                        sliderPosition.x += ( pointerPosition.x - sliderPosition.x ) / settings.followEasingFactor;
+                        sliderPosition.y += ( pointerPosition.y - sliderPosition.y ) / settings.followEasingFactor;
+
+                    }
+
+                    tweenToggle = null;
 
                 }
 
-                tweenToggle = null;
+                if ( pointerActive === false && settings.autoAnimation === true ) {
 
-            }
+                    if ( animationTime === 0 ) {
 
-            if ( pointerActive === false && settings.autoAnimation === true ) {
+                        var from = 0;
+                        var to = 0;
 
-                if ( animationTime === 0 ) {
+                        if ( settings.orientation === orientation.HORIZONTAL ) {
 
-                    var from = 0;
-                    var to = 0;
+                            if ( tweenToggle === null ) {
 
-                    if ( settings.orientation === orientation.HORIZONTAL ) {
+                                from = sliderPosition.x;
 
-                        if ( tweenToggle === null ) {
+                                if ( sliderPosition.x >= element.offsetWidth / 2 ) {
 
-                            from = sliderPosition.x;
+                                    to = tweenEndPosX;
 
-                            if ( sliderPosition.x >= element.offsetWidth / 2 ) {
+                                    tweenToggle = true;
 
-                                to = tweenEndPosX;
+                                } else {
 
-                                tweenToggle = true;
+                                    to = tweenStartPosX;
 
-                            } else {
+                                    tweenToggle = false;
 
-                                to = tweenStartPosX;
+                                }
 
-                                tweenToggle = false;
+                                var dist = Math.abs( getDistance( sliderPosition.x, element.offsetWidth / 2, 0, 0 ) );
+                                var distPercent = 1 - dist / ( element.offsetWidth / 2 );
 
-                            }
-
-                            var dist = Math.abs( getDistance( sliderPosition.x, element.offsetWidth / 2, 0, 0 ) );
-                            var distPercent = 1 - dist / ( element.offsetWidth / 2 );
-
-                            animationTimeMaxCalc = animationTimeMax * distPercent;
-
-                        } else {
-
-                            animationTimeMaxCalc = animationTimeMax;
-
-                            if ( tweenToggle === true ) {
-
-                                from = tweenEndPosX;
-                                to = tweenStartPosX;
+                                animationTimeMaxCalc = animationTimeMax * distPercent;
 
                             } else {
 
-                                from = tweenStartPosX;
-                                to = tweenEndPosX;
+                                animationTimeMaxCalc = animationTimeMax;
+
+                                if ( tweenToggle === true ) {
+
+                                    from = tweenEndPosX;
+                                    to = tweenStartPosX;
+
+                                } else {
+
+                                    from = tweenStartPosX;
+                                    to = tweenEndPosX;
+
+                                }
+
+                                tweenToggle = !tweenToggle;
 
                             }
 
-                            tweenToggle = !tweenToggle;
+                            tween.init( [ { from: from, to: to, property: 'x' } ], animationTimeMaxCalc );
+
+                        } else if ( settings.orientation === orientation.VERTICAL ) {
+
+                            if ( tweenToggle === null ) {
+
+                                from = sliderPosition.y;
+
+                                if ( sliderPosition.y >= element.offsetHeight / 2 ) {
+
+                                    to = tweenEndPosY;
+
+                                    tweenToggle = true;
+
+                                } else {
+
+                                    to = tweenStartPosY;
+
+                                    tweenToggle = false;
+
+                                }
+
+                                var dist = Math.abs( getDistance( 0, 0, sliderPosition.y, element.offsetHeight / 2 ) );
+                                var distPercent = 1 - dist / ( element.offsetHeight / 2 );
+
+                                animationTimeMaxCalc = animationTimeMax * distPercent;
+
+                            } else {
+
+                                animationTimeMaxCalc = animationTimeMax;
+
+                                if ( tweenToggle === true ) {
+
+                                    from = tweenEndPosY;
+                                    to = tweenStartPosY;
+
+                                } else {
+
+                                    from = tweenStartPosY;
+                                    to = tweenEndPosY;
+
+                                }
+
+                                tweenToggle = !tweenToggle;
+
+                            }
+
+                            tween.init( [ { from: from, to: to, property: 'y' } ], animationTimeMaxCalc );
 
                         }
 
-                        tween.init( [ { from: from, to: to, property: 'x' } ], animationTimeMaxCalc );
+                    }
 
-                    } else if ( settings.orientation === orientation.VERTICAL ) {
+                    //---
 
-                        if ( tweenToggle === null ) {
+                    if ( animationTime >= 0 ) {
 
-                            from = sliderPosition.y;
+                        tween.run( animationTime );
 
-                            if ( sliderPosition.y >= element.offsetHeight / 2 ) {
+                        animationTime += animationTimeSpeed;
 
-                                to = tweenEndPosY;
+                    }
 
-                                tweenToggle = true;
+                    if ( animationTime > animationTimeMaxCalc ) {
 
-                            } else {
+                        animationTime = -1;
+                        animationPauseTime = settings.autoAnimationPause;
 
-                                to = tweenStartPosY;
+                    }
 
-                                tweenToggle = false;
+                    if ( animationTime === -1 ) {
 
-                            }
+                        animationPauseTime -= animationTimeSpeed;
 
-                            var dist = Math.abs( getDistance( 0, 0, sliderPosition.y, element.offsetHeight / 2 ) );
-                            var distPercent = 1 - dist / ( element.offsetHeight / 2 );
+                    }
 
-                            animationTimeMaxCalc = animationTimeMax * distPercent;
+                    if ( animationPauseTime <= 0 && animationTime === -1 ) {
 
-                        } else {
-
-                            animationTimeMaxCalc = animationTimeMax;
-
-                            if ( tweenToggle === true ) {
-
-                                from = tweenEndPosY;
-                                to = tweenStartPosY;
-
-                            } else {
-
-                                from = tweenStartPosY;
-                                to = tweenEndPosY;
-
-                            }
-
-                            tweenToggle = !tweenToggle;
-
-                        }
-
-                        tween.init( [ { from: from, to: to, property: 'y' } ], animationTimeMaxCalc );
+                        animationTime = 0;
 
                     }
 
@@ -1392,75 +1398,46 @@ THE SOFTWARE.
 
                 //---
 
-                if ( animationTime >= 0 ) {
+                if ( settings.orientation === orientation.HORIZONTAL ) {
 
-                    tween.run( animationTime );
+                    if ( sliderPosition.x > element.offsetWidth ) {
 
-                    animationTime += animationTimeSpeed;
+                        sliderPosition.x = element.offsetWidth;
 
-                }
+                    } else if ( sliderPosition.x < 1 ) {
 
-                if ( animationTime > animationTimeMaxCalc ) {
+                        sliderPosition.x = 1;
 
-                    animationTime = -1;
-                    animationPauseTime = settings.autoAnimationPause;
+                    }
 
-                }
+                    imageLft.style.width = sliderPosition.x + 'px';
 
-                if ( animationTime === -1 ) {
+                    if ( dragger !== null ) {
 
-                    animationPauseTime -= animationTimeSpeed;
+                        dragger.style.left = ( sliderPosition.x - dragger.offsetWidth / 2 ) + 'px';
 
-                }
+                    }
+                    
 
-                if ( animationPauseTime <= 0 && animationTime === -1 ) {
+                } else if ( settings.orientation === orientation.VERTICAL ) {
 
-                    animationTime = 0;
+                    if ( sliderPosition.y > element.offsetHeight ) {
 
-                }
+                        pointerPosliderPositionsition.y = element.offsetHeight;
 
-            }
+                    } else if ( sliderPosition.y < 1 ) {
 
-            //---
+                        sliderPosition.y = 1;
 
-            if ( settings.orientation === orientation.HORIZONTAL ) {
+                    }
 
-                if ( sliderPosition.x > element.offsetWidth ) {
+                    imageLft.style.height = sliderPosition.y + 'px';
 
-                    sliderPosition.x = element.offsetWidth;
+                    if ( dragger !== null ) {
 
-                } else if ( sliderPosition.x < 1 ) {
+                        dragger.style.top = ( sliderPosition.y - dragger.offsetHeight / 2 ) + 'px';
 
-                    sliderPosition.x = 1;
-
-                }
-
-                imageLft.style.width = sliderPosition.x + 'px';
-
-                if ( dragger !== null ) {
-
-                    dragger.style.left = ( sliderPosition.x - dragger.offsetWidth / 2 ) + 'px';
-
-                }
-                
-
-            } else if ( settings.orientation === orientation.VERTICAL ) {
-
-                if ( sliderPosition.y > element.offsetHeight ) {
-
-                    pointerPosliderPositionsition.y = element.offsetHeight;
-
-                } else if ( sliderPosition.y < 1 ) {
-
-                    sliderPosition.y = 1;
-
-                }
-
-                imageLft.style.height = sliderPosition.y + 'px';
-
-                if ( dragger !== null ) {
-
-                    dragger.style.top = ( sliderPosition.y - dragger.offsetHeight / 2 ) + 'px';
+                    }
 
                 }
 
@@ -1609,6 +1586,103 @@ THE SOFTWARE.
 
         aics.controlThisSlider = controlThisSlider;
         aics.controlOtherSliders = controlOtherSliders;
+
+        //---
+
+        function addIntersectionOberserver( autoUnobserve, callback ) {
+
+            autoUnobserve = ( typeof autoUnobserve !== 'undefined' ) ? autoUnobserve : false;
+
+            var isIntersectionObserverAvailable = !!window.IntersectionObserver;
+    
+            if ( isIntersectionObserverAvailable === true ) {
+
+                var intersectionHandler = function( elements, observer ) {
+
+                    var element = elements[ 0 ];
+
+                    viewportIntersection = element.isIntersecting;
+
+                    if ( viewportIntersection === true ) {
+
+                        if ( autoUnobserve === true ) {
+
+                            intersectionObserver.unobserve( element.target );
+
+                        }
+
+                        if ( callback ) {
+
+                            callback();
+
+                        }
+
+                    }
+                    
+                };
+
+                var intersectionObserver = new IntersectionObserver( intersectionHandler, { 
+                    
+                    rootMargin: settings.viewportOffset + ' ' + settings.viewportOffset + ' ' + settings.viewportOffset + ' ' + settings.viewportOffset 
+                
+                } );
+
+                intersectionObserver.observe( element );
+
+            } else {
+
+                var viewportOffset = parseInt( settings.viewportOffset.slice( 0, settings.viewportOffset.indexOf( 'px' ) ) );
+
+                var intersectionWithViewport = function() {
+
+                    var rect = element.getBoundingClientRect();
+
+                    return ( 
+
+                        ( rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) + viewportOffset ) && ( ( rect.top + rect.height + viewportOffset ) >= 0 ) && 
+                        ( rect.left <= ( window.innerWidth || document.documentElement.clientWidth ) + viewportOffset ) && ( ( rect.left + rect.width + viewportOffset ) >= 0 ) 
+
+                    );
+
+                };
+
+                var scrollHandler = function( e ) {
+
+                    viewportIntersection = intersectionWithViewport();
+
+                    if ( viewportIntersection === true ) {
+
+                        if ( autoUnobserve === true ) {
+
+                            window[ removeListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
+
+                        }
+
+                        if ( callback ) {
+
+                            callback();
+
+                        }
+
+                    }
+                    
+                };
+
+                window[ eventListener ]( eventType ? 'onscroll' : 'scroll', scrollHandler );
+
+                scrollHandler();
+
+            }
+
+        }
+
+        function intersectsViewport() {
+
+            return viewportIntersection;
+
+        }
+
+        aics.intersectsViewport = intersectsViewport;
 
         //---
 
