@@ -314,9 +314,27 @@
                 $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'controlByExternalSource', false );
 
             } );
+
+
             
+
+
+            // $( '#any-image-comparison-slider-28' ).anyImageComparisonSlider( { backgroundColor: '#f7f7e9' } );
+
+            // setInterval( function() { 
+                
+            //     $( '#any-image-comparison-slider-28' ).anyImageComparisonSlider( 'getPos', function( v ) { $( '#slider-position-output' ).text( 'Slider Position: ' + ( Math.round( parseFloat( v ) * 100 ) ).toString() + '%' ) } ); 
             
-            
+            // }, 100 );
+
+
+            var anyImageComparisonSlider28 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-28' ) );
+
+            setInterval( function() { 
+
+                document.getElementById( 'slider-position-output' ).innerHTML = 'Slider Position: ' + ( Math.round( parseFloat( anyImageComparisonSlider28.getPos() ) * 100 ) ).toString() + '%';
+
+            }, 100 );
             
 
             // console.log('---------');
@@ -3386,88 +3404,78 @@ $( '#range-slider' ).on( 'change', function( e ) {
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            In this example we see a slider that the user cannot interact with. It only runs automatically and cannot be operated. In addition to this change, this slider has a different speed than the standard slider, does not pause between direction changes and applies a different easing to the animation.
+                            Here we see a standard slider where we use JavaScript/jQuery to display the current position of the dividing line in percent.
                         </p>
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-28" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#f7f7e9" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 3px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="6" data-auto-animation-pause="0" data-auto-animation-easing="inOutSine" data-control-others="false" data-controlled-by-others="false" data-controlled-reverse="false" data-group="g12" data-group-sync="false" data-loading="lazy" data-viewport-offset="100px" data-sleep-mode="true">
+                        <div id="any-image-comparison-slider-28" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#f7f7e9" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-reverse="false" data-group="g15" data-group-sync="false" data-loading="lazy" data-viewport-offset="100px" data-sleep-mode="true">
                             <div class="images">
-                                <div class="image-rgt" data-src="./img/flooding_brahmaputra_bangladesh_20200716_103b_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
-                                <div class="image-lft" data-src="./img/flooding_brahmaputra_bangladesh_20200517_2278_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
+                                <div class="image-rgt" data-src="./img/port_beirut_lebanon_s3_20200805T083844Z_rgb_3840_16by9_geo-1-web.jpg" data-width="1200" data-height="900"></div>
+                                <div class="image-lft" data-src="./img/port_beirut_lebanon_s112_20200531T081734Z_rgb_3840_16by9_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                             </div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
-
-                    
-                    
+                    <div class="row pb-3">
+                        <div class="col mx-auto">
+                            <div class="text-center">
+                                <strong id="slider-position-output" class="block-headline">Slider Position: 0%</strong> 
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Let's look at how we can deactivate the interaction with the slider and how we can adjust speed, pause time and easing.
+                            How do we achive that?
                             <br/>
-                            We do this either by the data attributes data-cursor, data-dividing-line and data-auto-animation: 
+                            In both following code examples we initialize the slider first. After that we set an interval that accesses the method getPos from the slider every 100ms. We modify the position value we recieved a bit for a nicer presentation and then output it in a text field.
+                            <br/>
+                            First, let's have a look at the whole thing in pure JavaScript:
                         </p>
                     </div>
+
                     <div class="code-block row">
-                        <pre><code class="language-html">
-data-auto-animation=&quot;false&quot;
+                        <pre><code class="language-javascript">
+var anyImageComparisonSlider28 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-28' ) );
+
+setInterval( function() { 
+
+    document.getElementById( 'slider-position-output' ).innerHTML = 'Slider Position: ' + ( Math.round( parseFloat( anyImageComparisonSlider28.getPos() ) * 100 ) ).toString() + '%';
+
+}, 100 );
                         </code></pre>
                     </div>
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>Or we can do it using the settings object and the properties cursor, dividingLine and autoAnimation: 
+                            <br/>
+                            Same same in jQuery:
                         </p>
                     </div>
+
                     <div class="code-block row">
                         <pre><code class="language-javascript">
-autoAnimation: false
+$( '#any-image-comparison-slider-28' ).anyImageComparisonSlider();
+
+setInterval( function() { 
+
+    $( '#any-image-comparison-slider-28' ).anyImageComparisonSlider( 'getPos', function( v ) { $( '#slider-position-output' ).text( 'Slider Position: ' + ( Math.round( parseFloat( v ) * 100 ) ).toString() + '%' ) } ); 
+
+}, 100 );
                         </code></pre>
                     </div>
+                       
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>The autoAnimation property is activated by default. If we deactivate the property with false, as in this example, we forbid the slider to animate the dividing line automatically by itself.
-                            <br/><br/>
-                            And here is the complete code for this example:
+                            <br/>
+                            Because this is a standard slider already known to us and we have processed the JavaScript/jQuery part completely, we are done and do not need any further code summary for this example.
                         </p>
                     </div>
 
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">HTML</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-html">
-&lt;div id=&quot;aics-28&quot; data-cursor=&quot;grab&quot; data-dividing-line=&quot;solid 3px rgba(255, 255, 255, 0.5)&quot;&gt;
-    &lt;div class=&quot;images&quot;&gt;
-        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-                        </code></pre>
-                    </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">JavaScript</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-javascript">
-new AnyImageComparisonSlider( document.getElementById( 'aics-28' ) );
-                        </code></pre>
-                    </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">jQuery</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-javascript">
-$( '#aics-28' ).anyImageComparisonSlider();
-                        </code></pre>
-                    </div>
 
 
 

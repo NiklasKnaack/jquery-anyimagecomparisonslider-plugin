@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '1.0.0';
+    var AICS_VERSION = '1.0.1';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -1787,11 +1787,11 @@ THE SOFTWARE.
 
             if ( settings.orientation === orientation.HORIZONTAL ) {
 
-                return getPercentagePosition( pointerPosition.x, element.offsetWidth ).v;
+                return getPercentagePosition( sliderPosition.x, element.offsetWidth ).v;
 
             } else if ( settings.orientation === orientation.VERTICAL ) {
 
-                return getPercentagePosition( pointerPosition.y, element.offsetHeight ).v;
+                return getPercentagePosition( sliderPosition.y, element.offsetHeight ).v;
 
             }
 
