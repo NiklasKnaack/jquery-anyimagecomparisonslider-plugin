@@ -52,7 +52,7 @@ THE SOFTWARE.
             settings.autoAnimationEasing = 'inOutCubic';
             settings.controlOthers = false;
             settings.controlledByOthers = false;
-            settings.controlledByOthersReverse = false;
+            settings.controlledReverse = false;
             settings.group = '';
             settings.groupSync = false;
             settings.loading = 'lazy';
@@ -140,9 +140,9 @@ THE SOFTWARE.
 
                 settings.controlledByOthers = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-controlled-by-others-reverse' ) {
+            } else if ( dataAttributes[ i ].nodeName === 'data-controlled-reverse' ) {
 
-                settings.controlledByOthersReverse = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
+                settings.controlledReverse = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
 
             } else if ( dataAttributes[ i ].nodeName === 'data-group' ) {
 
@@ -226,9 +226,9 @@ THE SOFTWARE.
 
         }
 
-        if ( settings.width.indexOf( 'px' ) < 0 && settings.width.indexOf( '%' ) < 0 ) {
+        if ( settings.width.indexOf( 'px' ) < 0 && settings.width.indexOf( 'pt' ) < 0 && settings.width.indexOf( '%' ) < 0 && settings.width.indexOf( 'em' ) < 0 && settings.width.indexOf( 'vw' ) < 0 ) {
 
-            throwError( 'width must be given in px or %' );
+            throwError( 'width must be given in px, pt, %, em or vw' );
 
         }
 
@@ -384,9 +384,9 @@ THE SOFTWARE.
 
         }
 
-        if ( typeof settings.controlledByOthersReverse !== 'boolean' ) {
+        if ( typeof settings.controlledReverse !== 'boolean' ) {
 
-            throwError( 'controlledByOthersReverse must be of type boolean' );
+            throwError( 'controlledReverse must be of type boolean' );
 
         }
 
@@ -1172,7 +1172,7 @@ THE SOFTWARE.
 
         function getPositionFromPercentageValue( position, size ) {
 
-            if ( settings.controlledByOthersReverse === true ) {
+            if ( settings.controlledReverse === true ) {
 
                 position = 1 - position;
 
