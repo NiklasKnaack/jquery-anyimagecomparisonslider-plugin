@@ -133,9 +133,9 @@
 
             } );
 
-            $( '.goto-download' ).click( function() {
+            $( '.goto-setup' ).click( function() {
 
-                scrollToElement( $( '#download .headline' ) );
+                scrollToElement( $( '#setup .headline' ) );
 
                 return false;
 
@@ -358,7 +358,7 @@
                             <strong class="sub-headline-text">Navigation</strong> 
                             <ul class="list-unstyled">
                                 <li></li><a href="#" class="text-muted goto-quickstart">Quickstart</a></li>
-                                <li></li><a href="#" class="text-muted goto-download">Download</a></li>
+                                <li></li><a href="#" class="text-muted goto-setup">Setup</a></li>
                                 <li></li><a href="#" class="text-muted goto-introduction">Introdution</a></li>
                                 <li></li><a href="#" class="text-muted goto-configuration">Configuration</a></li>
                                 <li></li><a href="#" class="text-muted goto-examples">Examples</a></li>
@@ -412,11 +412,11 @@
                     </p>
                     <p>
                     <a href="#" class="btn goto-quickstart btn-secondary my-2">Quickstart</a>
-                    <a href="#" class="btn goto-download btn-secondary my-2">Download</a>
+                    <a href="#" class="btn goto-setup btn-secondary my-2">Setup</a>
                     <a href="#" class="btn goto-introduction btn-secondary my-2">Introdution</a>
                     <a href="#" class="btn goto-configuration btn-secondary my-2">Configuration</a>
                     <a href="#" class="btn goto-examples btn-secondary my-2">Examples</a>
-                    <!-- <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/raw/master/js/jquery.anyimagecomparisonslider.min.js" class="btn btn-secondary my-2">Download</a> -->
+                    <!-- <a href="https://github.com/NiklasKnaack/jquery-anyimagecomparisonslider-plugin/raw/master/js/jquery.anyimagecomparisonslider.min.js" class="btn btn-secondary my-2">setup</a> -->
                     </p>
                 </div>
             </section>
@@ -554,11 +554,11 @@ $( '#aics' ).anyImageComparisonSlider();
 
 
 
-            <div id="download" class="block pb-5">
+            <div id="setup" class="block pb-5">
                 <div class="container">
                     <div class="headline row d-flex align-items-end">
                         <strong class="headline-number">2.</strong>
-                        <p class="headline-text">Download & Installation</p>
+                        <p class="headline-text">Setup</p>
                     </div>
                     <div class="sub-headline row pt-5">
                         <strong class="block-headline pb-3">Download</strong> 
@@ -577,7 +577,43 @@ $( '#aics' ).anyImageComparisonSlider();
                             <br/><br/>
                             Just click on the links. You will be directed to the corresponding file. Now click on file in your browser menu and then click on "save as..." or on "save page as..." and save the file in your project folder. 
                             Or simply use the key combination CTRL + S to save the file.
-                            <br/><br/>
+                        </p>
+                    </div>
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="block-headline pb-3">Install</strong> 
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            Install it via Package Managers:
+                        </p>
+                    </div>
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">NPM</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+npm install jquery-anyimagecomparisonslider-plugin --save
+                        </code></pre>
+                    </div>
+                    <div class="sub-headline row">
+                        <strong class="sub-headline-text">YARN</strong> 
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+yarn add jquery-anyimagecomparisonslider-plugin
+                        </code></pre>
+                    </div>
+
+
+
+                    <div class="sub-headline row pt-5">
+                        <strong class="block-headline pb-3">Embed</strong> 
+                    </div>
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
                             After you have downloaded the file and placed it in your project, you just have to embed it in your page:
                         </p>
                     </div>
@@ -602,7 +638,7 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <br/>
-                            jquery.anyimagecomparisonslider.min.js & jquery.anyimagecomparisonslider.js are also available on <a href="https://www.jsdelivr.com/" target="_blank">jsDelivr</a> via <a href="https://www.npmjs.com/package/jquery-anyimagecomparisonslider-plugin" target="_blank">npm</a>.
+                            jquery.anyimagecomparisonslider.min.js & jquery.anyimagecomparisonslider.js are also available on <a href="https://www.jsdelivr.com/" target="_blank">jsDelivr</a> via <a href="https://www.npmjs.com/package/jquery-anyimagecomparisonslider-plugin" target="_blank">npm</a> and can be embedded per CDN.
                         </p>
                     </div>
 
@@ -612,31 +648,7 @@ $( '#aics' ).anyImageComparisonSlider();
                         </code></pre>
                     </div>
 
-                    <div class="sub-headline row pt-5">
-                        <strong class="block-headline pb-3">Installation</strong> 
-                    </div>
-
-                    <div class="content row d-flex align-items-end">
-                        <p class="text-muted">
-                            Install it via Package Managers:
-                        </p>
-                    </div>
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">NPM</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-html">
-npm install jquery-anyimagecomparisonslider-plugin --save
-                        </code></pre>
-                    </div>
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">YARN</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-html">
-yarn add jquery-anyimagecomparisonslider-plugin
-                        </code></pre>
-                    </div>
+                    
                 </div> 
             </div>
 
@@ -2934,7 +2946,7 @@ $( '#aics-24' ).anyImageComparisonSlider();
                     </div>
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            In this example we get to see a slider with which no interaction is possible. This slider runs only automatically and cannot be operated. In addition to this change, this slider has a different speed than the standard slider, does not pause between direction changes and applies a different easing to the animation.
+                            In this example we see a slider that the user cannot interact with. It only runs automatically and cannot be operated. In addition to this change, this slider has a different speed than the standard slider, does not pause between direction changes and applies a different easing to the animation.
                         </p>
                     </div>
 

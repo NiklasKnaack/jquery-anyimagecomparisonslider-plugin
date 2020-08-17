@@ -66,6 +66,11 @@ body {
     -o-user-select: none;
 }
 
+.navbar .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .navbar .container {
     background-color: rgb(34, 26, 5);
     padding: 0 0 0 0;
