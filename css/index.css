@@ -130,9 +130,9 @@ body {
     letter-spacing: -1px;
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    padding: 0 50px;
+    /* padding: 0 50px; */
     color: #000;
-    line-height: 6rem;
+    /* line-height: 6rem; */
 }
 
 .jumbotron p {

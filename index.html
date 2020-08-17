@@ -204,7 +204,7 @@
 
             };
 
-            console.log( AnyImageComparisonSlider.VERSION );
+            console.log( 'any Image Comparison Slider Version: ', AnyImageComparisonSlider.VERSION );
 
             //------------------------------------------------------------------------
 
@@ -213,11 +213,6 @@
             //jQuery
             //$( '#any-image-comparison-slider' ).anyImageComparisonSlider( settings );
             //$( '#any-image-comparison-slider' ).anyImageComparisonSlider();
-            //$( '#any-image-comparison-slider-2' ).anyImageComparisonSlider();
-            //$( '#any-image-comparison-slider-3' ).anyImageComparisonSlider();
-            //$( '#any-image-comparison-slider-4' ).anyImageComparisonSlider();
-            //$( '#any-image-comparison-slider-5' ).anyImageComparisonSlider();
-            //$( '#any-image-comparison-slider-6' ).anyImageComparisonSlider();
 
             //js
             //var anyImageComparisonSlider = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider' ), settings );
@@ -344,7 +339,7 @@
                     <div class="row pt-4">
                         <div class="col-sm-12 col-md-6">
                             <strong class="sub-headline-text">About</strong> 
-                            <p class="text-muted">Hi. Just for a second. I am Niklas. I am the developer behind this little plugin. With this page I want to help you how to use the plugin and show you with the help of some examples how you can get the maximum out of it.</p>
+                            <p class="text-muted">Hi. Just for a second. I am Niklas. I'm the developer behind this. With this page I want to help you how to use the slider and show you with the help of some examples and a detailed documentation how you can get the maximum out of it.</p>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3">
                             <strong class="sub-headline-text">Navigation</strong> 
@@ -386,6 +381,7 @@
             <section class="jumbotron text-center">
                 <div class="container">
                     <strong class="sub-headline-text">Welcome</strong>
+                    <br/><br/>
                     <p class="text-muted">
                         Hi, and welcome. I'm glad you're here.
                         <br/>
@@ -434,7 +430,7 @@
                         </p>
                     </div>
                     <div class="row mb-3">
-                        <div id="any-image-comparison-slider-1" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g1" data-group-sync="false">
+                        <div id="any-image-comparison-slider-1" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g1" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/port_beirut_lebanon_s3_20200805T083844Z_rgb_3840_16by9_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/port_beirut_lebanon_s112_20200531T081734Z_rgb_3840_16by9_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -569,8 +565,6 @@ $( '#aics' ).anyImageComparisonSlider();
                             Just click on the links. You will be directed to the corresponding file. Now click on file in your browser menu and then click on "save as..." or on "save page as..." and save the file in your project folder. 
                             Or simply use the key combination CTRL + S to save the file.
                             <br/><br/>
-                            jquery.anyimagecomparisonslider.min.js & jquery.anyimagecomparisonslider.js are also available on <a href="https://www.jsdelivr.com/" target="_blank">jsDelivr</a> and <a href="https://cdnjs.com/" target="_blank">cdnjs.com</a>
-                            <br/><br/>
                             After you have downloaded the file and placed it in your project, you just have to embed it in your page:
                         </p>
                     </div>
@@ -582,12 +576,28 @@ $( '#aics' ).anyImageComparisonSlider();
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <br/>
-                            <i>Please note, if you want to use the plugin together with jQuery, then implement the slider script behind jQuery.</i>
+                            <i>Please note, if you want to use the slider together with jQuery, then implement the slider script behind jQuery:</i>
+                        </p>
+                    </div>
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;script src='./path/jquery-3.4.1.min.js'&gt;&lt;/script&gt;
+&lt;script src='./path/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            jquery.anyimagecomparisonslider.min.js & jquery.anyimagecomparisonslider.js are also available on <a href="https://www.jsdelivr.com/" target="_blank">jsDelivr</a>.
                         </p>
                     </div>
 
-
-
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;script src='https://cdn.jsdelivr.net/npm/package@1.0.0/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
+                        </code></pre>
+                    </div>
 
                     <div class="sub-headline row pt-5">
                         <strong class="block-headline pb-3">Installation</strong> 
@@ -646,7 +656,7 @@ yarn add jquery-anyimagecomparisonslider-plugin
                         </p>
                     </div>
                     <div class="row mb-3">
-                        <div id="any-image-comparison-slider-2" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#ffffff" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g2" data-group-sync="false">
+                        <div id="any-image-comparison-slider-2" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#ffffff" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g2" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-btm" data-src="./img/glacier-debris-20161008-full.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-top" data-src="./img/glacier-debris-20161008-compare-full.jpg" data-width="1200" data-height="900"></div>
@@ -1601,8 +1611,8 @@ $( '#aics' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v 
                     </div>
 
                     <div class="multible row">
-                        <div class="col-sm-6 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-3" data-initial-position="0" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g3" data-group-sync="true">
+                        <div class="col-6 pr-1">
+                            <div id="any-image-comparison-slider-3" data-initial-position="0" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g3" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/milne_ice_shelf_20200726_105c_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/milne_ice_shelf_20200731_1049_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
@@ -1610,8 +1620,8 @@ $( '#aics' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v 
                             </div>
                             
                         </div>
-                        <div class="col-sm-6 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-4" data-initial-position="0" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g3" data-group-sync="true">
+                        <div class="col-6 pl-1">
+                            <div id="any-image-comparison-slider-4" data-initial-position="0" data-orientation="horizontal" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="10" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g3" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/dust_south_africa_20200716_1018_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/dust_south_africa_20200705_0f02_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1750,8 +1760,8 @@ $( '#aics-4' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="multible row">
-                        <div class="col-sm-6 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-5" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true">
+                        <div class="col-6 pr-1">
+                            <div id="any-image-comparison-slider-5" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/milne_ice_shelf_20200731_1049_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/milne_ice_shelf_20200726_105c_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1759,8 +1769,8 @@ $( '#aics-4' ).anyImageComparisonSlider();
                             </div>
                             
                         </div>
-                        <div class="col-sm-6 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-6" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true">
+                        <div class="col-6 pl-1">
+                            <div id="any-image-comparison-slider-6" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/dust_south_africa_20200716_1018_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/dust_south_africa_20200705_0f02_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1769,8 +1779,8 @@ $( '#aics-4' ).anyImageComparisonSlider();
                         </div>
                     </div>
                     <div class="multible row pt-2">
-                        <div class="col-sm-6 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-7" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true">
+                        <div class="col-6 pr-1">
+                            <div id="any-image-comparison-slider-7" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/flooding_brahmaputra_bangladesh_20200716_103b_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/flooding_brahmaputra_bangladesh_20200517_2278_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1778,8 +1788,8 @@ $( '#aics-4' ).anyImageComparisonSlider();
                             </div>
                             
                         </div>
-                        <div class="col-sm-6 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-8" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true">
+                        <div class="col-6 pl-1">
+                            <div id="any-image-comparison-slider-8" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g4" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/nishinoshima_s3_20200624T013253Z_rgb_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/nishinoshima_s03_20161027T002621Z_rgb_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1934,8 +1944,8 @@ $( '#aics-8' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="multible row">
-                        <div class="col-sm-4 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-9" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pr-1">
+                            <div id="any-image-comparison-slider-9" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/milne_ice_shelf_20200731_1049_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/milne_ice_shelf_20200726_105c_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1943,16 +1953,16 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             </div>
                             
                         </div>
-                        <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-10" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pl-1">
+                            <div id="any-image-comparison-slider-10" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/dust_south_africa_20200716_1018_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/dust_south_africa_20200705_0f02_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-11" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pl-1">
+                            <div id="any-image-comparison-slider-11" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/flooding_brahmaputra_bangladesh_20200716_103b_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/flooding_brahmaputra_bangladesh_20200517_2278_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1961,8 +1971,8 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         </div>
                     </div>
                     <div class="multible row pt-2">
-                        <div class="col-sm-4 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-12" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pr-1">
+                            <div id="any-image-comparison-slider-12" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/tyson_foods_pasco_wa_s108_20200430T213525Z_1920_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/tyson_foods_pasco_wa_NAIP_20150625_1920_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1970,16 +1980,16 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             </div>
                             
                         </div>
-                        <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-13" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pl-1">
+                            <div id="any-image-comparison-slider-13" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/SFO_s106_20200330T215157Z_1080_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/SFO_s109_20200209T214620Z_1080_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-14" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pl-1">
+                            <div id="any-image-comparison-slider-14" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/riyadh_season_20190825_1057_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/riyadh_season_20191021_105c_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1988,8 +1998,8 @@ $( '#aics-8' ).anyImageComparisonSlider();
                         </div>
                     </div>
                     <div class="multible row pt-2">
-                        <div class="col-sm-4 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-15" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pr-1">
+                            <div id="any-image-comparison-slider-15" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/blue_mountains_fires_20191118_1057_gallery-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/blue_mountains_fires_20191216_1061_gallery-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -1997,16 +2007,16 @@ $( '#aics-8' ).anyImageComparisonSlider();
                             </div>
                             
                         </div>
-                        <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-16" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pl-1">
+                            <div id="any-image-comparison-slider-16" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ns-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/islam_qala_s106_20200426T092058Z_1920_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/islam_qala_s106_20200221T092924Z_1920_geo-2-web.jpg" data-width="1200" data-height="900"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-17" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true">
+                        <div class="col-4 pl-1">
+                            <div id="any-image-comparison-slider-17" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g5" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/port_beirut_lebanon_s3_20200805T083844Z_rgb_3840_16by9_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/port_beirut_lebanon_s112_20200531T081734Z_rgb_3840_16by9_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2205,8 +2215,8 @@ $( '#aics-17' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="multible row">
-                        <div class="col-sm-6 col-xs-3 pr-1">
-                            <div id="any-image-comparison-slider-18" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="true" data-group="g6" data-group-sync="true">
+                        <div class="col-6 pr-1">
+                            <div id="any-image-comparison-slider-18" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="true" data-group="g6" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/nishinoshima_s3_20200624T013253Z_rgb_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/nishinoshima_s03_20161027T002621Z_rgb_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2214,8 +2224,8 @@ $( '#aics-17' ).anyImageComparisonSlider();
                             </div>
                             
                         </div>
-                        <div class="col-sm-6 col-xs-3 pl-1">
-                            <div id="any-image-comparison-slider-19" data-orientation="horizontal" data-initial-position="1" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="true" data-group="g6" data-group-sync="true">
+                        <div class="col-6 pl-1">
+                            <div id="any-image-comparison-slider-19" data-orientation="horizontal" data-initial-position="1" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="5" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="true" data-controlled-by-others="true" data-controlled-by-others-reverse="true" data-group="g6" data-group-sync="true" data-loading="lazy" data-loading-offset="100px">
                                 <div class="images">
                                     <div class="image-rgt" data-src="./img/nishinoshima_s3_20200624T013253Z_rgb_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                     <div class="image-lft" data-src="./img/nishinoshima_s03_20161027T002621Z_rgb_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2329,7 +2339,7 @@ $( '#aics-19' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-20" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="none" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g7" data-group-sync="false">
+                        <div id="any-image-comparison-slider-20" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="none" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g7" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/tyson_foods_pasco_wa_s108_20200430T213525Z_1920_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/tyson_foods_pasco_wa_NAIP_20150625_1920_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2444,7 +2454,7 @@ $( '#aics-20' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row mt-5">
-                        <div id="any-image-comparison-slider-21" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="row-resize" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g8" data-group-sync="false">
+                        <div id="any-image-comparison-slider-21" data-orientation="vertical" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="row-resize" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g8" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/SFO_s106_20200330T215157Z_1080_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/SFO_s109_20200209T214620Z_1080_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2589,7 +2599,7 @@ $( '#aics-21' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-22" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="url('./img/dragger-h.cur') 22 12, auto" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g9" data-group-sync="false">
+                        <div id="any-image-comparison-slider-22" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="url('./img/dragger-h.cur') 22 12, auto" data-dividing-line="solid 3px rgba(0, 0, 0, 1.0)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g9" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/riyadh_season_20190825_1057_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/riyadh_season_20191021_105c_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2683,7 +2693,7 @@ $( '#aics-22' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-23" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="true" data-cursor="grab" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g10" data-group-sync="false">
+                        <div id="any-image-comparison-slider-23" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="true" data-cursor="grab" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g10" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/blue_mountains_fires_20191118_1057_gallery-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/blue_mountains_fires_20191216_1061_gallery-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2786,7 +2796,7 @@ $( '#aics-23' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-24" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 3px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="false" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g11" data-group-sync="false">
+                        <div id="any-image-comparison-slider-24" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 3px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="false" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g11" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/nishinoshima_s3_20200624T013253Z_rgb_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/nishinoshima_s03_20161027T002621Z_rgb_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2884,7 +2894,7 @@ $( '#aics-24' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-25" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 3px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="false" data-auto-animation="true" data-auto-animation-speed="6" data-auto-animation-pause="0" data-auto-animation-easing="inOutSine" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g12" data-group-sync="false">
+                        <div id="any-image-comparison-slider-25" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 3px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="false" data-auto-animation="true" data-auto-animation-speed="6" data-auto-animation-pause="0" data-auto-animation-easing="inOutSine" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g12" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/flooding_brahmaputra_bangladesh_20200716_103b_rgb_6m_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/flooding_brahmaputra_bangladesh_20200517_2278_rgb_6m_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -2979,7 +2989,7 @@ $( '#aics-25' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <div id="any-image-comparison-slider-26" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g13" data-group-sync="false">
+                        <div id="any-image-comparison-slider-26" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-by-others-reverse="false" data-group="g13" data-group-sync="false" data-loading="lazy" data-loading-offset="100px">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/islam_qala_s106_20200426T092058Z_1920_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/islam_qala_s106_20200221T092924Z_1920_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -3104,7 +3114,7 @@ $( '#aics-26' ).anyImageComparisonSlider();
                     </div>
 
                     <div class="row">
-                        <!-- <div id="any-image-comparison-slider-27" data-orientation="horizontal" data-initial-position="0.5" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="false" data-auto-animation="false" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g14" data-group-sync="false"> -->
+                        <!-- <div id="any-image-comparison-slider-27" data-orientation="horizontal" data-initial-position="0.5" data-width="100%" data-background-color="#000000" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, 0.5)" data-follow-easing-factor="0" data-interactive="false" data-auto-animation="false" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="true" data-controlled-by-others-reverse="false" data-group="g14" data-group-sync="false" data-loading="lazy" data-loading-offset="100px"> -->
                         <div id="any-image-comparison-slider-27">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/fires_corinth_greece_20200724_1020_rgb_4200_geo-1-web.jpg" data-width="1200" data-height="900"></div>
@@ -3307,7 +3317,8 @@ $( '#range-slider' ).on( 'change', function( e ) {
 
             <section class="jumbotron text-center mb-5">
                 <div class="container">
-                    <strong class="sub-headline-text">Yeah. You made it. Congrats!</strong>
+                    <strong class="sub-headline-text text-center">Yeah. You made it. Congrats!</strong>
+                    <br/><br/>
                     <p class="text-muted">
                         If you are reading this you have come a long way and should now be an expert in using the any Image Comparison Slider.
                         <br/><br/>
@@ -3347,7 +3358,7 @@ $( '#range-slider' ).on( 'change', function( e ) {
                     <strong class="sub-headline-text">About</strong> 
                     <ul class="list-unstyled text-small">
                         <li><a href="https://www.niklasknaack.de/">Niklas Knaack</a></li>
-                        <li><a href="https://www.anymotion.de/">anyMOTION </a></li>
+                        <li><a href="https://www.anymotion.de/">anyMOTION</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -3367,7 +3378,6 @@ $( '#range-slider' ).on( 'change', function( e ) {
                         <li><a href="https://twitter.com/niklaswebdev">Twitter</a></li>
                         <li><a href="http://codepen.io/NiklasKnaack/#">CodePen</a></li>
                         <li><a href="https://jsfiddle.net/user/NiklasKnaack/fiddles/">JSFiddle</a></li>
-                        <!-- <li><a href="https://www.dwitter.net/u/Niklas/top">Dwitter</a></li> -->
                     </ul>
                 </div>
                 

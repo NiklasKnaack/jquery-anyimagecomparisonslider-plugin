@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '0.9.99';
+    var AICS_VERSION = '1.0.0';
 
     function AnyImageComparisonSlider( element, params ) {
 
