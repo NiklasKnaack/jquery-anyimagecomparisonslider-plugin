@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '1.0.1';
+    var AICS_VERSION = '1.0.2';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -1369,9 +1369,17 @@ THE SOFTWARE.
 
                     if ( animationTime >= 0 ) {
 
-                        tween.run( animationTime );
+                        if ( tween.props[ 0 ].from !== tween.props[ 0 ].to ) {
 
-                        animationTime += animationTimeSpeed;
+                            tween.run( animationTime );
+
+                            animationTime += animationTimeSpeed;
+
+                        } else {
+
+                            animationTime = animationTimeMaxCalc + 1;
+
+                        }
 
                     }
 
@@ -1423,7 +1431,7 @@ THE SOFTWARE.
 
                     if ( sliderPosition.y > element.offsetHeight ) {
 
-                        pointerPosliderPositionsition.y = element.offsetHeight;
+                        sliderPosition.y = element.offsetHeight;
 
                     } else if ( sliderPosition.y < 1 ) {
 
