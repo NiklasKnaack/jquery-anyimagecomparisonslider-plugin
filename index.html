@@ -3649,7 +3649,13 @@ setInterval( function() {
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            Let's start with the HTML part. We take our default slider and insert the already known div with the class ui. In this ui div you can insert any animation. As you like. In this example I decided to use the roller animation of <a href="https://loading.io/css/" target="_blank">LOADING.IO</a>. There you get the necessary code for the animation which you can insert directly into the ui div and into your CSS with a few small adjustments:
+                            Let's start with the HTML part. We take our default slider and insert the already known div with the class ui. In this ui div you can insert any animation. As you like. In this example I decided to use the roller animation of <a href="https://loading.io/css/" target="_blank">Loading.io</a>. There you get the necessary code for the animation which you can insert directly into the ui div and into your CSS with a few small adjustments:
+                            <br/><br/>
+                            <i>
+                            Please note: Microsoft Internet Explorer version earlier than 10 don't support CSS Animation. Therefore this example does not work on all browsers. 
+                            <br/>
+                            But in case you need to support older browsers, you can simply use an animated gif instead of a CSS loading animation. This way backwards compatibility is not a thing.
+                            </i>
                         </p>
                     </div>
 
@@ -3805,9 +3811,10 @@ setInterval( function() {
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <br/>
-                            Now we have integrated the preloader animation. Now let's have a look how we can remove them when the slider is completely loaded.
+                            Now that we have implemented the preloader animation we want to know how to remove this element when the slider is fully loaded and initialized.
                             <br/>
-                            Let's start with the JavaScript solution as usual:
+                            <br/>
+                            Let's start with the JavaScript solution as usual: 
                         </p>
                     </div>
 
