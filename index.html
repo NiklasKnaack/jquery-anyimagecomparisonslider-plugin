@@ -450,19 +450,37 @@
 
             // setInterval(function(){ $( '#any-image-comparison-slider-27' ).anyImageComparisonSlider( 'getPos', function( v ) { console.log( v ) } ); }, 100);
 
-
+            var timeOut29 = null;
 
             var loadingDone29 = function() {
 
-                setTimeout( function() { 
+                timeOut29 = setTimeout( function() { 
                     
                     document.getElementById( 'lds-wrapper' ).style.display = 'none';
+
+                    timeOut29 = null;
 
                 }, 3000 );
 
             }
 
             var anyImageComparisonSlider29 = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-29' ), { onReady: loadingDone29 } );
+
+            $( '#restart-preloader-animation' ).click( function() {
+
+                if ( timeOut29 !== null ) {
+
+                    clearTimeout( timeOut29 );
+
+                }
+
+                document.getElementById( 'lds-wrapper' ).style.display = 'block';
+
+                loadingDone29();
+
+                return false;
+
+            } );
 
             //------------------------------------------------------------------------
 
@@ -3619,15 +3637,15 @@ setInterval( function() {
                     <div class="row mb-3">
                         <a class="copyright" href="https://www.planet.com/gallery/" target="_blank">Images: Planet Labs Inc</a>
                     </div>
-                    <!--
+                    
                     <div class="row pb-3">
                         <div class="col mx-auto">
                             <div class="text-center">
-                                <strong id="slider-position-output" class="block-headline">Slider Position: 0%</strong> 
+                                <a href="#" id="restart-preloader-animation" class="btn btn-function my-2">Restart preloader animation</a>
                             </div>
                         </div>
                     </div>
-                    -->
+                    
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
