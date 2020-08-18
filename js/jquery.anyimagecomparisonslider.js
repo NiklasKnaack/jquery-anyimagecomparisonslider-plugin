@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '1.0.2';
+    var AICS_VERSION = '1.0.3';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -61,7 +61,7 @@ THE SOFTWARE.
             settings.onReady = function(){};
 
         //get settings from params
-        if ( params !== undefined ) {
+        if ( typeof params !== 'undefined' ) {
 
             for ( var prop in params ) {
 
@@ -76,98 +76,65 @@ THE SOFTWARE.
         }
 
         //get settings from element data attributes
-        var dataAttributes = element.attributes
+        var elemAttributes = element.attributes;
+        var dataAttributes = [
 
-        for ( var i = 0, l = dataAttributes.length; i < l; i++ ) {
+            { attr: 'data-orientation', prop: 'orientation',type: String },
+            { attr: 'data-initial-position', prop: 'initialPosition', type: Number },
+            { attr: 'data-width', prop: 'width', type: String },
+            { attr: 'data-background-color', prop: 'backgroundColor', type: String },
+            { attr: 'data-on-pointer-down', prop: 'onPointerDown', type: Boolean },
+            { attr: 'data-cursor', prop: 'cursor', type: String },
+            { attr: 'data-dividing-line', prop: 'dividingLine', type: String },
+            { attr: 'data-follow-easing-factor', prop: 'followEasingFactor', type: Number },
+            { attr: 'data-interactive', prop: 'interactive', type: Boolean },
+            { attr: 'data-auto-animation', prop: 'autoAnimation', type: Boolean },
+            { attr: 'data-auto-animation-speed', prop: 'autoAnimationSpeed', type: Number },
+            { attr: 'data-auto-animation-pause', prop: 'autoAnimationPause', type: Number },
+            { attr: 'data-auto-animation-easing', prop: 'autoAnimationEasing', type: String },
+            { attr: 'data-control-others', prop: 'controlOthers', type: Boolean },
+            { attr: 'data-controlled-by-others', prop: 'controlledByOthers', type: Boolean },
+            { attr: 'data-controlled-reverse', prop: 'controlledReverse', type: Boolean },
+            { attr: 'data-group', prop: 'group', type: String },
+            { attr: 'data-group-sync', prop: 'groupSync', type: Boolean },
+            { attr: 'data-loading', prop: 'loading', type: String },
+            { attr: 'data-viewport-offset', prop: 'viewportOffset', type: String },
+            { attr: 'data-sleep-mode', prop: 'sleepMode', type: Boolean }
 
-            if ( dataAttributes[ i ].nodeName === 'data-orientation' ) {
+        ];
 
-                settings.orientation = dataAttributes[ i ].nodeValue;
+        for ( var i = 0, l = elemAttributes.length; i < l; i++ ) {
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-initial-position' ) {
+            var elemAttr = elemAttributes[ i ];
 
-                settings.initialPosition = parseFloat( dataAttributes[ i ].nodeValue );
+            for ( var j = 0, m = dataAttributes.length; j < m; j++ ) {
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-width' ) {
+                var dataAttr = dataAttributes[ j ];
 
-                settings.width = dataAttributes[ i ].nodeValue;
+                if ( dataAttr.attr === elemAttr.nodeName ) {
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-background-color' ) {
+                    if ( dataAttr.type === String ) {
 
-                settings.backgroundColor = dataAttributes[ i ].nodeValue;
+                        settings[ dataAttr.prop ] = elemAttr.nodeValue;
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-on-pointer-down' ) {
+                    } else if ( dataAttr.type === Number ) {
 
-                settings.onPointerDown = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
+                        settings[ dataAttr.prop ] = parseFloat( elemAttr.nodeValue );
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-cursor' ) {
+                    } else if ( dataAttr.type === Boolean ) {
 
-                settings.cursor = dataAttributes[ i ].nodeValue;
+                        settings[ dataAttr.prop ] = ( elemAttr.nodeValue.toLowerCase() === 'true' );
+                        
+                    }
 
-            } else if ( dataAttributes[ i ].nodeName === 'data-dividing-line' ) {
+                    break;
 
-                settings.dividingLine = dataAttributes[ i ].nodeValue;
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-follow-easing-factor' ) {
-
-                settings.followEasingFactor = parseFloat( dataAttributes[ i ].nodeValue );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-interactive' ) {
-
-                settings.interactive = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-auto-animation' ) {
-
-                settings.autoAnimation = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-auto-animation-speed' ) {
-
-                settings.autoAnimationSpeed = parseFloat( dataAttributes[ i ].nodeValue );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-auto-animation-pause' ) {
-
-                settings.autoAnimationPause = parseFloat( dataAttributes[ i ].nodeValue );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-auto-animation-easing' ) {
-
-                settings.autoAnimationEasing = dataAttributes[ i ].nodeValue;
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-control-others' ) {
-
-                settings.controlOthers = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-controlled-by-others' ) {
-
-                settings.controlledByOthers = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-controlled-reverse' ) {
-
-                settings.controlledReverse = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-group' ) {
-
-                settings.group = dataAttributes[ i ].nodeValue;
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-group-sync' ) {
-
-                settings.groupSync = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-loading' ) {
-
-                settings.loading = dataAttributes[ i ].nodeValue;
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-viewport-offset' ) {
-
-                settings.viewportOffset = dataAttributes[ i ].nodeValue;
-
-            } else if ( dataAttributes[ i ].nodeName === 'data-sleep-mode' ) {
-
-                settings.sleepMode = ( dataAttributes[ i ].nodeValue.toLowerCase() === 'true' );
+                }
 
             }
 
         }
-
+        
         //---
 
         if ( typeof settings.orientation !== 'string' ) {
