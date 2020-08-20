@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ( function() {
 
-    var AICS_VERSION = '1.0.3';
+    var AICS_VERSION = '1.0.4';
 
     function AnyImageComparisonSlider( element, params ) {
 
@@ -1781,6 +1781,48 @@ THE SOFTWARE.
     AnyImageComparisonSlider.VERSION = AICS_VERSION;
 
     window.AnyImageComparisonSlider = AnyImageComparisonSlider;
+
+    //---
+
+    function documentReady( callback ) {
+
+        if ( document.readyState !== 'loading' ) {
+            
+            callback();
+
+        } else if ( document.addEventListener ) {
+            
+            document.addEventListener( 'DOMContentLoaded', callback );
+
+        } else document.attachEvent( 'onreadystatechange', function() {
+
+            if ( document.readyState === 'complete' ) {
+
+                callback();
+
+            } 
+
+        } );
+
+    }
+
+    documentReady( function() {
+        
+        var divs = document.getElementsByTagName( 'div' );
+
+        for ( var i = 0, l = divs.length; i < l; i++ ) {
+
+            var div = divs[ i ];
+
+            if ( div.id.length > 0 && div.id.indexOf( 'aics' ) > -1 && div.id.indexOf( 'autostart' ) > -1 ) {
+
+                new AnyImageComparisonSlider( div );
+
+            }
+
+        }
+
+    });
 
 } () );
 

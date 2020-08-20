@@ -337,7 +337,7 @@
             //js
             //var anyImageComparisonSlider = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider' ), settings );
 
-            var anyImageComparisonSlider1  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-1' ) );
+            //var anyImageComparisonSlider1  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-1' ) );
             var anyImageComparisonSlider2  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-2' ) );
             var anyImageComparisonSlider3  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-3' ) );
             var anyImageComparisonSlider4  = new AnyImageComparisonSlider( document.getElementById( 'any-image-comparison-slider-4' ) );
@@ -616,7 +616,8 @@
                         </p>
                     </div>
                     <div class="row mb-3">
-                        <div id="any-image-comparison-slider-1" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#f7f7e9" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-reverse="false" data-group="g1" data-group-sync="false" data-loading="lazy" data-viewport-offset="100px" data-sleep-mode="true">
+                        <!-- <div id="any-image-comparison-slider-1" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#f7f7e9" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-reverse="false" data-group="g1" data-group-sync="false" data-loading="lazy" data-viewport-offset="100px" data-sleep-mode="true"> -->
+                        <div id="aics-autostart" data-orientation="horizontal" data-initial-position="0" data-width="100%" data-background-color="#f7f7e9" data-on-pointer-down="false" data-cursor="ew-resize" data-dividing-line="solid 1px rgba(255, 255, 255, .5)" data-follow-easing-factor="0" data-interactive="true" data-auto-animation="true" data-auto-animation-speed="8" data-auto-animation-pause="1" data-auto-animation-easing="inOutCubic" data-control-others="false" data-controlled-by-others="false" data-controlled-reverse="false" data-group="g1" data-group-sync="false" data-loading="lazy" data-viewport-offset="100px" data-sleep-mode="true">
                             <div class="images">
                                 <div class="image-rgt" data-src="./img/port_beirut_lebanon_s3_20200805T083844Z_rgb_3840_16by9_geo-1-web.jpg" data-width="1200" data-height="900"></div>
                                 <div class="image-lft" data-src="./img/port_beirut_lebanon_s112_20200531T081734Z_rgb_3840_16by9_geo-2-web.jpg" data-width="1200" data-height="900"></div>
@@ -644,7 +645,7 @@
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-&lt;script src='https://cdn.jsdelivr.net/npm/jquery-anyimagecomparisonslider-plugin@1.0.3/js/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://cdn.jsdelivr.net/npm/jquery-anyimagecomparisonslider-plugin@1.0.4/js/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
                         </code></pre>
                     </div>
 
@@ -659,7 +660,7 @@
                     </div>
                     <div class="code-block row">
                         <pre><code class="language-html">
-&lt;div id=&quot;aics&quot;&gt;
+&lt;div id=&quot;aics-autostart&quot;&gt;
     &lt;div class=&quot;images&quot;&gt;
         &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
@@ -668,50 +669,17 @@
                         </code></pre>
                     </div>
 
-                    <!-- <div class="sub-headline row">
-                        <strong class="sub-headline-text">CSS</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-css">
-.block .container .sub-headline {
-    letter-spacing: -1px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    padding: 0 50px;
-    color: rgb(34, 26, 5);
-}
-</code></pre>
-                    </div> -->
-
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>Almost there. Now all you have to do is initialize the slider. Depending on whether you want to work with jQuery or pure JavaScript, you have the following options.
+                            <br/>
+                            You did it. Congrats, you have successfully added your first any Image Comparison slider to your site.
+                            <br/>
+                            <br/>
+                            The special feature of this example is that we don't have to initialize the slider in JavaScript/jQuery. 
+                            If you include the words <b>aics</b> and <b>autostart</b> in the id, the initialization will be done autoamitically.
                         </p>
                     </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">JavaScript</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-javascript">
-new AnyImageComparisonSlider( document.getElementById( 'aics' ) );
-                        </code></pre>
-                    </div>
-
-                    <div class="sub-headline row">
-                        <strong class="sub-headline-text">jQuery</strong> 
-                    </div>
-                    <div class="code-block row">
-                        <pre><code class="language-javascript">
-$( '#aics' ).anyImageComparisonSlider();
-                        </code></pre>
-                    </div>
-
-                    <div class="content row d-flex align-items-end">
-                        <p class="text-muted">
-                            <br/>Congrats, you have successfully added your first any Image Comparison slider to your site.
-                        </p>
-                    </div>
+                    
                 </div> 
             </div>
 
@@ -815,7 +783,7 @@ yarn add jquery-anyimagecomparisonslider-plugin
 
                     <div class="code-block row">
                         <pre><code class="language-html">
-&lt;script src='https://cdn.jsdelivr.net/npm/jquery-anyimagecomparisonslider-plugin@1.0.3/js/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://cdn.jsdelivr.net/npm/jquery-anyimagecomparisonslider-plugin@1.0.4/js/jquery.anyimagecomparisonslider.min.js'&gt;&lt;/script&gt;
                         </code></pre>
                     </div>
 
@@ -976,7 +944,13 @@ button-btm
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>And here it is again about the initialization. As already learned there are two possibilities depending on whether you want to work with jQuery or pure JavaScript.
+                            <!-- <br/>And here it is again about the initialization. As already learned there are two possibilities depending on whether you want to work with jQuery or pure JavaScript. -->
+                            <br/>
+                            Let's now continue with the initialization.
+                            <br/>
+                            Besides the automatic initialization without a single line of JavaScript/jQuery code and using the words <b>aics</b> and <b>autostart</b> in the id of the slider, there is the ability to initialize the slider yourself.
+                            <br/>
+                            There are two possibilities depending on whether you want to work with pure JavaScript or jQuery.
                         </p>
                     </div>
 
@@ -1000,7 +974,15 @@ $( '#aics-2' ).anyImageComparisonSlider();
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
-                            <br/>Yay, you have successfully added your first self configured any Image Comparison slider to your site. 
+                            <br/>
+                            Yay, you have successfully added and initialized your first self configured any Image Comparison slider to your site. 
+                            <br/>
+                            <br/>
+                            <i>
+                                Please note that if you do not want the slider to initialize automatically, don't use a combination of the words <b>aics</b> and <b>autostart</b> in the slider id.
+                                <br/>
+                                In the following examples we always use the non-automatic initialization as shown here.
+                            </i>
                         </p>
                     </div>
                 </div> 
@@ -1062,6 +1044,7 @@ $( '#aics-2' ).anyImageComparisonSlider();
 
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
+                            <br/>
                             At this point we create the div element for our slider and set the id (aics) for this element so that we can access it in JavaScript/jQuery to initialize the slider.
                             <br/>
                             Furthermore, in our slider div element we create another div element with the class images.
@@ -1250,7 +1233,7 @@ button-btm
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <br/>
-                            And this is the complete markup for our horizontal slider:
+                            And this is the complete markup for a horizontal slider:
                         </p>
                     </div>
 
@@ -1296,7 +1279,58 @@ button-btm
                     <div class="content row d-flex align-items-end">
                         <p class="text-muted">
                             <br/>
-                            In the next step we will look at how to configure the slider.
+                            Now let's look again at the markup for a slider that works completely without initialization in JavaScript/jQuery:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics-autostart&quot;&gt;
+    &lt;div class=&quot;images&quot;&gt;
+        &lt;div class=&quot;image-rgt&quot; data-src=&quot;./path/image-rgt.jpg&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;image-lft&quot; data-src=&quot;./path/image-lft.jpg&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            The naming of the slider id plays the decisive role here:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics-autostart&quot;&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            If you want your slider to be initialized automatically, you have to make sure that the name of the slider id contains the words <b>aics</b> and <b>autostart</b>.
+                            <br/>
+                            The order or additional other words in the slider id are irrelevant. 
+                            <br/>
+                            The following Slider id for example also works so that the slider is automatically initialized:
+                        </p>
+                    </div>
+
+                    <div class="code-block row">
+                        <pre><code class="language-html">
+&lt;div id=&quot;aics-1-autostart&quot;&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="content row d-flex align-items-end">
+                        <p class="text-muted">
+                            <br/>
+                            On the other hand, if you want to avoid that the initialization takes place automatically just avoid the word <b>autostart</b> in the slider id.
+                            <br/>
+                            <br/>
+                            But now enough slider markup. In the next step we will look at how to configure the slider.
                         </p>
                     </div>
 
